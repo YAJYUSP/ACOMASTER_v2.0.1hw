@@ -895,6 +895,46 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>wouo</GroupName>
+          <Files>
+            <File>
+              <FileName>WouoUI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_font.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_page.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_page.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_user.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_widget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_widget.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>

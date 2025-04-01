@@ -1,0 +1,9 @@
+acomaster\wououi_oled.o: Software\wouo\WouoUI_oled.c
+acomaster\wououi_oled.o: Software\wouo\WouoUI_oled.h
+acomaster\wououi_oled.o: Software\wouo\WouoUI_font.h
+acomaster\wououi_oled.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+acomaster\wououi_oled.o: Software\wouo\WouoUI_port.h
+acomaster\wououi_oled.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+acomaster\wououi_oled.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+acomaster\wououi_oled.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+acomaster\wououi_oled.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

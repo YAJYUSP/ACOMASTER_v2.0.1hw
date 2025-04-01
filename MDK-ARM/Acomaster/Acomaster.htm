@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Acomaster\Acomaster.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Acomaster\Acomaster.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Apr 01 21:54:00 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Apr 01 22:29:54 2025
 <BR><P>
 <H3>Maximum Stack Usage =        384 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1257,7 +1257,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 
-<P><STRONG><a name="[b7]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 340 bytes, Stack size 24 bytes, timer.o(i.HAL_TIM_PeriodElapsedCallback))
+<P><STRONG><a name="[b7]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 310 bytes, Stack size 24 bytes, timer.o(i.HAL_TIM_PeriodElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; GUI_power_off &rArr; OLED_Refresh_Gram &rArr; OLED_WR_Byte &rArr; Write_IIC_Data &rArr; HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnTXISFlagUntilTimeout &rArr; I2C_IsErrorOccurred
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin

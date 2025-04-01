@@ -148,16 +148,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				}
 				else
 				{
-						//若100ms内按键没有被触发过
-						//超时时间+1
-						key_timeout_status.key_timeout_not_prsd ++;
-						//超过超时时间，进入息屏模式
-						if(key_timeout_status.key_timeout_not_prsd >= KEY_SLEEP_TIMEOUT_TIME)
-						{
-								key_timeout_status.key_timeout_not_prsd = 0;
-								if(sys_ctrl.sys_status == SCREEN_ON)
-										sys_ctrl.sys_status = SCREEN_OFF;
-						}
+//						//若100ms内按键没有被触发过
+//						//超时时间+1
+//						key_timeout_status.key_timeout_not_prsd ++;
+//						//超过超时时间，进入息屏模式
+//						if(key_timeout_status.key_timeout_not_prsd >= KEY_SLEEP_TIMEOUT_TIME)
+//						{
+//								key_timeout_status.key_timeout_not_prsd = 0;
+//								if(sys_ctrl.sys_status == SCREEN_ON)
+//										sys_ctrl.sys_status = SCREEN_OFF;
+//						}
 				}
 	
 				

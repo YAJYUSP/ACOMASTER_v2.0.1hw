@@ -1,0 +1,12 @@
+acomaster\wououi_widget.o: Software\wouo\WouoUI_widget.c
+acomaster\wououi_widget.o: Software\wouo\WouoUI_widget.h
+acomaster\wououi_widget.o: Software\wouo\WouoUI_conf.h
+acomaster\wououi_widget.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+acomaster\wououi_widget.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+acomaster\wououi_widget.o: Software\wouo\WouoUI_page.h
+acomaster\wououi_widget.o: Software\wouo\WouoUI_oled.h
+acomaster\wououi_widget.o: Software\wouo\WouoUI_font.h
+acomaster\wououi_widget.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+acomaster\wououi_widget.o: Software\wouo\WouoUI_port.h
+acomaster\wououi_widget.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+acomaster\wououi_widget.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

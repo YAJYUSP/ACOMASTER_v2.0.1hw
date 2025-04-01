@@ -43,6 +43,13 @@
 "acomaster\qcc5125.o"
 "acomaster\oledfont.o"
 "acomaster\adau1761.o"
+"acomaster\wououi.o"
+"acomaster\wououi_font.o"
+"acomaster\wououi_oled.o"
+"acomaster\wououi_page.o"
+"acomaster\wououi_port.o"
+"acomaster\wououi_user.o"
+"acomaster\wououi_widget.o"
 --library_type=microlib --strict --scatter "Acomaster\Acomaster.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
