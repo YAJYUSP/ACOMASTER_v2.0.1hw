@@ -47,6 +47,7 @@ static void Write_IIC_Data(unsigned char IIC_Data);
 static void Write_IIC_Byte(unsigned char IIC_Byte);
 void OLED_DrawPoint(u8 x,u8 y,u8 t);
 void OLED_Refresh_Gram(void);
+void OLED_Refresh_FrameBuffer(uint8_t buff[][128]);
 
 void OLED_ShowFrame(void);
 void OLED_DrawLine(uint8_t x1, uint8_t y1, uint8_t x2,uint8_t y2, uint8_t b);

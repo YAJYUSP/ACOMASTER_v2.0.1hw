@@ -45,3 +45,15 @@ acomaster\key.o: ./Devices/qcc5125.h
 acomaster\key.o: ./Software/audio.h
 acomaster\key.o: ./Software/tasks.h
 acomaster\key.o: ../Core/Inc/rtc.h
+acomaster\key.o: .\Software\wouo\WouoUI.h
+acomaster\key.o: .\Software\wouo\WouoUI_conf.h
+acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+acomaster\key.o: .\Software\wouo\WouoUI_oled.h
+acomaster\key.o: .\Software\wouo\WouoUI_font.h
+acomaster\key.o: .\Software\wouo\WouoUI_port.h
+acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+acomaster\key.o: .\Software\wouo\WouoUI_page.h
+acomaster\key.o: .\Software\wouo\WouoUI_widget.h
+acomaster\key.o: .\Software\wouo\WouoUI_win.h

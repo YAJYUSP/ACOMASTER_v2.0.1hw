@@ -81,6 +81,28 @@ void OLED_Refresh_Gram(void)
 		}
 }
 
+//将一帧显存数组更新到OLED,要求显存结构为uint8_t buff[8][128]
+//这里专门为wouoUI定制此函数
+void OLED_Refresh_FrameBuffer(uint8_t buff[][128])
+{
+		u8 i,n;
+		for(i=0;i<8;i++)
+		{
+				OLED_WR_Byte (0xb0+i,OLED_CMD); //设置页地址（0~7）
+				OLED_WR_Byte (0x00,OLED_CMD); //设置显示位置—列低地址
+				OLED_WR_Byte (0x10,OLED_CMD); //设置显示位置—列高地址
+				HAL_Delay(1);
+
+				uint8_t txData[129];
+				txData[0] = 0x40;	//表明要发送的帧为数据帧
+				for(n=0;n<128;n++) txData[n+1] = buff[i][n];
+				while(HAL_DMA_GetState(hi2c1.hdmatx) != HAL_DMA_STATE_READY);
+				HAL_I2C_Master_Transmit_DMA(&hi2c1, OLED_SLAVE_ADDR, txData, 129);
+
+				HAL_Delay(1);
+		}
+}
+
  //关闭屏幕显示
 void OLED_displayOFF(void)
 {

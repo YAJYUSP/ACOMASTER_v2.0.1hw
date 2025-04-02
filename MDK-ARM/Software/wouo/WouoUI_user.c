@@ -207,7 +207,6 @@ void About_CallBack(const Page *cur_page_addr, Option *select_item) {
 
 //--------------给主函数调用的接口函数
 void TestUI_Init(void) {
-    // OLED_Init();  //硬件的初始化
     OLED_ClearBuff();      // 清空缓存
     OLED_SendBuff();       // 刷新屏幕(清空屏幕)
     OLED_SetPointColor(1); // 设置绘制颜色

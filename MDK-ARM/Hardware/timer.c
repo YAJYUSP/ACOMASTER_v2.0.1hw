@@ -15,6 +15,8 @@
 #include "tasks.h" 
 #include "adau1761.h"
 
+#include "WouoUI.h"
+
 
 //使用定时器22实现微秒延时
 void bsp_tim22_delay_us(uint16_t nus)
@@ -40,25 +42,49 @@ void bsp_tim22_delay_us(uint16_t nus)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 		static uint8_t time_cnt_1sec = 0;
+		static uint8_t time_cnt_10ms = 0;
+		static uint8_t time_cnt_20ms = 0;
 		//5ms period 
-		if (htim == (&htim21))                           
+		if (htim == (&htim21))                      
 		{
-				if(device_current_state == MAIN_UI)
-				{
-						if(IF_KEY_LEFT_PRSD)
-								qcc5125_key_press(KEY_PREV, 1);
-						else
-								qcc5125_key_press(KEY_PREV, 0);
-						
-						if(IF_KEY_RIGHT_PRSD)
-								qcc5125_key_press(KEY_NEXT, 1);
-						else
-								qcc5125_key_press(KEY_NEXT, 0);
-				}
-				else if(device_current_state == EQ_UI)
-				{
-						key_longpress_scan_5ms();
-				}
+			
+			//10ms定时中断，用于按键扫描
+			if(time_cnt_10ms < 1)
+				time_cnt_10ms ++;
+			else
+			{
+				time_cnt_10ms = 0;
+				
+			}
+			
+			//20ms定时中断，用于显示刷新
+			if(time_cnt_20ms < 3)
+				time_cnt_20ms ++;
+			else
+			{
+				time_cnt_20ms = 0;
+				
+				OLED_UIProc(20);
+			}
+			
+			
+			
+//				if(device_current_state == MAIN_UI)
+//				{
+//						if(IF_KEY_LEFT_PRSD)
+//								qcc5125_key_press(KEY_PREV, 1);
+//						else
+//								qcc5125_key_press(KEY_PREV, 0);
+//						
+//						if(IF_KEY_RIGHT_PRSD)
+//								qcc5125_key_press(KEY_NEXT, 1);
+//						else
+//								qcc5125_key_press(KEY_NEXT, 0);
+//				}
+//				else if(device_current_state == EQ_UI)
+//				{
+//						key_longpress_scan_5ms();
+//				}
 		}
 		
 
@@ -66,7 +92,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if (htim == (&htim6))                           
 		{
 			
-				qcc5125_io_update_100ms();
+//				qcc5125_io_update_100ms();
 			
 //				//充电时显示的电池动画效果
 //				if(sys_chg_info.chrg_state)
@@ -80,74 +106,74 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //						sys_chg_info.batt_soc_animation_state = 0;
 //						
 				
-				//mute软延时功能，其mute持续时间400ms
-				if(qcc5125_status.mute_delay_enable)
-				{
-						if(qcc5125_status.mute_delay_cnt < 1)
-								qcc5125_status.mute_delay_cnt++;
-						else
-						{
-								//延时时间到，解除mute,重新初始化音频链路
-								qcc5125_status.mute_delay_cnt = 0;
-								qcc5125_status.mute_delay_enable = 0;
-								audio_enable();
-						}
-				}
-				else
-						qcc5125_status.mute_delay_cnt = 0;
+//				//mute软延时功能，其mute持续时间400ms
+//				if(qcc5125_status.mute_delay_enable)
+//				{
+//						if(qcc5125_status.mute_delay_cnt < 1)
+//								qcc5125_status.mute_delay_cnt++;
+//						else
+//						{
+//								//延时时间到，解除mute,重新初始化音频链路
+//								qcc5125_status.mute_delay_cnt = 0;
+//								qcc5125_status.mute_delay_enable = 0;
+//								audio_enable();
+//						}
+//				}
+//				else
+//						qcc5125_status.mute_delay_cnt = 0;
 
 				
 				
-				//EQ调整模式中，长按按键自动更改参数
-				if(device_current_state == EQ_UI)
-				{
-						if(key_longpress_up.key_long_prsd_flag)
-								if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)
-								{
-										eq_setting_boost[select_eq] += 1;
-										GUI_OLEDRFS_REQ = 1;
-								}
-						if(key_longpress_down.key_long_prsd_flag)
-								if(eq_setting_boost[select_eq] > -EQ_BOOST_MAX)
-								{
-										eq_setting_boost[select_eq] -= 1;
-										GUI_OLEDRFS_REQ = 1;
-								}
-				}
+//				//EQ调整模式中，长按按键自动更改参数
+//				if(device_current_state == EQ_UI)
+//				{
+//						if(key_longpress_up.key_long_prsd_flag)
+//								if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)
+//								{
+//										eq_setting_boost[select_eq] += 1;
+//										GUI_OLEDRFS_REQ = 1;
+//								}
+//						if(key_longpress_down.key_long_prsd_flag)
+//								if(eq_setting_boost[select_eq] > -EQ_BOOST_MAX)
+//								{
+//										eq_setting_boost[select_eq] -= 1;
+//										GUI_OLEDRFS_REQ = 1;
+//								}
+//				}
 				
-			
-				//当系统初始化完成，才执行这里面的代码
-				if(device_current_state != SYSTEM_INIT && device_current_state != INIT_UI)
-				{
-						if(time_cnt_1sec < 100)
-								time_cnt_1sec++;
-						else
-						{
-								//这里的代码每10000ms(10s)执行一次
-								time_cnt_1sec = 0;
-								//电量评估
-								sys_chg_updt_info(&sys_chg_info);
-						}		
-						
-						//刷新屏幕
-						if(GUI_OLEDRFS_REQ)
-						{
-								OLED_Refresh_Gram();
-								GUI_OLEDRFS_REQ = 0;
-						}
-				}
-				
+//			
+//				//当系统初始化完成，才执行这里面的代码
+//				if(device_current_state != SYSTEM_INIT && device_current_state != INIT_UI)
+//				{
+//						if(time_cnt_1sec < 100)
+//								time_cnt_1sec++;
+//						else
+//						{
+//								//这里的代码每10000ms(10s)执行一次
+//								time_cnt_1sec = 0;
+//								//电量评估
+//								sys_chg_updt_info(&sys_chg_info);
+//						}		
+//						
+//						//刷新屏幕
+//						if(GUI_OLEDRFS_REQ)
+//						{
+//								OLED_Refresh_Gram();
+//								GUI_OLEDRFS_REQ = 0;
+//						}
+//				}
+//				
 					
 					
-				//按键超时与息屏判断
-				if(key_timeout_status.key_prsd_flag)
-				{
-						//若100ms内按键有被触发过，则清零超时时间
-						key_timeout_status.key_prsd_flag = 0;
-						key_timeout_status.key_timeout_not_prsd = 0;
-				}
-				else
-				{
+//				//按键超时与息屏判断
+//				if(key_timeout_status.key_prsd_flag)
+//				{
+//						//若100ms内按键有被触发过，则清零超时时间
+//						key_timeout_status.key_prsd_flag = 0;
+//						key_timeout_status.key_timeout_not_prsd = 0;
+//				}
+//				else
+//				{
 //						//若100ms内按键没有被触发过
 //						//超时时间+1
 //						key_timeout_status.key_timeout_not_prsd ++;
@@ -158,8 +184,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //								if(sys_ctrl.sys_status == SCREEN_ON)
 //										sys_ctrl.sys_status = SCREEN_OFF;
 //						}
-				}
-	
+//				}
+//	
 				
 				
 				//中键长按判断与关机，系统初始化时不进行关机判断

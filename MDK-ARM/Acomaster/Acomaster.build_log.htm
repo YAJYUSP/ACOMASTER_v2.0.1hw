@@ -22,30 +22,47 @@ Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
 D:\VDesktop\Projects\ACOMASTER _V2.1.0\MDK-ARM\Acomaster.uvprojx
-Project File Date:  04/01/2025
+Project File Date:  04/02/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ACOMASTER'
+compiling WouoUI_widget.c...
+Software\wouo\WouoUI_widget.c(2): warning:  #1-D: last line of file ends without a newline
+  #include "WouoUI_page.h"
+Software\wouo\WouoUI_widget.c: 1 warning, 0 errors
+compiling WouoUI_user.c...
+compiling WouoUI_page.c...
+Software\wouo\WouoUI_page.c(235): warning:  #177-D: variable "lp" was declared but never referenced
+      ListPage *lp = (ListPage *)page_addr;
+Software\wouo\WouoUI_page.c: 1 warning, 0 errors
+compiling WouoUI.c...
+Software\wouo\WouoUI.c(219): warning:  #111-D: statement is unreachable
+          break;
+Software\wouo\WouoUI.c(222): warning:  #111-D: statement is unreachable
+          break;
+Software\wouo\WouoUI.c(225): warning:  #111-D: statement is unreachable
+          break;
+Software\wouo\WouoUI.c(228): warning:  #111-D: statement is unreachable
+          break;
+Software\wouo\WouoUI.c(232): warning:  #940-D: missing return statement at end of non-void function "OLED_GetOptionFloatVal"
+  }
+Software\wouo\WouoUI.c: 5 warnings, 0 errors
+compiling WouoUI_oled.c...
+Software\wouo\WouoUI_oled.c(442): warning:  #111-D: statement is unreachable
+                      break;
+Software\wouo\WouoUI_oled.c: 1 warning, 0 errors
+compiling WouoUI_win.c...
+compiling WouoUI_port.c...
+compiling timer.c...
+Hardware\timer.c(44): warning:  #177-D: variable "time_cnt_1sec" was declared but never referenced
+  		static uint8_t time_cnt_1sec = 0;
+Hardware\timer.c: 1 warning, 0 errors
+compiling key.c...
 linking...
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_ConWinInit (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_ConWinReact (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_ConWinShow (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_InfoWinInit (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_InfoWinReact (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_InfoWinShow (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SlideValWinInit (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SlideValWinReact (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SlideValWinShow (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SpinWinInit (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SpinWinReact (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_SpinWinShow (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol OLED_WinFSM (referred from wououi.o).
-Acomaster\Acomaster.axf: Error: L6218E: Undefined symbol simulateSendBuff (referred from wououi_port.o).
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 14 error messages.
-"Acomaster\Acomaster.axf" - 14 Error(s), 0 Warning(s).
+Program Size: Code=31336 RO-data=8976 RW-data=3044 ZI-data=4860  
+FromELF: creating hex file...
+"Acomaster\Acomaster.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -69,7 +86,6 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

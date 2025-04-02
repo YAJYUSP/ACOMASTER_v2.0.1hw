@@ -33,7 +33,6 @@ acomaster\sys_init.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h
 acomaster\sys_init.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h
 acomaster\sys_init.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h
 acomaster\sys_init.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h
-acomaster\sys_init.o: ../Core/Inc/tim.h
 acomaster\sys_init.o: Software\sys_init.h
 acomaster\sys_init.o: Software\pwr_mngr.h
 acomaster\sys_init.o: ./Devices/cw2015.h

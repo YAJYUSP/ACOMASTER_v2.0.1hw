@@ -48,3 +48,15 @@ acomaster\timer.o: Hardware\key.h
 acomaster\timer.o: ./Software/audio.h
 acomaster\timer.o: ./Devices/qcc5125.h
 acomaster\timer.o: ./Software/tasks.h
+acomaster\timer.o: .\Software\wouo\WouoUI.h
+acomaster\timer.o: .\Software\wouo\WouoUI_conf.h
+acomaster\timer.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+acomaster\timer.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+acomaster\timer.o: .\Software\wouo\WouoUI_oled.h
+acomaster\timer.o: .\Software\wouo\WouoUI_font.h
+acomaster\timer.o: .\Software\wouo\WouoUI_port.h
+acomaster\timer.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+acomaster\timer.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+acomaster\timer.o: .\Software\wouo\WouoUI_page.h
+acomaster\timer.o: .\Software\wouo\WouoUI_widget.h
+acomaster\timer.o: .\Software\wouo\WouoUI_win.h

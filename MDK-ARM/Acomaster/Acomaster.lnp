@@ -50,6 +50,7 @@
 "acomaster\wououi_port.o"
 "acomaster\wououi_user.o"
 "acomaster\wououi_widget.o"
+"acomaster\wououi_win.o"
 --library_type=microlib --strict --scatter "Acomaster\Acomaster.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -34,12 +34,14 @@ acomaster\tasks.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h
 acomaster\tasks.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h
 acomaster\tasks.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h
 acomaster\tasks.o: Software\tasks.h
+acomaster\tasks.o: .\Software\wouo\WouoUI_user.h
 acomaster\tasks.o: Software\sys_init.h
 acomaster\tasks.o: Software\gui.h
 acomaster\tasks.o: Software\pwr_mngr.h
 acomaster\tasks.o: ./Devices/adau1761/adau1761.h
 acomaster\tasks.o: ./Devices/adau1761/adau1761_REG.h
 acomaster\tasks.o: ./Hardware/key.h
+acomaster\tasks.o: ../Core/Inc/tim.h
 acomaster\tasks.o: ./Devices/oled.h
 acomaster\tasks.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 acomaster\tasks.o: ./Devices/oledfont.h

@@ -10,6 +10,8 @@
 #include "adau1761.h"
 #include "rtc.h"
 
+#include "WouoUI.h"
+
 
 key_timeout_status_t key_timeout_status;
 key_status_t key_status;
@@ -93,73 +95,100 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		{
 				if(IF_KEY_UP_PRSD)
 				{
-						if(device_current_state == EQ_UI)
-						{
-								HAL_Delay(20);
-								if(IF_KEY_UP_PRSD)
-								{
-										if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)
-												eq_setting_boost[select_eq] += 1;
-										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-								}
-						}
+					HAL_Delay(20);
+					if(IF_KEY_UP_PRSD)
+					{
+						OLED_MsgQueSend(msg_up);
+					}
+//						if(device_current_state == EQ_UI)
+//						{
+//								HAL_Delay(20);
+//								if(IF_KEY_UP_PRSD)
+//								{
+//										if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)
+//												eq_setting_boost[select_eq] += 1;
+//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
+//								}
+//						}
+					
 				}
 				
 				else if(IF_KEY_DOWN_PRSD)
 				{
-						if(device_current_state == EQ_UI)
-						{
-								HAL_Delay(20);
-								if(IF_KEY_DOWN_PRSD)
-								{
-										if(eq_setting_boost[select_eq] > -EQ_BOOST_MAX)
-												eq_setting_boost[select_eq] -= 1;
-										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-								}
-						}
+					HAL_Delay(20);
+					if(IF_KEY_DOWN_PRSD)
+					{
+						OLED_MsgQueSend(msg_down);
+					}
+//						if(device_current_state == EQ_UI)
+//						{
+//								HAL_Delay(20);
+//								if(IF_KEY_DOWN_PRSD)
+//								{
+//										if(eq_setting_boost[select_eq] > -EQ_BOOST_MAX)
+//												eq_setting_boost[select_eq] -= 1;
+//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
+//								}
+//						}
 				}
 				
 				else if(IF_KEY_LEFT_PRSD)
 				{
-						if(device_current_state == EQ_UI)
-						{
-								HAL_Delay(20);
-								if(IF_KEY_LEFT_PRSD)
-								{
-										if(select_eq > eq_63)
-												select_eq -=1;
-										else 
-												select_eq = eq_16000;
-										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-								}
-						}
+					HAL_Delay(20);
+					if(IF_KEY_LEFT_PRSD)
+					{
+						OLED_MsgQueSend(msg_sub);
+					}
+//						if(device_current_state == EQ_UI)
+//						{
+//								HAL_Delay(20);
+//								if(IF_KEY_LEFT_PRSD)
+//								{
+//										if(select_eq > eq_63)
+//												select_eq -=1;
+//										else 
+//												select_eq = eq_16000;
+//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
+//								}
+//						}
+					
 				}
 				
 				else if(IF_KEY_RIGHT_PRSD)
 				{
-						if(device_current_state == EQ_UI)
-						{
-								HAL_Delay(20);
-								if(IF_KEY_RIGHT_PRSD)
-								{
-										if(select_eq < eq_16000)
-												select_eq += 1;
-										else 
-												select_eq = eq_63;
-										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-								}
-						}
+					HAL_Delay(20);
+					if(IF_KEY_RIGHT_PRSD)
+					{
+						OLED_MsgQueSend(msg_add);
+					}
+//						if(device_current_state == EQ_UI)
+//						{
+//								HAL_Delay(20);
+//								if(IF_KEY_RIGHT_PRSD)
+//								{
+//										if(select_eq < eq_16000)
+//												select_eq += 1;
+//										else 
+//												select_eq = eq_63;
+//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
+//								}
+//						}
 				}
 				 
 				else if(IF_KEY_MID_PRSD)
 				{
-						//当进入主页面
-						if(device_current_state == MAIN_UI)
-						{
-								HAL_Delay(50);
-								if(IF_KEY_MID_PRSD)
-										qcc5125_btn_press(KEY_PLAY, 2);
-						}	
+					HAL_Delay(20);
+					if(IF_KEY_MID_PRSD)
+					{
+						OLED_MsgQueSend(msg_click);
+					}
+//						//当进入主页面
+//						if(device_current_state == MAIN_UI)
+//						{
+//								HAL_Delay(50);
+//								if(IF_KEY_MID_PRSD)
+//										qcc5125_btn_press(KEY_PLAY, 2);
+//						}	
 				}		
 		}
 }

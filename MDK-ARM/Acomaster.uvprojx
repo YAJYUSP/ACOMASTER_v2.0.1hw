@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L051xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32L0xx_HAL_Driver/Inc;../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32L0xx/Include;../Drivers/CMSIS/Include;./Software;./Hardware;./Devices;./Devices/adau1701;./Devices/adau1761</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32L0xx_HAL_Driver/Inc;../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32L0xx/Include;../Drivers/CMSIS/Include;./Software;./Hardware;./Devices;./Devices/adau1701;./Devices/adau1761;.\Software\wouo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -931,6 +931,11 @@
               <FileName>WouoUI_widget.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Software\wouo\WouoUI_widget.c</FilePath>
+            </File>
+            <File>
+              <FileName>WouoUI_win.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_win.c</FilePath>
             </File>
           </Files>
         </Group>

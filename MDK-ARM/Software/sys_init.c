@@ -1,5 +1,4 @@
 #include "main.h"
-#include "tim.h"
 #include "sys_init.h"
 #include "pwr_mngr.h"
 #include "cw2015.h" 
@@ -58,11 +57,6 @@ void system_init(void)
 		//从eeprom读eq数据
 		bsp_read_eqs_from_eeprom(eq_setting_boost);
 		memcpy(eq_setting_boost_last, eq_setting_boost, 10);
-		
-		//5ms PIT
-		HAL_TIM_Base_Start_IT(&htim21);
-		//100ms PIT
-		HAL_TIM_Base_Start_IT(&htim6);
 		
 		//打开QCC5125模块
 		qcc5125_btn_press(KEY_PWR, 31);
