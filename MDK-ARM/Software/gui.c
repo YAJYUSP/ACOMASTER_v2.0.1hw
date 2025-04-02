@@ -253,87 +253,87 @@ void GUI_power_off(void)
 //更新主页面按钮的显示
 void GUI_update_button(void)
 {
-		//扫描按键
-		bsp_key_scan(&key_status);
+//		//扫描按键
+//		bsp_key_scan(&key_status);
 		
-		//开始播放音乐时
-		if(qcc5125_status.is_music_playing == 1 && qcc5125_status.is_music_playing_last == 0)
-		{
-				// 显示暂停icon
-				OLED_Fill(57, 20, 76, 36, 0);
-				OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_unchecked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		//暂停音乐时
-		else if(qcc5125_status.is_music_playing == 0 && qcc5125_status.is_music_playing_last == 1)
-		{
-				// 显示播放icon
-				OLED_Fill(57, 20, 76, 36, 0);
-				OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		if(IF_MUSIC_PLAYING)//音乐正在播放时，要显示的是暂停icon
-		{
-			if(key_status.if_key_mid_prsd && !key_status.if_key_mid_prsd_last)//按下中键
-			{
-					OLED_Fill(57, 20, 76, 36, 0);
-					OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_checked_16_16,16,1);
-					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-			}
-			if(!key_status.if_key_mid_prsd && key_status.if_key_mid_prsd_last)//释放中键
-			{
-					OLED_Fill(57, 20, 76, 36, 0);
-					OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_unchecked_16_16,16,1);
-					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-			}
-		}
-		else								//音乐停止播放时，要显示的是播放icon
-		{
-			if(key_status.if_key_mid_prsd && !key_status.if_key_mid_prsd_last)//按下中键
-			{
-					OLED_Fill(60, 20, 76, 36, 0);
-					OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_checked_16_16,16,1);
-					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-			}
-			if(!key_status.if_key_mid_prsd && key_status.if_key_mid_prsd_last)//释放中键
-			{
-					OLED_Fill(60, 20, 76, 36, 0);
-					OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
-					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-			}
-		}
-		
-		//“上一首”按钮
-		if(key_status.if_key_left_prsd && !key_status.if_key_left_prsd_last)
-		{
-				qcc5125_key_press(KEY_PREV, 1);
-				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_checked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		if(!key_status.if_key_left_prsd && key_status.if_key_left_prsd_last)
-		{
-				qcc5125_key_press(KEY_PREV, 0);
-				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_checked_16_16,16,0);
-				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_unchecked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		//“下一首”按钮
-		if(key_status.if_key_right_prsd && !key_status.if_key_right_prsd_last)
-		{
-				qcc5125_key_press(KEY_NEXT, 1);
-				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_checked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		if(!key_status.if_key_right_prsd && key_status.if_key_right_prsd_last)
-		{
-				qcc5125_key_press(KEY_NEXT, 0);
-				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_checked_16_16,16,0);
-				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_unchecked_16_16,16,1);
-				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
-		}
-		
-		//记录上一次键值
-		bsp_key_record(&key_status);
+//		//开始播放音乐时
+//		if(qcc5125_status.is_music_playing == 1 && qcc5125_status.is_music_playing_last == 0)
+//		{
+//				// 显示暂停icon
+//				OLED_Fill(57, 20, 76, 36, 0);
+//				OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_unchecked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		//暂停音乐时
+//		else if(qcc5125_status.is_music_playing == 0 && qcc5125_status.is_music_playing_last == 1)
+//		{
+//				// 显示播放icon
+//				OLED_Fill(57, 20, 76, 36, 0);
+//				OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		if(IF_MUSIC_PLAYING)//音乐正在播放时，要显示的是暂停icon
+//		{
+//			if(key_status.if_key_mid_prsd && !key_status.if_key_mid_prsd_last)//按下中键
+//			{
+//					OLED_Fill(57, 20, 76, 36, 0);
+//					OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_checked_16_16,16,1);
+//					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			}
+//			if(!key_status.if_key_mid_prsd && key_status.if_key_mid_prsd_last)//释放中键
+//			{
+//					OLED_Fill(57, 20, 76, 36, 0);
+//					OLED_Show_CustomChar(57,20,(uint8_t *)icon_pause_unchecked_16_16,16,1);
+//					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			}
+//		}
+//		else								//音乐停止播放时，要显示的是播放icon
+//		{
+//			if(key_status.if_key_mid_prsd && !key_status.if_key_mid_prsd_last)//按下中键
+//			{
+//					OLED_Fill(60, 20, 76, 36, 0);
+//					OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_checked_16_16,16,1);
+//					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			}
+//			if(!key_status.if_key_mid_prsd && key_status.if_key_mid_prsd_last)//释放中键
+//			{
+//					OLED_Fill(60, 20, 76, 36, 0);
+//					OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
+//					GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			}
+//		}
+//		
+//		//“上一首”按钮
+//		if(key_status.if_key_left_prsd && !key_status.if_key_left_prsd_last)
+//		{
+//				qcc5125_key_press(KEY_PREV, 1);
+//				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_checked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		if(!key_status.if_key_left_prsd && key_status.if_key_left_prsd_last)
+//		{
+//				qcc5125_key_press(KEY_PREV, 0);
+//				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_checked_16_16,16,0);
+//				OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_unchecked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		//“下一首”按钮
+//		if(key_status.if_key_right_prsd && !key_status.if_key_right_prsd_last)
+//		{
+//				qcc5125_key_press(KEY_NEXT, 1);
+//				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_checked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		if(!key_status.if_key_right_prsd && key_status.if_key_right_prsd_last)
+//		{
+//				qcc5125_key_press(KEY_NEXT, 0);
+//				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_checked_16_16,16,0);
+//				OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_unchecked_16_16,16,1);
+//				GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//		}
+//		
+//		//记录上一次键值
+//		bsp_key_record(&key_status);
 }
 
 

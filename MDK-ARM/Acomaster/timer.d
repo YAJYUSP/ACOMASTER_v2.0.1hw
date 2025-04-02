@@ -60,3 +60,4 @@ acomaster\timer.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 acomaster\timer.o: .\Software\wouo\WouoUI_page.h
 acomaster\timer.o: .\Software\wouo\WouoUI_widget.h
 acomaster\timer.o: .\Software\wouo\WouoUI_win.h
+acomaster\timer.o: Hardware\multi_button.h

@@ -17,6 +17,9 @@
 
 #include "WouoUI.h"
 
+#include "multi_button.h"
+
+
 
 //使用定时器22实现微秒延时
 void bsp_tim22_delay_us(uint16_t nus)
@@ -48,14 +51,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if (htim == (&htim21))                      
 		{
 			
-			//10ms定时中断，用于按键扫描
-			if(time_cnt_10ms < 1)
-				time_cnt_10ms ++;
-			else
-			{
-				time_cnt_10ms = 0;
-				
-			}
+			//5ms定时中断，用于按键扫描
+			button_ticks();
 			
 			//20ms定时中断，用于显示刷新
 			if(time_cnt_20ms < 3)
@@ -188,21 +185,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //	
 				
 				
-				//中键长按判断与关机，系统初始化时不进行关机判断
-				if(IF_KEY_MID_PRSD && device_current_state != SYSTEM_INIT)
-				{
-						//长按持续1.5s，则关机
-						if(key_middle_prsd_time < 15)
-								key_middle_prsd_time ++;
-						else
-						{
-								//关机
-								GUI_power_off();
-								sys_ctrl.sys_status = POWER_OFF;
-						} 
-				}
-				else
-						key_middle_prsd_time = 0;
+//				//中键长按判断与关机，系统初始化时不进行关机判断
+//				if(IF_KEY_MID_PRSD && device_current_state != SYSTEM_INIT)
+//				{
+//						//长按持续1.5s，则关机
+//						if(key_middle_prsd_time < 15)
+//								key_middle_prsd_time ++;
+//						else
+//						{
+//								//关机
+//								GUI_power_off();
+//								sys_ctrl.sys_status = POWER_OFF;
+//						} 
+//				}
+//				else
+//						key_middle_prsd_time = 0;
 				
 				
 				

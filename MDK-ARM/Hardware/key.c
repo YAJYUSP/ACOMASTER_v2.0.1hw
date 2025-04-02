@@ -1,198 +1,122 @@
+/*
+ * 此源文件用于实现所有按键事件与MCU外部GPIO输入处理
+ * 搭配multibutton库使用
+ * 
+ */
+
 #include "main.h"
 #include "key.h"
-#include "gui.h"
-#include "oled.h"
-#include "pwr_mngr.h"
-#include "cw2015.h" 
-#include "qcc5125.h" 
-#include "audio.h"
-#include "tasks.h"
-#include "adau1761.h"
-#include "rtc.h"
+#include "multi_button.h"
 
 #include "WouoUI.h"
 
 
-key_timeout_status_t key_timeout_status;
-key_status_t key_status;
-key_longpress_t key_longpress_up, key_longpress_down;
+/* 注册按键结构体*/
+struct Button btn_up, btn_down, btn_prev, btn_next, btn_mid;
 
-//中键被按下的持续时间，用于长按判断
-uint16_t key_middle_prsd_time = 0;
+/* 注册按键对应id*/
+const uint8_t btn_up_id   = 0;
+const uint8_t btn_down_id = 1;
+const uint8_t btn_prev_id = 2;
+const uint8_t btn_next_id = 3;
+const uint8_t btn_mid_id  = 4;
 
-//按键扫描
-void bsp_key_scan(key_status_t *key)
+
+/* 绑定按键id与其对应的电平读取函数*/
+uint8_t read_btn_level(uint8_t btn_id)
 {
-		key ->if_key_up_prsd = IF_KEY_UP_PRSD;
-		key ->if_key_down_prsd = IF_KEY_DOWN_PRSD;
-		key ->if_key_left_prsd = IF_KEY_LEFT_PRSD;
-		key ->if_key_right_prsd = IF_KEY_RIGHT_PRSD;
-		key ->if_key_mid_prsd = IF_KEY_MID_PRSD;
-}
-//记录上一次按键值
-void bsp_key_record(key_status_t *key)
-{
-		key ->if_key_up_prsd_last = key ->if_key_up_prsd;
-		key ->if_key_down_prsd_last = key ->if_key_down_prsd;
-		key ->if_key_left_prsd_last = key ->if_key_left_prsd;
-		key ->if_key_right_prsd_last = key ->if_key_right_prsd;
-		key ->if_key_mid_prsd_last = key ->if_key_mid_prsd;
-}
-//按键长按判定
-void key_longpress_scan_5ms(void)
-{
-		if(IF_KEY_UP_PRSD)
-		{
-				if(key_longpress_up.key_longpress_time < 150)
-						key_longpress_up.key_longpress_time++;
-				else
-						key_longpress_up.key_long_prsd_flag = 1;
-		}
-		else
-		{
-				key_longpress_up.key_long_prsd_flag = 0;
-				key_longpress_up.key_longpress_time = 0;
-		}
+	switch(btn_id)
+	{
+		case btn_up_id:
+			return !HAL_GPIO_ReadPin(KEY_UP_GPIO_Port, KEY_UP_Pin);
+			break;
 		
-		if(IF_KEY_DOWN_PRSD)
-		{
-				if(key_longpress_down.key_longpress_time < 150)
-						key_longpress_down.key_longpress_time++;
-				else
-						key_longpress_down.key_long_prsd_flag = 1;
-		}
-		else
-		{
-				key_longpress_down.key_long_prsd_flag = 0;
-				key_longpress_down.key_longpress_time = 0;
-		}
+		case btn_down_id:
+			return !HAL_GPIO_ReadPin(KEY_DOWN_GPIO_Port, KEY_DOWN_Pin);
+			break;
+		
+		case btn_prev_id:
+			return !HAL_GPIO_ReadPin(KEY_LEFT_GPIO_Port, KEY_LEFT_Pin);
+			break;
+		
+		case btn_next_id:
+			return !HAL_GPIO_ReadPin(KEY_RIGHT_GPIO_Port, KEY_RIGHT_Pin);
+			break;
+		
+		case btn_mid_id:
+			return HAL_GPIO_ReadPin(KEY_MID_GPIO_Port, KEY_MID_Pin);
+			break;
+		
+		default:
+			break;
+	}
 }
 
 
-extern uint16_t auto_pwroff_timeout;
-//按键中断回调
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+/* 按键单击事件回调*/
+void BTNUP_SINGLE_Click_Handler(void* btn)
 {
-		key_timeout_status.key_prsd_flag = 1;
-		//如果系统休眠，则恢复，忽略按键操作
-		if(sys_ctrl.sys_status == SCREEN_OFF)
-		{
-				//重新配置系统时钟
-				HAL_Init();
-				SystemClock_Config();
-				//关闭RTC唤醒中断
-				HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
-				//清零自动关机计数器
-				auto_pwroff_timeout = 0;
-				sys_ctrl.sys_status = SCREEN_ON;
-				HAL_Delay(100);
-				//开启屏幕显示
-				OLED_displayON();
-				HAL_Delay(300);
-				return;
-		}
-		else
-		{
-				if(IF_KEY_UP_PRSD)
-				{
-					HAL_Delay(20);
-					if(IF_KEY_UP_PRSD)
-					{
-						OLED_MsgQueSend(msg_up);
-					}
-//						if(device_current_state == EQ_UI)
-//						{
-//								HAL_Delay(20);
-//								if(IF_KEY_UP_PRSD)
-//								{
-//										if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)
-//												eq_setting_boost[select_eq] += 1;
-//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-//								}
-//						}
-					
-				}
-				
-				else if(IF_KEY_DOWN_PRSD)
-				{
-					HAL_Delay(20);
-					if(IF_KEY_DOWN_PRSD)
-					{
-						OLED_MsgQueSend(msg_down);
-					}
-//						if(device_current_state == EQ_UI)
-//						{
-//								HAL_Delay(20);
-//								if(IF_KEY_DOWN_PRSD)
-//								{
-//										if(eq_setting_boost[select_eq] > -EQ_BOOST_MAX)
-//												eq_setting_boost[select_eq] -= 1;
-//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-//								}
-//						}
-				}
-				
-				else if(IF_KEY_LEFT_PRSD)
-				{
-					HAL_Delay(20);
-					if(IF_KEY_LEFT_PRSD)
-					{
-						OLED_MsgQueSend(msg_sub);
-					}
-//						if(device_current_state == EQ_UI)
-//						{
-//								HAL_Delay(20);
-//								if(IF_KEY_LEFT_PRSD)
-//								{
-//										if(select_eq > eq_63)
-//												select_eq -=1;
-//										else 
-//												select_eq = eq_16000;
-//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-//								}
-//						}
-					
-				}
-				
-				else if(IF_KEY_RIGHT_PRSD)
-				{
-					HAL_Delay(20);
-					if(IF_KEY_RIGHT_PRSD)
-					{
-						OLED_MsgQueSend(msg_add);
-					}
-//						if(device_current_state == EQ_UI)
-//						{
-//								HAL_Delay(20);
-//								if(IF_KEY_RIGHT_PRSD)
-//								{
-//										if(select_eq < eq_16000)
-//												select_eq += 1;
-//										else 
-//												select_eq = eq_63;
-//										GUI_OLEDRFS_REQ = 1; //屏幕刷新请求
-//								}
-//						}
-				}
-				 
-				else if(IF_KEY_MID_PRSD)
-				{
-					HAL_Delay(20);
-					if(IF_KEY_MID_PRSD)
-					{
-						OLED_MsgQueSend(msg_click);
-					}
-//						//当进入主页面
-//						if(device_current_state == MAIN_UI)
-//						{
-//								HAL_Delay(50);
-//								if(IF_KEY_MID_PRSD)
-//										qcc5125_btn_press(KEY_PLAY, 2);
-//						}	
-				}		
-		}
+	OLED_MsgQueSend(msg_add);
+}
+
+void BTNDOWN_SINGLE_Click_Handler(void* btn)
+{
+	OLED_MsgQueSend(msg_sub);
+}
+
+void BTNPREV_SINGLE_Click_Handler(void* btn)
+{
+	OLED_MsgQueSend(msg_up);
+}
+
+void BTNNEXT_SINGLE_Click_Handler(void* btn)
+{
+	OLED_MsgQueSend(msg_down);
+}
+
+void BTNMID_SINGLE_Click_Handler(void* btn)
+{
+	OLED_MsgQueSend(msg_click);
 }
 
 
 
+/* 按键长按事件回调*/
+void BTNPREV_LONG_PRESS_START_Handler(void* btn)
+{
+	OLED_MsgQueSend(msg_return);
+}
+
+void BTNMID_LONG_PRESS_START_Handler(void* btn)
+{
+	
+}
+
+
+
+/* 初始化按键扫描服务*/
+void bsp_btn_scan_init(void)
+{
+		button_init(&btn_up, read_btn_level, 1, btn_up_id);
+		button_attach(&btn_up, SINGLE_CLICK,     BTNUP_SINGLE_Click_Handler);
+		button_start(&btn_up);
+	
+		button_init(&btn_down, read_btn_level, 1, btn_down_id);
+		button_attach(&btn_down, SINGLE_CLICK,     BTNDOWN_SINGLE_Click_Handler);
+		button_start(&btn_down);
+	
+		button_init(&btn_prev, read_btn_level, 1, btn_prev_id);
+		button_attach(&btn_prev, SINGLE_CLICK,     BTNPREV_SINGLE_Click_Handler);
+		button_attach(&btn_prev, LONG_PRESS_START, BTNPREV_LONG_PRESS_START_Handler);
+		button_start(&btn_prev);
+	
+		button_init(&btn_next, read_btn_level, 1, btn_next_id);
+		button_attach(&btn_next, SINGLE_CLICK,     BTNNEXT_SINGLE_Click_Handler);
+		button_start(&btn_next);
+	
+		button_init(&btn_mid, read_btn_level, 1, btn_mid_id);
+		button_attach(&btn_mid, SINGLE_CLICK,     BTNMID_SINGLE_Click_Handler);
+		button_attach(&btn_mid, LONG_PRESS_START, BTNMID_LONG_PRESS_START_Handler);
+		button_start(&btn_mid);
+}
 

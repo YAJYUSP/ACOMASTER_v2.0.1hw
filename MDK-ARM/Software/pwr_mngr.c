@@ -21,33 +21,33 @@ sys_ctrl_t sys_ctrl;
 //系统工作状态自动切换
 void sys_ctrl_status_switch(sys_ctrl_t *ctrl)
 {
-		//息屏动作
-		if(ctrl->sys_status == SCREEN_OFF && ctrl->sys_status_last != SCREEN_OFF)
-		{
-				//关闭屏幕显示
-				HAL_Delay(100);
-				OLED_displayOFF();
-				key_timeout_status.key_prsd_flag = 0;
-				
-				//息屏前先打开RTC中断，用于自动关机检测
-				HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 10, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
-				
-				HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
-		}
-		
-		//关机动作
-		if(ctrl->sys_status == POWER_OFF && ctrl->sys_status_last != POWER_OFF)
-		{
-				//关闭RTC唤醒中断
-				HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
-				//关定时器中断
-				HAL_TIM_Base_Stop_IT(&htim21);
-				HAL_TIM_Base_Stop_IT(&htim6);
-				HAL_Delay(100);
-				//系统掉电
-				sys_pwrctrl_power_down();
-		}
-		ctrl->sys_status_last = ctrl->sys_status;
+//		//息屏动作
+//		if(ctrl->sys_status == SCREEN_OFF && ctrl->sys_status_last != SCREEN_OFF)
+//		{
+//				//关闭屏幕显示
+//				HAL_Delay(100);
+//				OLED_displayOFF();
+//				key_timeout_status.key_prsd_flag = 0;
+//				
+//				//息屏前先打开RTC中断，用于自动关机检测
+//				HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 10, RTC_WAKEUPCLOCK_CK_SPRE_16BITS);
+//				
+//				HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON,PWR_STOPENTRY_WFI);
+//		}
+//		
+//		//关机动作
+//		if(ctrl->sys_status == POWER_OFF && ctrl->sys_status_last != POWER_OFF)
+//		{
+//				//关闭RTC唤醒中断
+//				HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
+//				//关定时器中断
+//				HAL_TIM_Base_Stop_IT(&htim21);
+//				HAL_TIM_Base_Stop_IT(&htim6);
+//				HAL_Delay(100);
+//				//系统掉电
+//				sys_pwrctrl_power_down();
+//		}
+//		ctrl->sys_status_last = ctrl->sys_status;
 }
 
 

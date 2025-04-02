@@ -32,6 +32,7 @@
 "acomaster\key.o"
 "acomaster\led.o"
 "acomaster\eeprom.o"
+"acomaster\multi_button.o"
 "acomaster\pwr_mngr.o"
 "acomaster\gui.o"
 "acomaster\sys_init.o"

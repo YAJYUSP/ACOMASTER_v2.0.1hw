@@ -34,17 +34,8 @@ acomaster\key.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h
 acomaster\key.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h
 acomaster\key.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h
 acomaster\key.o: Hardware\key.h
-acomaster\key.o: ./Software/gui.h
-acomaster\key.o: ./Software/pwr_mngr.h
-acomaster\key.o: ./Devices/adau1761/adau1761.h
-acomaster\key.o: ./Devices/adau1761/adau1761_REG.h
-acomaster\key.o: ./Devices/oled.h
-acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-acomaster\key.o: ./Devices/cw2015.h
-acomaster\key.o: ./Devices/qcc5125.h
-acomaster\key.o: ./Software/audio.h
-acomaster\key.o: ./Software/tasks.h
-acomaster\key.o: ../Core/Inc/rtc.h
+acomaster\key.o: Hardware\multi_button.h
+acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 acomaster\key.o: .\Software\wouo\WouoUI.h
 acomaster\key.o: .\Software\wouo\WouoUI_conf.h
 acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
@@ -53,7 +44,6 @@ acomaster\key.o: .\Software\wouo\WouoUI_oled.h
 acomaster\key.o: .\Software\wouo\WouoUI_font.h
 acomaster\key.o: .\Software\wouo\WouoUI_port.h
 acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-acomaster\key.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 acomaster\key.o: .\Software\wouo\WouoUI_page.h
 acomaster\key.o: .\Software\wouo\WouoUI_widget.h
 acomaster\key.o: .\Software\wouo\WouoUI_win.h

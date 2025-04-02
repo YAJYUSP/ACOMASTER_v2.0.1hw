@@ -37,7 +37,9 @@ void main_FSM(device_state_e *DeviceState, device_state_e *Device_LastState, uin
 						//°∞œ‘ æ∆Ù∂ØUI°±
 						GUI_powerUp();
 						OLED_RamClear();
-							OLED_Refresh_Gram();
+						OLED_Refresh_Gram();
+				
+						bsp_btn_scan_init();
 				
 //						GUI_main_page();
 						//5ms PIT
