@@ -1,11 +1,6 @@
 #include "WouoUI_win.h"
 #include "WouoUI.h"
 
-//临时调试用
-void *_w = NULL;
-void *_w_react = NULL;
-
-
 /**
  * @brief OLED_WinFSM函数用于处理窗口的状态机
  *
@@ -24,8 +19,6 @@ void OLED_WinFSM(Win *w, PageAddr bg, Option *sel_item, uint16_t time) {
         break;
     case win_state_show: // 弹窗动画和交互
         w->show(sel_item, time);
-				_w = w;
-//				_w_react = w->react;
         w->react(bg, sel_item);
         break;
     default:
@@ -33,7 +26,7 @@ void OLED_WinFSM(Win *w, PageAddr bg, Option *sel_item, uint16_t time) {
     }
 }
 
-//------------滑动数值弹窗相关函数
+//------------ 滑动数值弹窗相关函数
 void OLED_SlideValWinInit(PageAddr bg, Option *sel_item) {
     UNUSED_PARAMETER(bg);
     // 窗口y坐标
@@ -343,7 +336,7 @@ void OLED_SpinWinShow(Option *sel_item, uint16_t time) {
         break;
     }
     // num buffer
-    char numBuff[8];
+    char numBuff[12];
     sprintf(numBuff, "%+08d", sel_item->val);
     // show numDigit
     uint8_t num_x = (OLED_WIDTH - SPIN_WIN_NUM_W) / 2;
