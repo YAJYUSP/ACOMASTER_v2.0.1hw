@@ -34,10 +34,10 @@ void main_FSM(device_state_e *DeviceState, device_state_e *Device_LastState, uin
 						break;
 				
 				case INIT_UI:
-						//“显示启动UI”
-						GUI_powerUp();
-						OLED_RamClear();
-						OLED_Refresh_Gram();
+//						//“显示启动UI”
+//						GUI_powerUp();
+//						OLED_RamClear();
+//						OLED_Refresh_Gram();
 				
 						bsp_btn_scan_init();
 				

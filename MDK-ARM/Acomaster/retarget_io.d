@@ -1,0 +1,9 @@
+acomaster\retarget_io.o: D:/Applications/mdk/Packs/Keil/ARM_Compiler/1.7.2/Source/retarget_io.c
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+acomaster\retarget_io.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\rt_sys.h
+acomaster\retarget_io.o: .\RTE\_ACOMASTER\RTE_Components.h
+acomaster\retarget_io.o: D:\Applications\mdk\Packs\Keil\ARM_Compiler\1.7.2\Include\EventRecorder.h

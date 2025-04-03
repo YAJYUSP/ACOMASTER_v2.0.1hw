@@ -399,6 +399,11 @@ void OLED_UIBlurProc(uint16_t time) {
     OLED_SetPointColor(1);
 }
 
+
+void *ptr = NULL;
+void *ptr_react = NULL;
+
+
 /**
  * @brief 页面处理任务函数
  *
@@ -441,6 +446,8 @@ void OLED_UIPageProc(uint16_t time) {
             OLED_WinFSM(&(p_cur_ui->slideValWin.win), p_cur_ui->current_page, op, time);
             OLED_WinFSM(&(p_cur_ui->confWin.win), p_cur_ui->current_page, op, time);
             OLED_WinFSM(&(p_cur_ui->infoWin.win), p_cur_ui->current_page, op, time);
+						ptr = &(p_cur_ui->spinWin.win);
+						ptr_react = p_cur_ui->spinWin.win.react;
             OLED_WinFSM(&(p_cur_ui->spinWin.win), p_cur_ui->current_page, op, time);
         } else
             p->react(p_cur_ui->current_page, time);
