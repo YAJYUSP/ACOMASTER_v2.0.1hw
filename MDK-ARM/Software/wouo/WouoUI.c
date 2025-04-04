@@ -545,32 +545,68 @@ void OLED_UIScrollBarProc(uint8_t time) {
  * @param time 函数轮询间隔时间
  */
 void OLED_UIProc(uint8_t time) {
-#ifdef SOFTWARE_DYNAMIC_REFRESH
+	
+	Page *p = (Page *)(p_cur_ui->current_page);
+	PageType pt = OLED_CheckPageType(p_cur_ui->current_page);
+	
+	/* 如果目前是用户自定义页面，那么页面处理流程会有不同*/
+	if(pt == type_userdef){
+		
+		p_cur_ui->dynamicDefreshCnt = 0;
+		switch (p_cur_ui->state) // ui状态机轮询
+		{
+		case ui_page_out:
+				OLED_ClearBuff();           // 清空buff
+				OLED_UIPageProc(time);      // 绘制页面
+				OLED_UILayerOutProc(time);  // 绘制页面渐变
+				OLED_UIScrollBarProc(time); // 绘制进度条
+				break;
+		case ui_page_in: // 主要是对页面动画在切换时做一次参数的赋值
+				OLED_UILayerInProc(time);
+				p_cur_ui->state = ui_page_proc;
+				p->show(p_cur_ui->current_page, time); // 页面show
+				break;
+		case ui_page_proc:
+				/* 对于用户自定义页面，为了能够实现用户自定义的动画、交互等功能，需要反复处理页面的react函数*/
+				p->react(p_cur_ui->current_page, time);
+				break;
+		default:
+				break;
+		}
+	}
+	
+	else{
+		
+		/* 下面是对WouoUI默认支持的页面类型的处理*/
+		#ifdef SOFTWARE_DYNAMIC_REFRESH
     if (p_cur_ui->dynamicDefreshCnt) {
         p_cur_ui->dynamicDefreshCnt--;
-#endif
-        switch (p_cur_ui->state) // ui状态机轮询
-        {
-        case ui_page_out:
-            OLED_ClearBuff();           // 清空buff
-            OLED_UIPageProc(time);      // 绘制页面
-            OLED_UILayerOutProc(time);  // 绘制页面渐变
-            OLED_UIScrollBarProc(time); // 绘制进度条
-            break;
-        case ui_page_in: // 主要是对页面动画在切换时做一次参数的赋值
-            OLED_UILayerInProc(time);
-            p_cur_ui->state = ui_page_proc;
-            break;
-        case ui_page_proc:
-            OLED_ClearBuff();           // 清空buff
-            OLED_UIPageProc(time);      // 绘制页面以及弹窗
-            OLED_UIScrollBarProc(time); // 绘制进度条
-            break;
-        default:
-            break;
-        }
-        OLED_UIIndicatorProc(time); // 绘制指示器
-
+		#endif
+			
+			switch (p_cur_ui->state) // ui状态机轮询
+			{
+			case ui_page_out:
+					OLED_ClearBuff();           // 清空buff
+					OLED_UIPageProc(time);      // 绘制页面
+					OLED_UILayerOutProc(time);  // 绘制页面渐变
+					OLED_UIScrollBarProc(time); // 绘制进度条
+					break;
+			case ui_page_in: // 主要是对页面动画在切换时做一次参数的赋值
+					OLED_UILayerInProc(time);
+					p_cur_ui->state = ui_page_proc;
+					break;
+			case ui_page_proc:
+					OLED_ClearBuff();           // 清空buff
+					OLED_UIPageProc(time);      // 绘制页面以及弹窗
+					OLED_UIScrollBarProc(time); // 绘制进度条
+					break;
+			default:
+					break;
+			}
+			OLED_UIIndicatorProc(time); // 绘制指示器
+		}
+	}
+	
 #ifdef HARDWARE_DYNAMIC_REFRESH
         if (memcmp(oled_buff_dynamic, oled_buff, sizeof(oled_buff))) {
             memcpy(oled_buff_dynamic, oled_buff, sizeof(oled_buff));
@@ -580,7 +616,7 @@ void OLED_UIProc(uint8_t time) {
     OLED_SendBuff();
 #endif
 #ifdef SOFTWARE_DYNAMIC_REFRESH
-    }
+		
 #endif
 }
 
