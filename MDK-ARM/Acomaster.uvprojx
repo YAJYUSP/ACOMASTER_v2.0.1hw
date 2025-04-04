@@ -942,6 +942,11 @@
               <FileType>1</FileType>
               <FilePath>.\Software\wouo\WouoUI_win.c</FilePath>
             </File>
+            <File>
+              <FileName>WouoUI_udp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Software\wouo\WouoUI_udp.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

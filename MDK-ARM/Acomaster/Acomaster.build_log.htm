@@ -22,12 +22,21 @@ Dialog DLL:      TARMCM1.DLL V1.14.6.0
  
 <h2>Project:</h2>
 D:\VDesktop\Projects\ACOMASTER _V2.1.0\MDK-ARM\Acomaster.uvprojx
-Project File Date:  04/03/2025
+Project File Date:  04/04/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ACOMASTER'
-"Acomaster\Acomaster.axf" - 0 Error(s), 0 Warning(s).
+compiling WouoUI_udp.c...
+Software\wouo\WouoUI_udp.c(48): warning:  #177-D: variable "tp" was declared but never referenced
+      TitlePage *tp = (TitlePage *)page_addr;
+Software\wouo\WouoUI_udp.c(49): warning:  #177-D: variable "selcet_string" was declared but never referenced
+      String selcet_string = NULL;
+Software\wouo\WouoUI_udp.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=28648 RO-data=6848 RW-data=3036 ZI-data=5116  
+FromELF: creating hex file...
+"Acomaster\Acomaster.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

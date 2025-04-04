@@ -13,3 +13,4 @@ acomaster\wououi_user.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\st
 acomaster\wououi_user.o: Software\wouo\WouoUI_page.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_widget.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_win.h
+acomaster\wououi_user.o: Software\wouo\WouoUI_udp.h

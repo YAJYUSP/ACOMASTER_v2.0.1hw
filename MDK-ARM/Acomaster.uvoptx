@@ -157,8 +157,8 @@
       <MemoryWindow1>
         <Mm>
           <WinNumber>1</WinNumber>
-          <SubType>0</SubType>
-          <ItemText>oled_buff_dynamic</ItemText>
+          <SubType>2</SubType>
+          <ItemText>0x20001EF8</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
@@ -925,6 +925,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\Software\wouo\WouoUI_win.c</PathWithFileName>
       <FilenameWithoutPath>WouoUI_win.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>54</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\Software\wouo\WouoUI_udp.c</PathWithFileName>
+      <FilenameWithoutPath>WouoUI_udp.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

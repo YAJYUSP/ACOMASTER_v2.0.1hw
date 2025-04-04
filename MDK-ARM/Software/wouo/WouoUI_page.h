@@ -72,8 +72,9 @@ typedef char *String;
 typedef enum {
     type_title = 0x00, // 磁贴类
     type_list,         // 列表类
-                       // 终端类页面
+                       // 终端类
     type_wave,         // 波形显示类
+		type_userdef,			 // 用户自定义类
 } PageType;            // 页面类型，用于标志传入的每个页面类型，方便调用对应的proc函数
 
 typedef enum {

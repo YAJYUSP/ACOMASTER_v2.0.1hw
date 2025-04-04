@@ -1,10 +1,13 @@
-#ifndef __TEST_UI_H__
-#define __TEST_UI_H__
+#ifndef __WOUOUI_USER_H__
+#define __WOUOUI_USER_H__
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+#include "WouoUI.h"	
+	
+	
 void TestUI_Init(void);
 
 #ifdef __cplusplus

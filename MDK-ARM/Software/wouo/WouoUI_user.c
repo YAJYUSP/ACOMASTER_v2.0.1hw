@@ -2,16 +2,23 @@
 #include "WouoUI.h"
 #include "math.h"
 #include "string.h"
+#include "WouoUI_udp.h"
+
 
 //--------定义页面对象
+PlayingPage playing_page;
 TitlePage main_page;
 ListPage setting_page;
 ListPage about_page;
 RadioPage about_origin_page;
 RadioPage about_wououi_page;
 RadioPage about_version_page;
+
+
 //--------定义每个页面需要的一些参数
-// 部分页面内选项个数
+
+// 页面内选项个数
+#define NO_PAGE         			0
 #define MAIN_PAGE_NUM         3
 #define SETTING_PAGE_NUM      13
 #define ABOUT_PAGE_NUM        3
@@ -19,12 +26,11 @@ RadioPage about_version_page;
 #define ABOUT_WOUOUI_PAGE_NUM 9
 #define ABOUT_PAGEVERSION_NUM 8
 
-// 定义部分页面选项
-//********main页面的选项
+// main页面的选项
 Option mian_option_array[MAIN_PAGE_NUM] =
     {
-        {.text = (char *)"+ List"},
-        {.text = (char *)"+ About"},
+        {.text = (char *)"+ Playing"},
+        {.text = (char *)"+ Settings"},
         {.text = (char *)"! Info", .content = (char *)"    WARNING\nThis is a\ninfo test!"},
         // {.text = (char *)"# Conf", .content = (char *)"    WARNING\nThis is a\nconf test!"},
         // {.text = (char *)"% Spin", .val = 123456, .min = -500000, .max = 500000, .decimalNum = DecimalNum_2},
@@ -74,7 +80,7 @@ Icon main_icon_array[MAIN_PAGE_NUM] =
         //        0xF8, 0xF8, 0xF8, 0xF8, 0xFF, 0xFF, 0xDF, 0xCF} // about
 };
 
-// 设置的列表选项数组
+// 设置页面的列表选项数组
 Option setting_option_array[SETTING_PAGE_NUM] =
     {
         {.text = (char *)"- List"}, // 第一个做说明标签，没有功能
@@ -100,7 +106,7 @@ Option about_option_array[ABOUT_PAGE_NUM] =
         {.text = (char *)"+ Page version"}, // Page version的说明
 };
 
-// about wououi页面的数组
+// about页面->Radio box页面的数组
 Option about_origin_array[ABOUT_ORIGIN_PAGE_NUM] =
     {
         {.text = (char *)"- Radio box"},
@@ -111,6 +117,7 @@ Option about_origin_array[ABOUT_ORIGIN_PAGE_NUM] =
         {.text = (char *)"@ test5", .step = 1},
 };
 
+// about页面->About wouo页面的数组
 Option about_wououi_array[ABOUT_WOUOUI_PAGE_NUM] =
     {
         {.text = (char *)"- From WouoUI1.2"},
@@ -124,6 +131,7 @@ Option about_wououi_array[ABOUT_WOUOUI_PAGE_NUM] =
         {.text = (char *)"  RQNG/WouoUI"},
 };
 
+// about页面->Page version页面的数组
 Option about_version_array[ABOUT_PAGEVERSION_NUM] =
     {
         {.text = (char *)"- Page Version"},
@@ -135,18 +143,29 @@ Option about_version_array[ABOUT_PAGEVERSION_NUM] =
         {.text = (char *)"  Sheep118/WouoUI"},
         {.text = (char *)"  -PageVersion"},
 };
+		
+
+
+
 //--------定义每个页面的回调函数
 
+// play页面的回调函数,暂时没有用到
+void PlayingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
+
+}
+
+// main页面的回调函数，主要用于页面跳转
 void MainPage_CallBack(const Page *cur_page_addr, Option *select_item) {
-    if (!strcmp(select_item->text, "+ List")) {
-        OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_page);
-    } else if (!strcmp(select_item->text, "+ About")) {
+    if (!strcmp(select_item->text, "+ Playing")) {
+        OLED_UIJumpToPage((PageAddr)cur_page_addr, &playing_page);
+    } else if (!strcmp(select_item->text, "+ Settings")) {
         OLED_UIJumpToPage((PageAddr)cur_page_addr, &about_page);
     }
 }
 
+// setting页面的回调函数，主要用于参数赋值
 void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
-    // switch (select_item->order) // 对选中项的真实参数值赋值
+    // switch (select_item->order)
     // {                           // 由于第0项是说明文字“Setting”
     // case 1:
     //     g_default_ui_para.ani_param[TILE_ANI] = select_item->val;
@@ -189,6 +208,7 @@ void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
     // }
 }
 
+// setting页面的回调函数，主要用于页面跳转
 void About_CallBack(const Page *cur_page_addr, Option *select_item) {
     switch (select_item->order) { // 第0项是说明文字
     case 0:
@@ -205,27 +225,23 @@ void About_CallBack(const Page *cur_page_addr, Option *select_item) {
     }
 }
 
-//--------------给主函数调用的接口函数
+
+
+
+
+//--------------页面初始化函数，供主函数调用
+
+
 void TestUI_Init(void) {
     OLED_ClearBuff();      // 清空缓存
     OLED_SendBuff();       // 刷新屏幕(清空屏幕)
     OLED_SetPointColor(1); // 设置绘制颜色
-    // 补充列表页面的初值
-    // setting_option_array[1].val = g_default_ui_para.ani_param[TILE_ANI];
-    // setting_option_array[2].val = g_default_ui_para.ani_param[LIST_ANI];
-    // setting_option_array[3].val = g_default_ui_para.ani_param[TILE_UFD];
-    // setting_option_array[4].val = g_default_ui_para.ani_param[LIST_UFD];
-    // setting_option_array[5].val = g_default_ui_para.ani_param[TILE_LOOP];
-    // setting_option_array[6].val = g_default_ui_para.ani_param[LIST_LOOP];
-    // setting_option_array[7].val = g_default_ui_para.valwin_broken;
-    // setting_option_array[8].val = g_default_ui_para.conwin_broken;
-    // setting_option_array[9].val = g_default_ui_para.digital_ripple;
-    // setting_option_array[10].val = g_default_ui_para.raderpic_scan_mode;
-    // setting_option_array[11].val = g_default_ui_para.raderpic_scan_rate;
-    // setting_option_array[12].val = g_default_ui_para.raderpic_move_rate;
 
     // 设置界面选项
+	 
     OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, mian_option_array, main_icon_array, MainPage_CallBack);
+	
+		OLED_PlayingPageInit(&playing_page, NO_PAGE, NULL, NULL, PlayingPage_CallBack);
 
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, setting_option_array, Setting_none, SettingPage_CallBack);
     OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, about_option_array, Setting_none, About_CallBack);
