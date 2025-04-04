@@ -568,6 +568,9 @@ void OLED_UIProc(uint8_t time) {
 				break;
 		case ui_page_proc:
 				/* 对于用户自定义页面，为了能够实现用户自定义的动画、交互等功能，需要反复处理页面的react函数*/
+				/* (WouoUI应该是把页面的Show函数视为一个页面的UI框架绘制，而且每次刷新屏幕时都会清空屏幕并且重新绘制框架)*/
+				OLED_ClearBuff();           					 // 清空buff
+				p->show(p_cur_ui->current_page, time); // 页面show
 				p->react(p_cur_ui->current_page, time);
 				break;
 		default:
@@ -607,6 +610,7 @@ void OLED_UIProc(uint8_t time) {
 		}
 	}
 	
+	/* 动态刷新，如果显存一致则不进行刷新*/
 #ifdef HARDWARE_DYNAMIC_REFRESH
         if (memcmp(oled_buff_dynamic, oled_buff, sizeof(oled_buff))) {
             memcpy(oled_buff_dynamic, oled_buff, sizeof(oled_buff));

@@ -13,7 +13,6 @@ acomaster\wououi_udp.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\str
 acomaster\wououi_udp.o: Software\wouo\WouoUI_page.h
 acomaster\wououi_udp.o: Software\wouo\WouoUI_widget.h
 acomaster\wououi_udp.o: Software\wouo\WouoUI_win.h
-acomaster\wououi_udp.o: ./Devices/oledfont.h
 acomaster\wououi_udp.o: ../Core/Inc/main.h
 acomaster\wououi_udp.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h
 acomaster\wououi_udp.o: ../Core/Inc/stm32l0xx_hal_conf.h

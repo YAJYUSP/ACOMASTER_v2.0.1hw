@@ -34,7 +34,7 @@ void GUI_powerUp(void)
 {
 		OLED_RamClear();
 		for(uint8_t i=0; i<6; i++)
-				OLED_Show_CustomChar(16+16*i,44,(uint8_t *)chn_tiao_16_16[i],16,1);
+//				OLED_Show_CustomChar(16+16*i,44,(uint8_t *)chn_tiao_16_16[i],16,1);
 		OLED_ShowString(4, 24, (uint8_t *)"Acoustic",16,1);
 		OLED_ShowString(78, 24, (uint8_t *)"Master",16,1);
 		OLED_DrawLine(78,26,124,26,1);
@@ -42,7 +42,7 @@ void GUI_powerUp(void)
 		HAL_Delay(1000);
 		for(uint8_t i=0; i<3; i++)
 		{
-				OLED_Show_Char12x12(38+20*i,5,(uint8_t *)icon_filled_ball_12_12,1);
+				//OLED_Show_Char12x12(38+20*i,5,(uint8_t *)icon_filled_ball_12_12,1);
 				HAL_Delay(800);
 				OLED_Refresh_Gram();
 		}
@@ -56,7 +56,7 @@ void GUI_wait_until_connect(void)
 {
 		OLED_RamClear();
 		for(uint8_t i=0; i<6; i++)
-				OLED_Show_Char12x12(12+12*i,40,(uint8_t *)chn_deng_12_12[i],1);
+				//OLED_Show_Char12x12(12+12*i,40,(uint8_t *)chn_deng_12_12[i],1);
 		OLED_ShowString(84,10,(uint8_t *)"....", 16,1);
 		OLED_Refresh_Gram();
 		HAL_Delay(500);
@@ -65,13 +65,13 @@ void GUI_wait_until_connect(void)
 		{
 				for(uint8_t i=0; i<3; i++)
 				{
-						OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,1);
+						//OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,1);
 						HAL_Delay(100);
 						OLED_Refresh_Gram();
 				}
 				for(uint8_t i=0; i<3; i++)
 				{
-						OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,0);
+						//OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,0);
 						HAL_Delay(100);
 						OLED_Refresh_Gram();
 				}
@@ -80,7 +80,7 @@ void GUI_wait_until_connect(void)
 		OLED_RamClear();
 		//显示连接成功字样
 		for(uint8_t i=0; i<3; i++)
-				OLED_Show_Char12x12(48+12*i,40,(uint8_t *)chn_yi_12_12[i],1);
+				//OLED_Show_Char12x12(48+12*i,40,(uint8_t *)chn_yi_12_12[i],1);
 		
 		OLED_Refresh_Gram();
 		HAL_Delay(1000);
@@ -91,10 +91,10 @@ void GUI_main_page(void)
 {
 		OLED_RamClear();
 		OLED_ShowString(0, 2, (const uint8_t*)"Hi-Res", 8, 1);
-		OLED_Show_CustomChar(60,0, (uint8_t *)icon_triangle_up_8_8, 8, 1);
-		OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_unchecked_16_16,16,1);
-		OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
-		OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_unchecked_16_16,16,1);
+//		OLED_Show_CustomChar(60,0, (uint8_t *)icon_triangle_up_8_8, 8, 1);
+//		OLED_Show_CustomChar(24,20,(uint8_t *)icon_prev_unchecked_16_16,16,1);
+//		OLED_Show_CustomChar(60,20,(uint8_t *)icon_play_unchecked_16_16,16,1);
+//		OLED_Show_CustomChar(88,20,(uint8_t *)icon_next_unchecked_16_16,16,1);
 		
 	  //强制重绘状态栏
 		GUI_update_status_bar(&sys_chg_info, 1);
@@ -121,7 +121,7 @@ void GUI_update_status_bar(sys_chg_t *chg_info, uint8_t force_rfs)
 			if(sys_chg_info.chrg_state)
 			{
 //				OLED_ShowString(SOC_DISP_X,3,(uint8_t *)"   ",8,1); //擦除soc
-				OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,1);
+//				OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,1);
 //				OLED_Show_CustomChar(BATT_DISP_X,46,(uint8_t *)icon_battery_empty_16_16,16,1);
 			}
 			/* 如果没在充电，则显示电池soc与电池logo，擦除小闪电*/
@@ -138,11 +138,11 @@ void GUI_update_status_bar(sys_chg_t *chg_info, uint8_t force_rfs)
 //				OLED_ShowInt(SOC_DISP_X,3,sys_chg_info.soc, 8, 1);
 				
 //				OLED_ShowString(SOC_DISP_X,3,(uint8_t *)"   ",8,1);
-				OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,0);
+//				OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,0);
 			}
 
 			if(qcc5125_status.is_connected)
-				OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,1);
+				//OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,1);
 			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
 			
 			return;
@@ -156,8 +156,8 @@ void GUI_update_status_bar(sys_chg_t *chg_info, uint8_t force_rfs)
 			/* 开始充电时 */
 //			OLED_ShowString(SOC_DISP_X,3,(uint8_t *)"   ",8,1); //擦除soc
 //			OLED_Show_CustomChar(BATT_DISP_X,46,(uint8_t *)icon_battery_empty_16_16,16,1);
-			OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,1);
-			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,1);
+//			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
 		}
 		if(!sys_chg_info.chrg_state && sys_chg_info.chrg_state_last)
 		{
@@ -172,8 +172,8 @@ void GUI_update_status_bar(sys_chg_t *chg_info, uint8_t force_rfs)
 //			//电池soc
 //			OLED_ShowString(SOC_DISP_X,3,(uint8_t *)"   ",8,1);
 //			OLED_ShowInt(SOC_DISP_X,3,sys_chg_info.soc, 8, 1);
-			OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,0);
-			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
+//			OLED_Show_CustomChar(LIGHTNING_DISP_X,46,(uint8_t *)icon_lightning_16_16,16,0);
+//			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
 		}
 		
 		//电池图标与电池soc
@@ -218,12 +218,12 @@ void GUI_update_status_bar(sys_chg_t *chg_info, uint8_t force_rfs)
 		//显示蓝牙连接图标
 		if(qcc5125_status.is_connected && !qcc5125_status.is_connected_last)
 		{
-			OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,1);
+			//OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,1);
 			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
 		}
 		else if(!qcc5125_status.is_connected && qcc5125_status.is_connected_last)
 		{
-			OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,0);
+			//OLED_Show_Char12x12(BLUETOOTH_DISP_X,50,(uint8_t *)icon_bluetooth_12_12,0);
 			GUI_OLEDRFS_REQ = 1; //刷新屏幕请求
 		}
 
@@ -234,17 +234,17 @@ void GUI_power_off(void)
 {
 		OLED_RamClear();
 		for(uint8_t i=0; i<3; i++)
-				OLED_Show_CustomChar(42+16*i,40,(uint8_t *)chn_guan_12_12[i],16,1);
+//				OLED_Show_CustomChar(42+16*i,40,(uint8_t *)chn_guan_12_12[i],16,1);
 		OLED_Refresh_Gram();
 		for(uint8_t i=0; i<3; i++)
 		{
-				OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,1);
+				//OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,1);
 				HAL_Delay(100);
 				OLED_Refresh_Gram();
 		}
 		for(uint8_t i=0; i<3; i++)
 		{
-				OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,0);
+				//OLED_Show_Char12x12(38+20*i,10,(uint8_t *)icon_filled_ball_12_12,0);
 				HAL_Delay(100);
 				OLED_Refresh_Gram();
 		}
@@ -364,10 +364,10 @@ void GUI_update_button(void)
 //各段eq对应线段y坐标介于10-63
 void GUI_eq(int8_t *eq_status)
 {		
-		OLED_Show_CustomChar(64, 0, (uint8_t *)icon_triangle_left_8_8, 8, 1);
-		OLED_ShowString(88, 57, (uint8_t *)"63", 8, 1);
-		OLED_Show_CustomChar(115, 0, (uint8_t *)icon_triangle_right_8_8, 8, 1);
-	
+//		OLED_Show_CustomChar(64, 0, (uint8_t *)icon_triangle_left_8_8, 8, 1);
+//		OLED_ShowString(88, 57, (uint8_t *)"63", 8, 1);
+//		OLED_Show_CustomChar(115, 0, (uint8_t *)icon_triangle_right_8_8, 8, 1);
+//	
 		//更新显示的boost值
 		gui_update_eq_boost();
 

@@ -369,10 +369,14 @@ void OLED_WinDrawBoxRightAngle(window *win, int16_t x_start, int16_t y_start, in
     OLED_WinDrawVLine(win, x_start + width - 1, y_start + height - r, y_start + height - 1);
 }
 
+
+//WouoUI的BMP绘制函数比较奇怪，它把BMP中的0视为透明像素，所以如果想擦除画面中的1，必须调用ClearBuffer
 /**
  * @brief : void OLED_WinDrawBMP(window * win, int16_t x, int16_t y, int16_t width, int16_t height,const uint8_t * BMP, uint8_t color)
  * @param : heigh must be a total times of 8, the color is convenient for draw inverse-color BMP
  */
+/* 取模方式：(PC2LCD2002)*/
+/* 阴码，列行式，逆向（低位在前）*/
 void OLED_WinDrawBMP(window *win, int16_t x, int16_t y, int16_t width, int16_t height, const uint8_t *BMP, uint8_t color) {
     if (BMP == NULL)
         return; // 如果是NULL，直接返回
