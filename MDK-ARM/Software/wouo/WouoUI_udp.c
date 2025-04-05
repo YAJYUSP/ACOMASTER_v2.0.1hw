@@ -8,6 +8,7 @@
 #include "string.h"
 
 #include "main.h"
+#include "qcc5125.h"
 
 
 
@@ -47,6 +48,46 @@ const unsigned char icon_empty_16_16[] =
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
 };
+const unsigned char icon_bl_disconn_16_16[] = 
+{
+0x00,0x00,0x00,0x10,0x20,0x40,0x80,0xFE,0x82,0x44,0x28,0x10,0x00,0x00,0x00,0x00,
+0x00,0x00,0x00,0x04,0x02,0x01,0x00,0x3F,0x20,0x11,0x0A,0x04,0x00,0x00,0x00,0x00
+};
+const unsigned char icon_bl_conn_16_16[] = 
+{
+0x00,0xE0,0xC0,0x90,0x20,0x40,0x80,0xFE,0x82,0x44,0x28,0x90,0xC0,0xE0,0x00,0x00,
+0x00,0x07,0x03,0x04,0x02,0x01,0x00,0x3F,0x20,0x11,0x0A,0x04,0x01,0x03,0x00,0x00,
+};
+const unsigned char icon_vol3_16_16[] = 
+{
+0xE0,0x20,0xE0,0x10,0x08,0x04,0xFC,0x00,0x40,0x90,0x20,0xC4,0x08,0xF0,0x00,0x00,
+0x0F,0x08,0x0F,0x10,0x20,0x40,0x7F,0x00,0x04,0x13,0x08,0x47,0x20,0x1F,0x00,0x00,
+};
+const unsigned char icon_vol2_16_16[] = 
+{
+0xE0,0x20,0xE0,0x10,0x08,0x04,0xFC,0x00,0x40,0x90,0x20,0xC0,0x00,0x00,0x00,0x00,
+0x0F,0x08,0x0F,0x10,0x20,0x40,0x7F,0x00,0x04,0x13,0x08,0x07,0x00,0x00,0x00,0x00,
+};
+const unsigned char icon_vol1_16_16[] = 
+{
+0xE0,0x20,0xE0,0x10,0x08,0x04,0xFC,0x00,0x40,0x80,0x00,0x00,0x00,0x00,0x00,0x00,
+0x0F,0x08,0x0F,0x10,0x20,0x40,0x7F,0x00,0x04,0x03,0x00,0x00,0x00,0x00,0x00,0x00,
+};
+const unsigned char icon_vol0_16_16[] = 
+{
+0xE0,0x20,0xE0,0x10,0x08,0x04,0xFC,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+0x0F,0x08,0x0F,0x10,0x20,0x40,0x7F,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+};
+const unsigned char icon_pause_unchecked_16_16[] = 
+{
+0x00,0x00,0xFE,0x01,0x01,0x01,0xFE,0x00,0xFE,0x01,0x01,0x01,0xFE,0x00,0x00,0x00,
+0x00,0x00,0x7F,0x80,0x80,0x80,0x7F,0x00,0x7F,0x80,0x80,0x80,0x7F,0x00,0x00,0x00,
+};
+const unsigned char icon_pause_checked_16_16[] = 
+{
+0x00,0x00,0xFE,0xFF,0xFF,0xFF,0xFE,0x00,0xFE,0xFF,0xFF,0xFF,0xFE,0x00,0x00,0x00,
+0x00,0x00,0x7F,0xFF,0xFF,0xFF,0x7F,0x00,0x7F,0xFF,0xFF,0xFF,0x7F,0x00,0x00,0x00,
+};
 
 
 //**********************每个以Page为基类的类都有对应的AnimInit、show、React方法
@@ -57,17 +98,26 @@ void OLED_PlayingPageEnterInit(PageAddr page_addr, uint16_t time) {
 }
 
 
+extern qcc5125_status_t qcc5125_status;
 
 void OLED_PlayingPageShow(PageAddr page_addr, uint16_t time) {
 	
-	OLED_WinDrawBMP(&w_all,24, 20, 16, 16, (uint8_t *)icon_prev_unchecked_16_16, 1);
-	OLED_WinDrawBMP(&w_all,60, 20, 16, 16, (uint8_t *)icon_play_unchecked_16_16, 1);
-	OLED_WinDrawBMP(&w_all,88, 20, 16, 16, (uint8_t *)icon_next_unchecked_16_16, 1);
-
+	
+	OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol0_16_16, 1);
+	OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_disconn_16_16, 1);
+	
+	OLED_WinDrawBMP(&w_all,24, 35, 16, 16, (uint8_t *)icon_prev_unchecked_16_16, 1);
+	OLED_WinDrawBMP(&w_all,88, 35, 16, 16, (uint8_t *)icon_next_unchecked_16_16, 1);
+	if(qcc5125_status.is_music_playing)
+		OLED_WinDrawBMP(&w_all,57, 35, 16, 16, (uint8_t *)icon_pause_unchecked_16_16, 1);
+	else
+		OLED_WinDrawBMP(&w_all,60, 35, 16, 16, (uint8_t *)icon_play_unchecked_16_16, 1);
+	
 }
 
-
-
+// 实际时间 = ICON_DISP_TIMEOUT * time
+#define ICON_PLAY_TIMEOUT 10
+#define ANIM_VOL_TIMEOUT  10
 
 void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 	
@@ -77,50 +127,36 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
     InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
 		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
 	
-		// 计数器与计数器标志，用以控制按下对应按键时屏幕Icon的变化，标志为1代表正在计数
+		// 此计数器标志用以控制按下PLAY等按键时屏幕三大icon的变化，标志为1代表正在计数
 		static uint8_t counter[3] = {0};
 		static uint8_t cnt_switch[3] = {0};
-		uint8_t ICON_DISP_TIMEOUT = 20; // 实际时间 = ICON_DISP_TIMEOUT * time
+		
+		// 此计数器标志用以控制按下音量键时屏幕喇叭icon的变化，标志为1代表正在计数
+		static uint8_t counter_vol_anim = 0;
+		/* status = 0：空；   status = 1：播放“音量+”动画；   status = 2：播放“音量-”动画；*/
+		static uint8_t counter_vol_status = 0;
+		
 		
 		if(msg == msg_none){
-			if(cnt_switch[0]) {
-					if(counter[0] < ICON_DISP_TIMEOUT)
-							counter[0] ++;
-					else{ 
-							counter[0] = 0;
-							cnt_switch[0] = 0;
-					}
-					OLED_WinDrawBMP(&w_all,24, 20, 16, 16, (uint8_t *)icon_prev_checked_16_16, 1);
-				}
-				if(cnt_switch[1]) {
-					if(counter[1] < ICON_DISP_TIMEOUT)
-							counter[1] ++;
-					else{
-							counter[1] = 0;
-							cnt_switch[1] = 0;
-					}
-					OLED_WinDrawBMP(&w_all,88, 20, 16, 16, (uint8_t *)icon_next_checked_16_16, 1);
-				}
-				if(cnt_switch[2]) {
-					if(counter[2] < ICON_DISP_TIMEOUT)
-							counter[2] ++;
-					else{
-							counter[2] = 0;
-							cnt_switch[2] = 0;
-					}
-					OLED_WinDrawBMP(&w_all,60, 20, 16, 16, (uint8_t *)icon_play_checked_16_16, 1);					
-				}
 		}
 		else if(msg == msg_add){
-			
+			if(!counter_vol_status){ // 播放“音量+”动画
+				counter_vol_status = 1;
+			}
+			if (p->cb != NULL)			 // 按键信息到来时，触发回调
+					p->cb(p, &(pp->option_array[3]));
 		}
 		else if(msg == msg_sub){
-			
+			if(!counter_vol_status){ // 播放“音量-”动画
+				counter_vol_status = 2;
+			}
+			if (p->cb != NULL)
+					p->cb(p, &(pp->option_array[4]));
 		}
 		else if(msg == msg_up){    //prev
 			cnt_switch[0] = 1;		
 			if (p->cb != NULL)
-				p->cb(p, &(pp->option_array[0]));		// 按键信息到来时，触发回调
+				p->cb(p, &(pp->option_array[0]));
 		}
 		else if(msg == msg_down){  //next
 			cnt_switch[1] = 1;
@@ -133,11 +169,77 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 				p->cb(p, &(pp->option_array[2]));
 		}
 		else if(msg == msg_return){
-			OLED_PageReturn(page_addr);
+			if (p->cb != NULL)
+				p->cb(p, &(pp->option_array[5]));
 		}
 		
+		/* 处理屏幕三大icon的变化*/
+		if(cnt_switch[0]) {
+				if(counter[0] < ICON_PLAY_TIMEOUT)
+						counter[0] ++;
+				else{ 
+						counter[0] = 0;
+						cnt_switch[0] = 0;
+				}
+				OLED_WinDrawBMP(&w_all,24, 35, 16, 16, (uint8_t *)icon_prev_checked_16_16, 1);
+		}
+		if(cnt_switch[1]) {
+			if(counter[1] < ICON_PLAY_TIMEOUT)
+					counter[1] ++;
+			else{
+					counter[1] = 0;
+					cnt_switch[1] = 0;
+		  }
+			OLED_WinDrawBMP(&w_all,88, 35, 16, 16, (uint8_t *)icon_next_checked_16_16, 1);
+		}
+		if(cnt_switch[2]) {
+			if(counter[2] < ICON_PLAY_TIMEOUT)
+					counter[2] ++;
+			else{
+					counter[2] = 0;
+					cnt_switch[2] = 0;
+			}
+			if(qcc5125_status.is_music_playing)
+				OLED_WinDrawBMP(&w_all,57, 35, 16, 16, (uint8_t *)icon_pause_checked_16_16, 1);
+			else
+				OLED_WinDrawBMP(&w_all,60, 35, 16, 16, (uint8_t *)icon_play_checked_16_16, 1);		
+		}
+			
+		/* 处理音量动画的变化*/
+		if(counter_vol_status == 1) {
+			if(counter_vol_anim < ANIM_VOL_TIMEOUT)
+					counter_vol_anim ++;
+			else{ 
+					counter_vol_anim = 0;
+					counter_vol_status = 0;
+			}
+		}
+		else if(counter_vol_status == 2) {
+			if(counter_vol_anim == 0)
+				counter_vol_anim = ANIM_VOL_TIMEOUT; // 递减计数
+			if(counter_vol_anim > 0)
+					counter_vol_anim --;
+			if(counter_vol_anim == 0)
+					counter_vol_status = 0;
+		}
+		if(counter_vol_anim == 0)
+			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol3_16_16, 1);
+		else if(counter_vol_anim < ANIM_VOL_TIMEOUT/4)
+			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol0_16_16, 1);
+		else if(counter_vol_anim < ANIM_VOL_TIMEOUT/2)
+			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol1_16_16, 1);
+		else if(counter_vol_anim < ANIM_VOL_TIMEOUT*3/4)
+			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol2_16_16, 1);
+		else if(counter_vol_anim <= ANIM_VOL_TIMEOUT)
+			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol3_16_16, 1);
 		
-}	
+		/* 处理蓝牙图标*/
+		if(qcc5125_status.is_connected)
+			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_conn_16_16, 1);
+		else
+			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_disconn_16_16, 1);
+		
+}
 	
 void OLED_PlayingPageInit(
     PlayingPage *playing_page,  // 磁贴页面对象

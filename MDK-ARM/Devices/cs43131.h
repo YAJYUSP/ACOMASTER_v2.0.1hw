@@ -8,9 +8,6 @@
 
 #include "stdint.h"
 
-extern uint8_t cs43131_volume;
-
-
 
 void bsp_43131_init(void);
 void bsp_43131_set_volume(uint8_t vol);

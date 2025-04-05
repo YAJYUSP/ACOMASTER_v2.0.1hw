@@ -34,7 +34,7 @@ acomaster\audio.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h
 acomaster\audio.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h
 acomaster\audio.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h
 acomaster\audio.o: Software\audio.h
+acomaster\audio.o: ./Devices/qcc5125.h
 acomaster\audio.o: ./Devices/adau1761/adau1761.h
 acomaster\audio.o: ./Devices/adau1761/adau1761_REG.h
 acomaster\audio.o: ./Devices/cs43131.h
-acomaster\audio.o: ./Devices/qcc5125.h

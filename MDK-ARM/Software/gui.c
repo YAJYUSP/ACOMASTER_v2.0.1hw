@@ -29,26 +29,6 @@ const uint8_t eq_gui_x_coor[10] =
 };
 
 
-//显示开机画面
-void GUI_powerUp(void)
-{
-		OLED_RamClear();
-		for(uint8_t i=0; i<6; i++)
-//				OLED_Show_CustomChar(16+16*i,44,(uint8_t *)chn_tiao_16_16[i],16,1);
-		OLED_ShowString(4, 24, (uint8_t *)"Acoustic",16,1);
-		OLED_ShowString(78, 24, (uint8_t *)"Master",16,1);
-		OLED_DrawLine(78,26,124,26,1);
-		OLED_Refresh_Gram();
-		HAL_Delay(1000);
-		for(uint8_t i=0; i<3; i++)
-		{
-				//OLED_Show_Char12x12(38+20*i,5,(uint8_t *)icon_filled_ball_12_12,1);
-				HAL_Delay(800);
-				OLED_Refresh_Gram();
-		}
-		HAL_Delay(1000);
-}
-
 
 
 //显示等待连接蓝牙画面

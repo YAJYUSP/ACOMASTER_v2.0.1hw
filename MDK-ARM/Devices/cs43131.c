@@ -2,9 +2,6 @@
 #include "simi2c.h"
 #include "main.h"
 
-//CODEC全局音量值，0-100
-uint8_t cs43131_volume = 0;
-
 
 // Vol: 0 = mute, 100 = 0 dB
 void bsp_43131_set_volume(uint8_t vol) 

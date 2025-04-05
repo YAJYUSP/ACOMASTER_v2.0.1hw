@@ -5,6 +5,7 @@
 #include "WouoUI_udp.h"
 
 #include "main.h"
+#include "qcc5125.h"
 
 
 //--------定义页面对象
@@ -90,6 +91,7 @@ const Option play_option_array[ABOUT_PAGEVERSION_NUM] =
         {.text = (char *)"play"},
         {.text = (char *)"volp"},
         {.text = (char *)"vols"},
+				{.text = (char *)"return"},
 };
 
 
@@ -156,7 +158,6 @@ const Option about_version_array[ABOUT_PAGEVERSION_NUM] =
         {.text = (char *)"  Sheep118/WouoUI"},
         {.text = (char *)"  -PageVersion"},
 };
-		
 
 
 
@@ -167,19 +168,22 @@ const Option about_version_array[ABOUT_PAGEVERSION_NUM] =
 void PlayingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 
 	if (!strcmp(select_item->text, "prev")) {
-		HAL_Delay(1);
+		qcc5125_btn_press(KEY_PREV, 200);
 	} 
 	if (!strcmp(select_item->text,"next")) {
-		HAL_Delay(1);
+		qcc5125_btn_press(KEY_NEXT, 200);
 	} 
 	if (!strcmp(select_item->text, "play")) {
-		HAL_Delay(1);
+		qcc5125_btn_press(KEY_PLAY, 200);
 	} 
 	if (!strcmp(select_item->text, "volp")) {
-		HAL_Delay(1);
+		qcc5125_btn_press(KEY_NEXT, 550);
 	}
 	if (!strcmp(select_item->text, "vols")) {
-		HAL_Delay(1);
+		qcc5125_btn_press(KEY_PREV, 550);
+	}
+	if (!strcmp(select_item->text, "return")) {
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &main_page);
 	}
 }
 
@@ -252,7 +256,17 @@ void About_CallBack(const Page *cur_page_addr, Option *select_item) {
     default:
         break;
     }
+//			if(select_item->order == 0)
+//				OLED_UIJumpToPage((PageAddr)cur_page_addr, &about_origin_page);
+//			else if(select_item->order == 1)
+//				OLED_UIJumpToPage((PageAddr)cur_page_addr, &about_wououi_page);
+//			else if(select_item->order == 2)
+//				OLED_UIJumpToPage((PageAddr)cur_page_addr, &about_version_page);
+	
+	
 }
+
+
 
 
 
@@ -268,9 +282,9 @@ void TestUI_Init(void) {
 
     // 设置界面选项
 	 
-    OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, (Option *)mian_option_array, main_icon_array, MainPage_CallBack);
-	
 		OLED_PlayingPageInit(&playing_page, PLAY_PAGE_NUM, (Option *)play_option_array, NULL, PlayingPage_CallBack);
+	
+    OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, (Option *)mian_option_array, main_icon_array, MainPage_CallBack);
 
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
     OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, (Option *)about_option_array, Setting_none, About_CallBack);

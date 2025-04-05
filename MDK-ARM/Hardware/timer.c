@@ -39,7 +39,8 @@ void bsp_tim22_delay_us(uint16_t nus)
 } 
 
 
-//eq_chnl_e testing_chnl = eq_16000;
+extern qcc5125_status_t  qcc5125_status;
+
 
 //PIT
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -51,10 +52,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if (htim == (&htim21))                      
 		{
 			
-			//5ms定时中断，用于按键扫描
+			// 5ms定时中断，用于按键扫描
 			button_ticks();
-			
-			//20ms定时中断，用于显示刷新
+	
+			// 20ms定时中断，用于显示刷新
 			if(time_cnt_20ms < 3)
 				time_cnt_20ms ++;
 			else
@@ -63,66 +64,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				
 				OLED_UIProc(20);
 			}
-			
-			
-			
-//				if(device_current_state == MAIN_UI)
-//				{
-//						if(IF_KEY_LEFT_PRSD)
-//								qcc5125_key_press(KEY_PREV, 1);
-//						else
-//								qcc5125_key_press(KEY_PREV, 0);
-//						
-//						if(IF_KEY_RIGHT_PRSD)
-//								qcc5125_key_press(KEY_NEXT, 1);
-//						else
-//								qcc5125_key_press(KEY_NEXT, 0);
-//				}
-//				else if(device_current_state == EQ_UI)
-//				{
-//						key_longpress_scan_5ms();
-//				}
 		}
 		
 
 		//100ms period
 		if (htim == (&htim6))                           
 		{
-			
-//				qcc5125_io_update_100ms();
-			
-//				//充电时显示的电池动画效果
-//				if(sys_chg_info.chrg_state)
-//				{
-//					if(sys_chg_info.batt_soc_animation_state <100)
-//						sys_chg_info.batt_soc_animation_state++;
-//					else
-//						sys_chg_info.batt_soc_animation_state = 0;
-//				}
-//				else
-//						sys_chg_info.batt_soc_animation_state = 0;
-//						
 				
-//				//mute软延时功能，其mute持续时间400ms
-//				if(qcc5125_status.mute_delay_enable)
-//				{
-//						if(qcc5125_status.mute_delay_cnt < 1)
-//								qcc5125_status.mute_delay_cnt++;
-//						else
-//						{
-//								//延时时间到，解除mute,重新初始化音频链路
-//								qcc5125_status.mute_delay_cnt = 0;
-//								qcc5125_status.mute_delay_enable = 0;
-//								audio_enable();
-//						}
-//				}
-//				else
-//						qcc5125_status.mute_delay_cnt = 0;
+				qcc5125_status_proc(&qcc5125_status, 100);
+				audio_enable_proc(qcc5125_status, 100);  // 就是这句代码
+
 
 				
 				
 //				//EQ调整模式中，长按按键自动更改参数
-//				if(device_current_state == EQ_UI)
+//				if(device_current_state == EQ_UI) 
 //				{
 //						if(key_longpress_up.key_long_prsd_flag)
 //								if(eq_setting_boost[select_eq] < EQ_BOOST_MAX)

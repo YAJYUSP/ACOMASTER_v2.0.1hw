@@ -14,7 +14,6 @@
 #define BLUETOOTH_DISP_X  			60
 
 
-void GUI_powerUp(void);
 void GUI_power_off(void);
 void GUI_wait_until_connect(void);
 void GUI_main_page(void);

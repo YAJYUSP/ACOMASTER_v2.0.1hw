@@ -54,6 +54,6 @@
 "acomaster\wououi_win.o"
 "acomaster\wououi_udp.o"
 --library_type=microlib --strict --scatter "Acomaster\Acomaster.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
+--summary_stderr --info summarysizes --map --load_addr_map_info --symbols
+--info sizes --info totals
 --list "Acomaster.map" -o Acomaster\Acomaster.axf
