@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Acomaster\Acomaster.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Acomaster\Acomaster.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Apr 04 23:47:41 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sat Apr 05 10:42:17 2025
 <BR><P>
 <H3>Maximum Stack Usage =        376 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -261,7 +261,8 @@ Global Symbols
 <P><STRONG><a name="[d5]"></a>strcmp</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, strcmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainPage_CallBack
+<BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PlayingPage_CallBack
+<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MainPage_CallBack
 </UL>
 
 <P><STRONG><a name="[6e]"></a>memcmp</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, memcmp.o(.text))
@@ -669,6 +670,7 @@ Global Symbols
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_chg_info_init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTCEx_WakeUpTimerEventCallback
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh_FrameBuffer
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PlayingPage_CallBack
 </UL>
 
 <P><STRONG><a name="[7a]"></a>HAL_FLASH_EndOfOperationCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l0xx_hal_flash.o(i.HAL_FLASH_EndOfOperationCallback))
@@ -1450,15 +1452,15 @@ Global Symbols
 <P><STRONG><a name="[38]"></a>OLED_PlayingPageEnterInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wououi_udp.o(i.OLED_PlayingPageEnterInit))
 <BR>[Address Reference Count : 1]<UL><LI> wououi_udp.o(i.OLED_PlayingPageInit)
 </UL>
-<P><STRONG><a name="[f3]"></a>OLED_PlayingPageInit</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, wououi_udp.o(i.OLED_PlayingPageInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = OLED_PlayingPageInit
+<P><STRONG><a name="[f3]"></a>OLED_PlayingPageInit</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, wououi_udp.o(i.OLED_PlayingPageInit))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = OLED_PlayingPageInit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_PageInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TestUI_Init
 </UL>
 
-<P><STRONG><a name="[3a]"></a>OLED_PlayingPageReact</STRONG> (Thumb, 208 bytes, Stack size 32 bytes, wououi_udp.o(i.OLED_PlayingPageReact))
+<P><STRONG><a name="[3a]"></a>OLED_PlayingPageReact</STRONG> (Thumb, 244 bytes, Stack size 32 bytes, wououi_udp.o(i.OLED_PlayingPageReact))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = OLED_PlayingPageReact &rArr; OLED_WinDrawBMP &rArr; OLED_WinWriteByte &rArr; OLED_BuffWriteByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_PageReturn
@@ -1857,7 +1859,12 @@ Global Symbols
 <P><STRONG><a name="[10]"></a>PendSV_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l0xx_it.o(i.PendSV_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l051xx.o(RESET)
 </UL>
-<P><STRONG><a name="[3f]"></a>PlayingPage_CallBack</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, wououi_user.o(i.PlayingPage_CallBack))
+<P><STRONG><a name="[3f]"></a>PlayingPage_CallBack</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, wououi_user.o(i.PlayingPage_CallBack))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = PlayingPage_CallBack &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+</UL>
 <BR>[Address Reference Count : 1]<UL><LI> wououi_user.o(i.TestUI_Init)
 </UL>
 <P><STRONG><a name="[a1]"></a>RTC_EnterInitMode</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, stm32l0xx_hal_rtc.o(i.RTC_EnterInitMode))

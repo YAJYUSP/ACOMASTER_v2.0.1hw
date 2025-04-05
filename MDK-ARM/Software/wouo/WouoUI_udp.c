@@ -10,16 +10,6 @@
 #include "main.h"
 
 
-//extern const unsigned char icon_play_unchecked_16_16[];
-
-//extern const unsigned char icon_pause_checked_16_16[];
-//extern const unsigned char icon_pause_unchecked_16_16[];
-
-
-
-
-//extern const unsigned char icon_prev_unchecked_16_16[];
-
 
 const unsigned char icon_play_checked_16_16[] = 
 {
@@ -80,10 +70,12 @@ void OLED_PlayingPageShow(PageAddr page_addr, uint16_t time) {
 
 
 void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
+	
+		Page *p = (Page *)page_addr;
     PlayingPage *pp = (PlayingPage *)page_addr;
     String selcet_string = NULL;
     InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
-		OLED_MsgQueClear(); // 这里暂时清空消息队列，可能会引发问题------------------======================================================
+		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
 	
 		// 计数器与计数器标志，用以控制按下对应按键时屏幕Icon的变化，标志为1代表正在计数
 		static uint8_t counter[3] = {0};
@@ -125,14 +117,20 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 		else if(msg == msg_sub){
 			
 		}
-		else if(msg == msg_up){
-			cnt_switch[0] = 1;
+		else if(msg == msg_up){    //prev
+			cnt_switch[0] = 1;		
+			if (p->cb != NULL)
+				p->cb(p, &(pp->option_array[0]));		// 按键信息到来时，触发回调
 		}
-		else if(msg == msg_down){
+		else if(msg == msg_down){  //next
 			cnt_switch[1] = 1;
+			if (p->cb != NULL)
+				p->cb(p, &(pp->option_array[1]));
 		}
-		else if(msg == msg_click){
+		else if(msg == msg_click){ //play
 			cnt_switch[2] = 1;
+			if (p->cb != NULL)
+				p->cb(p, &(pp->option_array[2]));
 		}
 		else if(msg == msg_return){
 			OLED_PageReturn(page_addr);
@@ -155,5 +153,9 @@ void OLED_PlayingPageInit(
     playing_page->page.react = OLED_PlayingPageReact; // 关联处理函数(方法)
 		playing_page->select_item = 0;
     playing_page->item_num = item_num;
+		playing_page->option_array = option_array;
+    playing_page->icon_array = icon_array;
+    for (uint8_t i = 0; i < playing_page->item_num; i++)
+        playing_page->option_array[i].order = i; // 选项序号标号
 }
 

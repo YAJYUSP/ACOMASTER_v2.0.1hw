@@ -4,6 +4,8 @@
 #include "string.h"
 #include "WouoUI_udp.h"
 
+#include "main.h"
+
 
 //--------定义页面对象
 PlayingPage playing_page;
@@ -18,7 +20,7 @@ RadioPage about_version_page;
 //--------定义每个页面需要的一些参数
 
 // 页面内选项个数
-#define NO_PAGE         			0
+#define PLAY_PAGE_NUM         5
 #define MAIN_PAGE_NUM         3
 #define SETTING_PAGE_NUM      13
 #define ABOUT_PAGE_NUM        3
@@ -27,7 +29,7 @@ RadioPage about_version_page;
 #define ABOUT_PAGEVERSION_NUM 8
 
 // main页面的选项
-Option mian_option_array[MAIN_PAGE_NUM] =
+const Option mian_option_array[MAIN_PAGE_NUM] =
     {
         {.text = (char *)"+ Playing"},
         {.text = (char *)"+ Settings"},
@@ -36,7 +38,7 @@ Option mian_option_array[MAIN_PAGE_NUM] =
         // {.text = (char *)"% Spin", .val = 123456, .min = -500000, .max = 500000, .decimalNum = DecimalNum_2},
 };
 // main页面的图标
-Icon main_icon_array[MAIN_PAGE_NUM] =
+const Icon main_icon_array[MAIN_PAGE_NUM] =
     {
         [0] = {0xFC, 0xFE, 0xFF, 0x3F, 0x1F, 0x0F, 0x07, 0x03, 0x03, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
                0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x07, 0x07, 0x0F, 0x1F, 0x3F, 0xFF, 0xFE, 0xFC, 0xFF, 0x01,
@@ -80,8 +82,19 @@ Icon main_icon_array[MAIN_PAGE_NUM] =
         //        0xF8, 0xF8, 0xF8, 0xF8, 0xFF, 0xFF, 0xDF, 0xCF} // about
 };
 
+// Play页面的选项字符串表，不用于显示，用于回调函数传参
+const Option play_option_array[ABOUT_PAGEVERSION_NUM] =
+{
+        {.text = (char *)"prev"},
+        {.text = (char *)"next"},
+        {.text = (char *)"play"},
+        {.text = (char *)"volp"},
+        {.text = (char *)"vols"},
+};
+
+
 // 设置页面的列表选项数组
-Option setting_option_array[SETTING_PAGE_NUM] =
+const Option setting_option_array[SETTING_PAGE_NUM] =
     {
         {.text = (char *)"- List"}, // 第一个做说明标签，没有功能
         {.text = (char *)"% spin box 1", .val = 123456, .min = -500000, .max = 500000, .decimalNum = DecimalNum_1},
@@ -99,7 +112,7 @@ Option setting_option_array[SETTING_PAGE_NUM] =
 };
 
 // about页面的选项数组
-Option about_option_array[ABOUT_PAGE_NUM] =
+const Option about_option_array[ABOUT_PAGE_NUM] =
     {
         {.text = (char *)"+ Radio box"},    // 原wououi的说明
         {.text = (char *)"+ About wouo"},   // 第一项只是说明
@@ -107,7 +120,7 @@ Option about_option_array[ABOUT_PAGE_NUM] =
 };
 
 // about页面->Radio box页面的数组
-Option about_origin_array[ABOUT_ORIGIN_PAGE_NUM] =
+const Option about_origin_array[ABOUT_ORIGIN_PAGE_NUM] =
     {
         {.text = (char *)"- Radio box"},
         {.text = (char *)"# test1", .val = 1, .step = 1},
@@ -118,7 +131,7 @@ Option about_origin_array[ABOUT_ORIGIN_PAGE_NUM] =
 };
 
 // about页面->About wouo页面的数组
-Option about_wououi_array[ABOUT_WOUOUI_PAGE_NUM] =
+const Option about_wououi_array[ABOUT_WOUOUI_PAGE_NUM] =
     {
         {.text = (char *)"- From WouoUI1.2"},
         {.text = (char *)"- Thanks for the "},
@@ -132,7 +145,7 @@ Option about_wououi_array[ABOUT_WOUOUI_PAGE_NUM] =
 };
 
 // about页面->Page version页面的数组
-Option about_version_array[ABOUT_PAGEVERSION_NUM] =
+const Option about_version_array[ABOUT_PAGEVERSION_NUM] =
     {
         {.text = (char *)"- Page Version"},
         {.text = (char *)"- MyBilili UID:"},
@@ -147,11 +160,27 @@ Option about_version_array[ABOUT_PAGEVERSION_NUM] =
 
 
 
+
 //--------定义每个页面的回调函数
 
 // play页面的回调函数,暂时没有用到
 void PlayingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 
+	if (!strcmp(select_item->text, "prev")) {
+		HAL_Delay(1);
+	} 
+	if (!strcmp(select_item->text,"next")) {
+		HAL_Delay(1);
+	} 
+	if (!strcmp(select_item->text, "play")) {
+		HAL_Delay(1);
+	} 
+	if (!strcmp(select_item->text, "volp")) {
+		HAL_Delay(1);
+	}
+	if (!strcmp(select_item->text, "vols")) {
+		HAL_Delay(1);
+	}
 }
 
 // main页面的回调函数，主要用于页面跳转
@@ -239,14 +268,14 @@ void TestUI_Init(void) {
 
     // 设置界面选项
 	 
-    OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, mian_option_array, main_icon_array, MainPage_CallBack);
+    OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, (Option *)mian_option_array, main_icon_array, MainPage_CallBack);
 	
-		OLED_PlayingPageInit(&playing_page, NO_PAGE, NULL, NULL, PlayingPage_CallBack);
+		OLED_PlayingPageInit(&playing_page, PLAY_PAGE_NUM, (Option *)play_option_array, NULL, PlayingPage_CallBack);
 
-    OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, setting_option_array, Setting_none, SettingPage_CallBack);
-    OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, about_option_array, Setting_none, About_CallBack);
+    OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
+    OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, (Option *)about_option_array, Setting_none, About_CallBack);
 
-    OLED_ListPageInit(&about_origin_page, ABOUT_ORIGIN_PAGE_NUM, about_origin_array, Setting_radio, NULL);
-    OLED_ListPageInit(&about_wououi_page, ABOUT_WOUOUI_PAGE_NUM, about_wououi_array, Setting_none, NULL);
-    OLED_ListPageInit(&about_version_page, ABOUT_PAGEVERSION_NUM, about_version_array, Setting_none, NULL);
+    OLED_ListPageInit(&about_origin_page, ABOUT_ORIGIN_PAGE_NUM, (Option *)about_origin_array, Setting_radio, NULL);
+    OLED_ListPageInit(&about_wououi_page, ABOUT_WOUOUI_PAGE_NUM, (Option *)about_wououi_array, Setting_none, NULL);
+    OLED_ListPageInit(&about_version_page, ABOUT_PAGEVERSION_NUM, (Option *)about_version_array, Setting_none, NULL);
 }
