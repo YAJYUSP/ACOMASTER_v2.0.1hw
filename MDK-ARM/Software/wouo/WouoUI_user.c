@@ -114,7 +114,7 @@ const Option setting_option_array[SETTING_PAGE_NUM] =
 };
 
 // about页面的选项数组
-const Option about_option_array[ABOUT_PAGE_NUM] =
+Option about_option_array[ABOUT_PAGE_NUM] =
     {
         {.text = (char *)"+ Radio box"},    // 原wououi的说明
         {.text = (char *)"+ About wouo"},   // 第一项只是说明
@@ -287,7 +287,7 @@ void TestUI_Init(void) {
     OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, (Option *)mian_option_array, main_icon_array, MainPage_CallBack);
 
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
-    OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, (Option *)about_option_array, Setting_none, About_CallBack);
+    OLED_ListPageInit(&about_page, ABOUT_PAGE_NUM, about_option_array, Setting_none, About_CallBack);
 
     OLED_ListPageInit(&about_origin_page, ABOUT_ORIGIN_PAGE_NUM, (Option *)about_origin_array, Setting_radio, NULL);
     OLED_ListPageInit(&about_wououi_page, ABOUT_WOUOUI_PAGE_NUM, (Option *)about_wououi_array, Setting_none, NULL);
