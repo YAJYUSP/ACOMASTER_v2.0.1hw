@@ -20,9 +20,9 @@ ListPage setting_eqpreset_page;
 // 页面内选项个数
 #define PLAY_PAGE_NUM         6
 #define MAIN_PAGE_NUM         3
-
-#define SETTING_PAGE_NUM      6
-#define SETTING_EQPRESET_NUM      3
+ 
+#define SETTING_PAGE_NUM      7
+#define SETTING_EQPRESET_NUM  5 
 
 
 // main页面的选项
@@ -77,13 +77,24 @@ const Option play_option_array[PLAY_PAGE_NUM] =
 // setting页面的选项字符串表
 Option setting_option_array[SETTING_PAGE_NUM] =
 {
-        {.text = (char *)"+ EQ Presets"},   // 选择EQ预设
-        {.text = (char *)"+ Edit EQ Preset"},   // 第一项只是说明
-        {.text = (char *)"# HP Detecting", .val = 1, .step = 1},  //预留radio box
-				{.text = (char *)"# DSEE HX", .val = 1, .step = 1},  //预留radio box
-				{.text = (char *)"# Auto PWR-OFF", .val = 1, .step = 1},  //预留radio box
-				{.text = (char *)"# PWR-OFF Timer", .val = 1, .step = 1},  //预留radio box
+        {.text = (char *)"- Settings -"},   // 选择EQ预设
+				{.text = (char *)"+ EQ Presets"},   // 进入选择EQ预设
+        {.text = (char *)"+ Edit EQ Preset"},   // 进入选择EQ预设
+        {.text = (char *)"# HP Detecting", .val = 0, .step = 1},  //预留radio box
+				{.text = (char *)"# DSEE HX", .val = 0, .step = 1},  //预留radio box
+				{.text = (char *)"# Auto PWR-OFF", .val = 0, .step = 1},  //预留radio box
+				{.text = (char *)"# PWR-OFF Timer", .val = 0, .step = 1},  //预留radio box
+};  
+// setting->EQ Preset页面的选项字符串表
+Option setting_preset_option_array[SETTING_EQPRESET_NUM] =
+{
+        {.text = (char *)"- EQ Presets -"},
+        {.text = (char *)"# Normal", .val = 1, .step = 1},
+        {.text = (char *)"# Custom 1", .val = 0, .step = 1},
+        {.text = (char *)"# Custom 2", .val = 0, .step = 1},
+				{.text = (char *)"# Custom 3", .val = 0, .step = 1},
 };
+
 
 
 //--------定义每个页面的回调函数
@@ -122,7 +133,13 @@ void MainPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 
 // setting页面的回调函数，主要用于参数赋值
 void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
-    // switch (select_item->order)
+ 
+	if (!strcmp(select_item->text, "+ EQ Presets")) {
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
+	} 
+	
+	
+	// switch (select_item->order)
     // {                           // 由于第0项是说明文字“Setting”
     // case 1:
     //     g_default_ui_para.ani_param[TILE_ANI] = select_item->val;
@@ -165,6 +182,10 @@ void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
     // }
 }
 
+// setting->EQPreset页面的回调函数，主要用于参数赋值
+void Setting_EQPresetPage_CallBack(const Page *cur_page_addr, Option *select_item) {
+	
+}
 
 //--------------页面初始化函数，供主函数调用
 
@@ -181,6 +202,7 @@ void TestUI_Init(void) {
     OLED_TitlePageInit(&main_page, MAIN_PAGE_NUM, (Option *)mian_option_array, main_icon_array, MainPage_CallBack);
 
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
+		OLED_ListPageInit(&setting_eqpreset_page, SETTING_EQPRESET_NUM, (Option *)setting_preset_option_array, Setting_radio, Setting_EQPresetPage_CallBack);
 
 }
 
