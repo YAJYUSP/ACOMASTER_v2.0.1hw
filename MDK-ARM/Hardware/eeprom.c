@@ -8,8 +8,8 @@
 #define EEPROM_BYTE_SIZE	0x03FF
 #define iEEPROM_CHECK_NUM 2
 
-//Byte write
-static void EEPROM_WRITE(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
+// 向EEPROM写入数据，写入地址为EEPROM_BASE_ADDR+BiasAddress
+static void EEPROM_Write(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
 {
 		uint16_t i;
 		HAL_StatusTypeDef status = HAL_OK;
@@ -17,13 +17,13 @@ static void EEPROM_WRITE(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
 		HAL_FLASHEx_DATAEEPROM_Unlock();
 		for(i=0;i<len;i++)
 		{
-				status +=HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_BYTE, EEPROM_BASE_ADDR+BiasAddress+i, *Data);
+				status += HAL_FLASHEx_DATAEEPROM_Program(FLASH_TYPEPROGRAMDATA_BYTE, EEPROM_BASE_ADDR+BiasAddress+i, *Data);
 				Data++;
 		}
 		HAL_FLASHEx_DATAEEPROM_Lock();
 }
-//Byte read
-static void EEPROM_READ(uint16_t BiasAddress,uint8_t *Buffer,uint16_t Len)
+// 从EEPROM读出数据，读取地址为EEPROM_BASE_ADDR+BiasAddress
+static void EEPROM_Read(uint16_t BiasAddress,uint8_t *Buffer,uint16_t Len)
 {
 		uint8_t *wAddr;
 		wAddr=(uint8_t *)(EEPROM_BASE_ADDR+BiasAddress);
@@ -32,33 +32,34 @@ static void EEPROM_READ(uint16_t BiasAddress,uint8_t *Buffer,uint16_t Len)
 }
 
 
-
-HAL_StatusTypeDef EEPROM_WRITE_W_CHECK(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
+// 向EEPROM写入数据，写入地址为EEPROM_BASE_ADDR+BiasAddress
+// 写入后进行读取、比较校验
+HAL_StatusTypeDef EEPROM_WriteWithCheck(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
 {
 		uint8_t buff[len];
 		uint16_t i;
 		for (i=0;i<iEEPROM_CHECK_NUM;i++)
 		{
-			EEPROM_WRITE(BiasAddress, Data, len);
-			EEPROM_READ(BiasAddress, buff, len);
+			EEPROM_Write(BiasAddress, Data, len);
+			EEPROM_Read(BiasAddress, buff, len);
 			if (memcmp(Data, buff, len)==0)
 			{
 				return HAL_OK;
 			}
 		}
-
 		return HAL_ERROR;
 }
-
-HAL_StatusTypeDef EEPROM_Read_W_CHECK(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
+// 从EEPROM读取数据，读出地址为EEPROM_BASE_ADDR+BiasAddress
+// 读取两次进行比较校验
+HAL_StatusTypeDef EEPROM_ReadWithCheck(uint16_t BiasAddress, uint8_t *Data, uint16_t len)
 {
 		uint8_t buff0[len];
 		uint8_t buff1[len];
 		uint16_t i;
 		for (i=0;i<iEEPROM_CHECK_NUM;i++)
 		{
-			EEPROM_READ(BiasAddress, buff0, len);
-			EEPROM_READ(BiasAddress, buff1, len);
+			EEPROM_Read(BiasAddress, buff0, len);
+			EEPROM_Read(BiasAddress, buff1, len);
 
 				if (memcmp(buff0, buff1, len)==0)
 				{
@@ -67,22 +68,4 @@ HAL_StatusTypeDef EEPROM_Read_W_CHECK(uint16_t BiasAddress, uint8_t *Data, uint1
 				}
 		}
 		return HAL_ERROR;
-}
-
-
-//向eeprom保存eq信息
-void bsp_write_eqs_to_eeprom(int8_t *eq_boost)
-{
-		for(uint8_t i=0; i<=9; i++)
-		{
-				EEPROM_WRITE_W_CHECK(i, (uint8_t *)&eq_boost[i], 1);
-		}
-}
-//从eeprom加载eq信息
-void bsp_read_eqs_from_eeprom(int8_t *eq_boost)
-{
-		for(uint8_t i=0; i<=9; i++)
-		{
-				EEPROM_Read_W_CHECK(i, (uint8_t *)&eq_boost[i], 1);
-		}
 }

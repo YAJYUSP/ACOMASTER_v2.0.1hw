@@ -3,6 +3,8 @@ acomaster\qcc5125.o: Devices\qcc5125.h
 acomaster\qcc5125.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 acomaster\qcc5125.o: Devices\cs43131.h
 acomaster\qcc5125.o: ./Software/audio.h
+acomaster\qcc5125.o: ./Devices/adau1761/adau1761.h
+acomaster\qcc5125.o: ./Devices/adau1761/adau1761_REG.h
 acomaster\qcc5125.o: ./Software/sys_init.h
 acomaster\qcc5125.o: ../Core/Inc/tim.h
 acomaster\qcc5125.o: ../Core/Inc/main.h

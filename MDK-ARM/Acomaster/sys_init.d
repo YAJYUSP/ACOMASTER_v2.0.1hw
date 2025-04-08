@@ -38,13 +38,9 @@ acomaster\sys_init.o: Software\sys_init.h
 acomaster\sys_init.o: ./Hardware/key.h
 acomaster\sys_init.o: Software\pwr_mngr.h
 acomaster\sys_init.o: ./Devices/cw2015.h
-acomaster\sys_init.o: ./Devices/adau1761/adau1761.h
-acomaster\sys_init.o: ./Devices/adau1761/adau1761_REG.h
-acomaster\sys_init.o: ./Devices/cs43131.h
+acomaster\sys_init.o: ./Devices/qcc5125.h
 acomaster\sys_init.o: ./Devices/oled.h
 acomaster\sys_init.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-acomaster\sys_init.o: ./Devices/qcc5125.h
-acomaster\sys_init.o: ./Hardware/eeprom.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_user.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_conf.h
@@ -58,3 +54,6 @@ acomaster\sys_init.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\strin
 acomaster\sys_init.o: .\Software\wouo\WouoUI_page.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_widget.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_win.h
+acomaster\sys_init.o: Software\audio.h
+acomaster\sys_init.o: ./Devices/adau1761/adau1761.h
+acomaster\sys_init.o: ./Devices/adau1761/adau1761_REG.h

@@ -6,18 +6,17 @@
 #include "key.h"
 #include "pwr_mngr.h"
 #include "cw2015.h" 
-#include "adau1761.h"
-#include "cs43131.h" 
-#include "oled.h"
 #include "qcc5125.h" 
-#include "eeprom.h"
+#include "oled.h"
 
 #include "WouoUI_user.h"
+#include "audio.h"
 
+
+extern eq_param_t eq_channel[10];  // 10段EQ结构体的数组
 
 void system_init(void)
 {
-
 		//长按开机延时
 		uint8_t pwr_on_lpdelay = 0;
 		if(IF_KEY_MID_PRSD)	//复位后如果OK键被按下，说明是从关机状态唤醒
@@ -60,11 +59,10 @@ void system_init(void)
 //		sys_chg_info_init(&sys_chg_info);
 		
 		//初始化dsp的eq结构体，每次复位后调用一次即可
-		bsp_adau1761_eq_init();
+		audio_param_init(eq_channel);
 	
 		//从eeprom读eq数据
-		bsp_read_eqs_from_eeprom(eq_setting_boost);
-		memcpy(eq_setting_boost_last, eq_setting_boost, 10);
+		audio_read_all_eqchnl_from_eeprom();
 		
 		//初始化显示屏
 		OLED_Init();

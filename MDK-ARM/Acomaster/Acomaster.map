@@ -40,81 +40,81 @@ Image Symbol Table
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
     ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memcmp.c         0x00000000   Number         0  memcmp.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
-    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
-    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixl.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltl.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixl.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltl.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
-    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
-    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
     ../fplib/microlib/fpsqrt.c               0x00000000   Number         0  dsqrt.o ABSOLUTE
-    ../mathlib/cos.c                         0x00000000   Number         0  cos.o ABSOLUTE
     ../mathlib/cos.c                         0x00000000   Number         0  cos_x.o ABSOLUTE
+    ../mathlib/cos.c                         0x00000000   Number         0  cos.o ABSOLUTE
     ../mathlib/cos_i.c                       0x00000000   Number         0  cos_i.o ABSOLUTE
     ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
     ../mathlib/fpclassify.c                  0x00000000   Number         0  fpclassify.o ABSOLUTE
     ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
-    ../mathlib/pow.c                         0x00000000   Number         0  pow_x.o ABSOLUTE
     ../mathlib/pow.c                         0x00000000   Number         0  pow.o ABSOLUTE
+    ../mathlib/pow.c                         0x00000000   Number         0  pow_x.o ABSOLUTE
     ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
     ../mathlib/rred.c                        0x00000000   Number         0  rred.o ABSOLUTE
     ../mathlib/sin.c                         0x00000000   Number         0  sin_x.o ABSOLUTE
@@ -272,9 +272,9 @@ Image Symbol Table
     i.DMA1_Channel2_3_IRQHandler             0x08000dac   Section        0  stm32l0xx_it.o(i.DMA1_Channel2_3_IRQHandler)
     i.DMA_SetConfig                          0x08000dbc   Section        0  stm32l0xx_hal_dma.o(i.DMA_SetConfig)
     DMA_SetConfig                            0x08000dbd   Thumb Code    44  stm32l0xx_hal_dma.o(i.DMA_SetConfig)
-    i.EEPROM_READ                            0x08000de8   Section        0  eeprom.o(i.EEPROM_READ)
-    EEPROM_READ                              0x08000de9   Thumb Code    26  eeprom.o(i.EEPROM_READ)
-    i.EEPROM_Read_W_CHECK                    0x08000e08   Section        0  eeprom.o(i.EEPROM_Read_W_CHECK)
+    i.EEPROM_Read                            0x08000de8   Section        0  eeprom.o(i.EEPROM_Read)
+    EEPROM_Read                              0x08000de9   Thumb Code    26  eeprom.o(i.EEPROM_Read)
+    i.EEPROM_ReadWithCheck                   0x08000e08   Section        0  eeprom.o(i.EEPROM_ReadWithCheck)
     i.EXTI0_1_IRQHandler                     0x08000e78   Section        0  stm32l0xx_it.o(i.EXTI0_1_IRQHandler)
     i.EXTI2_3_IRQHandler                     0x08000e88   Section        0  stm32l0xx_it.o(i.EXTI2_3_IRQHandler)
     i.EXTI4_15_IRQHandler                    0x08000e98   Section        0  stm32l0xx_it.o(i.EXTI4_15_IRQHandler)
@@ -493,117 +493,118 @@ Image Symbol Table
     SIGMA_WRITE_REGISTER_BLOCK               0x080064f5   Thumb Code    76  adau1761.o(i.SIGMA_WRITE_REGISTER_BLOCK)
     i.SVC_Handler                            0x08006540   Section        0  stm32l0xx_it.o(i.SVC_Handler)
     i.SettingPage_CallBack                   0x08006544   Section        0  wououi_user.o(i.SettingPage_CallBack)
-    i.Setting_EQPresetPage_CallBack          0x08006578   Section        0  wououi_user.o(i.Setting_EQPresetPage_CallBack)
-    i.SysTick_Handler                        0x0800657a   Section        0  stm32l0xx_it.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x08006584   Section        0  main.o(i.SystemClock_Config)
-    i.SystemInit                             0x0800661c   Section        0  system_stm32l0xx.o(i.SystemInit)
-    i.TIM21_IRQHandler                       0x08006620   Section        0  stm32l0xx_it.o(i.TIM21_IRQHandler)
-    i.TIM6_IRQHandler                        0x08006630   Section        0  stm32l0xx_it.o(i.TIM6_IRQHandler)
-    i.TIM_Base_SetConfig                     0x08006640   Section        0  stm32l0xx_hal_tim.o(i.TIM_Base_SetConfig)
-    TIM_Base_SetConfig                       0x08006641   Thumb Code    78  stm32l0xx_hal_tim.o(i.TIM_Base_SetConfig)
-    i.TIM_ETR_SetConfig                      0x08006698   Section        0  stm32l0xx_hal_tim.o(i.TIM_ETR_SetConfig)
-    TIM_ETR_SetConfig                        0x08006699   Thumb Code    22  stm32l0xx_hal_tim.o(i.TIM_ETR_SetConfig)
-    i.TIM_SlaveTimer_SetConfig               0x080066ae   Section        0  stm32l0xx_hal_tim.o(i.TIM_SlaveTimer_SetConfig)
-    TIM_SlaveTimer_SetConfig                 0x080066af   Thumb Code   140  stm32l0xx_hal_tim.o(i.TIM_SlaveTimer_SetConfig)
-    i.TIM_TI1_ConfigInputStage               0x0800673a   Section        0  stm32l0xx_hal_tim.o(i.TIM_TI1_ConfigInputStage)
-    TIM_TI1_ConfigInputStage                 0x0800673b   Thumb Code    34  stm32l0xx_hal_tim.o(i.TIM_TI1_ConfigInputStage)
-    i.TIM_TI2_ConfigInputStage               0x0800675c   Section        0  stm32l0xx_hal_tim.o(i.TIM_TI2_ConfigInputStage)
-    TIM_TI2_ConfigInputStage                 0x0800675d   Thumb Code    38  stm32l0xx_hal_tim.o(i.TIM_TI2_ConfigInputStage)
-    i.TestUI_Init                            0x08006784   Section        0  wououi_user.o(i.TestUI_Init)
-    i.WouoUI_port_SendBuff                   0x08006800   Section        0  wououi_port.o(i.WouoUI_port_SendBuff)
-    i.__0sprintf                             0x08006808   Section        0  printfa.o(i.__0sprintf)
-    i.__ARM_clz                              0x08006830   Section        0  depilogue.o(i.__ARM_clz)
-    i.__ARM_common_ll_muluu                  0x0800685e   Section        0  stm32l0xx_hal_rcc.o(i.__ARM_common_ll_muluu)
-    i.__ARM_common_switch8                   0x0800688e   Section        0  stm32l0xx_hal_dma.o(i.__ARM_common_switch8)
-    i.__ARM_fpclassify                       0x080068a8   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i.__NVIC_SetPriority                     0x080068d4   Section        0  stm32l0xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x080068d5   Thumb Code    60  stm32l0xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__ieee754_rem_pio2                     0x08006918   Section        0  rred.o(i.__ieee754_rem_pio2)
-    i.__kernel_cos                           0x08006cb4   Section        0  cos_i.o(i.__kernel_cos)
-    i.__kernel_poly                          0x08006da8   Section        0  poly.o(i.__kernel_poly)
-    i.__kernel_sin                           0x08006e54   Section        0  sin_i.o(i.__kernel_sin)
-    i.__mathlib_dbl_divzero                  0x08006f40   Section        0  dunder.o(i.__mathlib_dbl_divzero)
-    i.__mathlib_dbl_infnan                   0x08006f54   Section        0  dunder.o(i.__mathlib_dbl_infnan)
-    i.__mathlib_dbl_infnan2                  0x08006f5e   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
-    i.__mathlib_dbl_invalid                  0x08006f66   Section        0  dunder.o(i.__mathlib_dbl_invalid)
-    i.__mathlib_dbl_overflow                 0x08006f78   Section        0  dunder.o(i.__mathlib_dbl_overflow)
-    i.__mathlib_dbl_underflow                0x08006f8c   Section        0  dunder.o(i.__mathlib_dbl_underflow)
-    i.__scatterload_copy                     0x08006fa0   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08006fae   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08006fb0   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.__set_errno                            0x08006fc0   Section        0  errno.o(i.__set_errno)
-    i._fp_digits                             0x08006fcc   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x08006fcd   Thumb Code   316  printfa.o(i._fp_digits)
-    i._printf_core                           0x08007124   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x08007125   Thumb Code  1754  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x08007810   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x08007811   Thumb Code    32  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x08007830   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x08007831   Thumb Code    44  printfa.o(i._printf_pre_padding)
-    i._sputc                                 0x0800785c   Section        0  printfa.o(i._sputc)
-    _sputc                                   0x0800785d   Thumb Code    10  printfa.o(i._sputc)
-    i.audio_enable_proc                      0x08007868   Section        0  audio.o(i.audio_enable_proc)
-    i.bsp_43131_init                         0x080078e8   Section        0  cs43131.o(i.bsp_43131_init)
-    i.bsp_43131_set_volume                   0x08007ab4   Section        0  cs43131.o(i.bsp_43131_set_volume)
-    i.bsp_adau1761_eq_data_conv              0x08007adc   Section        0  adau1761.o(i.bsp_adau1761_eq_data_conv)
-    i.bsp_adau1761_eq_download               0x08007c48   Section        0  adau1761.o(i.bsp_adau1761_eq_download)
-    i.bsp_adau1761_eq_init                   0x08007e14   Section        0  adau1761.o(i.bsp_adau1761_eq_init)
-    i.bsp_adau1761_eq_set                    0x08007eb8   Section        0  adau1761.o(i.bsp_adau1761_eq_set)
-    i.bsp_btn_scan_init                      0x08007edc   Section        0  key.o(i.bsp_btn_scan_init)
-    i.bsp_cw2015_init                        0x08007fc0   Section        0  cw2015.o(i.bsp_cw2015_init)
-    i.bsp_cw2015_set_alrt                    0x08007fd0   Section        0  cw2015.o(i.bsp_cw2015_set_alrt)
-    i.bsp_cw2015_slp                         0x08007fe4   Section        0  cw2015.o(i.bsp_cw2015_slp)
-    i.bsp_read_eqs_from_eeprom               0x08007ff8   Section        0  eeprom.o(i.bsp_read_eqs_from_eeprom)
-    i.bsp_tim22_delay_us                     0x08008014   Section        0  timer.o(i.bsp_tim22_delay_us)
-    i.button_attach                          0x08008050   Section        0  multi_button.o(i.button_attach)
-    i.button_handler                         0x08008058   Section        0  multi_button.o(i.button_handler)
-    button_handler                           0x08008059   Thumb Code   450  multi_button.o(i.button_handler)
-    i.button_init                            0x0800821a   Section        0  multi_button.o(i.button_init)
-    i.button_start                           0x08008258   Section        0  multi_button.o(i.button_start)
-    i.button_ticks                           0x0800827c   Section        0  multi_button.o(i.button_ticks)
-    i.cos                                    0x08008298   Section        0  cos.o(i.cos)
-    i.default_download_IC_2                  0x08008330   Section        0  adau1761.o(i.default_download_IC_2)
-    i.free                                   0x08008588   Section        0  malloc.o(i.free)
-    i.main                                   0x080085dc   Section        0  main.o(i.main)
-    i.main_FSM                               0x0800861c   Section        0  tasks.o(i.main_FSM)
-    i.malloc                                 0x0800864c   Section        0  malloc.o(i.malloc)
-    i.point_to_int32                         0x080086b8   Section        0  adau1761.o(i.point_to_int32)
-    i.pow                                    0x080086ec   Section        0  pow.o(i.pow)
-    i.qcc5125_btn_press                      0x0800906c   Section        0  qcc5125.o(i.qcc5125_btn_press)
-    i.qcc5125_ioctl                          0x08009088   Section        0  qcc5125.o(i.qcc5125_ioctl)
-    qcc5125_ioctl                            0x08009089   Thumb Code    80  qcc5125.o(i.qcc5125_ioctl)
-    i.qcc5125_status_proc                    0x080090dc   Section        0  qcc5125.o(i.qcc5125_status_proc)
-    i.read_btn_level                         0x08009168   Section        0  key.o(i.read_btn_level)
-    i.sin                                    0x080091b4   Section        0  sin.o(i.sin)
-    i.sqrt                                   0x08009250   Section        0  sqrt.o(i.sqrt)
-    i.sys_ctrl_status_switch                 0x08009298   Section        0  pwr_mngr.o(i.sys_ctrl_status_switch)
-    i.sys_pwrctrl_power_up                   0x0800929c   Section        0  pwr_mngr.o(i.sys_pwrctrl_power_up)
-    i.system_init                            0x08009310   Section        0  sys_init.o(i.system_init)
-    i.ui_ftoa_str                            0x080093d0   Section        0  wououi.o(i.ui_ftoa_str)
-    i.ui_itoa                                0x08009448   Section        0  wououi.o(i.ui_itoa)
-    i.ui_itoa_str                            0x0800946c   Section        0  wououi.o(i.ui_itoa_str)
-    .constdata                               0x0800948c   Section       25  system_stm32l0xx.o(.constdata)
-    .constdata                               0x080094a5   Section     1484  adau1761.o(.constdata)
-    .constdata                               0x08009a71   Section      570  wououi_font.o(.constdata)
-    .constdata                               0x08009cab   Section     1330  wououi_font.o(.constdata)
-    .constdata                               0x0800a1dd   Section     3420  wououi_font.o(.constdata)
-    .constdata                               0x0800af3c   Section      648  wououi_user.o(.constdata)
-    .constdata                               0x0800b1c4   Section      448  wououi_udp.o(.constdata)
-    .constdata                               0x0800b388   Section      136  pow.o(.constdata)
-    bp                                       0x0800b388   Data          16  pow.o(.constdata)
-    dp_h                                     0x0800b398   Data          16  pow.o(.constdata)
-    dp_l                                     0x0800b3a8   Data          16  pow.o(.constdata)
-    L                                        0x0800b3b8   Data          48  pow.o(.constdata)
-    P                                        0x0800b3e8   Data          40  pow.o(.constdata)
-    .constdata                               0x0800b410   Section       48  cos_i.o(.constdata)
-    C                                        0x0800b410   Data          48  cos_i.o(.constdata)
-    .constdata                               0x0800b440   Section        8  qnan.o(.constdata)
-    .constdata                               0x0800b448   Section      200  rred.o(.constdata)
-    pio2s                                    0x0800b448   Data          48  rred.o(.constdata)
-    twooverpi                                0x0800b478   Data         152  rred.o(.constdata)
-    .constdata                               0x0800b510   Section       40  sin_i.o(.constdata)
-    S                                        0x0800b510   Data          40  sin_i.o(.constdata)
-    .conststring                             0x0800b538   Section      277  wououi_user.o(.conststring)
+    i.Setting_EQPresetPage_CallBack          0x08006574   Section        0  wououi_user.o(i.Setting_EQPresetPage_CallBack)
+    i.SysTick_Handler                        0x08006576   Section        0  stm32l0xx_it.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08006580   Section        0  main.o(i.SystemClock_Config)
+    i.SystemInit                             0x08006618   Section        0  system_stm32l0xx.o(i.SystemInit)
+    i.TIM21_IRQHandler                       0x0800661c   Section        0  stm32l0xx_it.o(i.TIM21_IRQHandler)
+    i.TIM6_IRQHandler                        0x0800662c   Section        0  stm32l0xx_it.o(i.TIM6_IRQHandler)
+    i.TIM_Base_SetConfig                     0x0800663c   Section        0  stm32l0xx_hal_tim.o(i.TIM_Base_SetConfig)
+    TIM_Base_SetConfig                       0x0800663d   Thumb Code    78  stm32l0xx_hal_tim.o(i.TIM_Base_SetConfig)
+    i.TIM_ETR_SetConfig                      0x08006694   Section        0  stm32l0xx_hal_tim.o(i.TIM_ETR_SetConfig)
+    TIM_ETR_SetConfig                        0x08006695   Thumb Code    22  stm32l0xx_hal_tim.o(i.TIM_ETR_SetConfig)
+    i.TIM_SlaveTimer_SetConfig               0x080066aa   Section        0  stm32l0xx_hal_tim.o(i.TIM_SlaveTimer_SetConfig)
+    TIM_SlaveTimer_SetConfig                 0x080066ab   Thumb Code   140  stm32l0xx_hal_tim.o(i.TIM_SlaveTimer_SetConfig)
+    i.TIM_TI1_ConfigInputStage               0x08006736   Section        0  stm32l0xx_hal_tim.o(i.TIM_TI1_ConfigInputStage)
+    TIM_TI1_ConfigInputStage                 0x08006737   Thumb Code    34  stm32l0xx_hal_tim.o(i.TIM_TI1_ConfigInputStage)
+    i.TIM_TI2_ConfigInputStage               0x08006758   Section        0  stm32l0xx_hal_tim.o(i.TIM_TI2_ConfigInputStage)
+    TIM_TI2_ConfigInputStage                 0x08006759   Thumb Code    38  stm32l0xx_hal_tim.o(i.TIM_TI2_ConfigInputStage)
+    i.TestUI_Init                            0x08006780   Section        0  wououi_user.o(i.TestUI_Init)
+    i.WouoUI_port_SendBuff                   0x080067fc   Section        0  wououi_port.o(i.WouoUI_port_SendBuff)
+    i.__0sprintf                             0x08006804   Section        0  printfa.o(i.__0sprintf)
+    i.__ARM_clz                              0x0800682c   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_ll_muluu                  0x0800685a   Section        0  stm32l0xx_hal_rcc.o(i.__ARM_common_ll_muluu)
+    i.__ARM_common_switch8                   0x0800688a   Section        0  stm32l0xx_hal_dma.o(i.__ARM_common_switch8)
+    i.__ARM_fpclassify                       0x080068a4   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__NVIC_SetPriority                     0x080068d0   Section        0  stm32l0xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080068d1   Thumb Code    60  stm32l0xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__ieee754_rem_pio2                     0x08006914   Section        0  rred.o(i.__ieee754_rem_pio2)
+    i.__kernel_cos                           0x08006cb0   Section        0  cos_i.o(i.__kernel_cos)
+    i.__kernel_poly                          0x08006da4   Section        0  poly.o(i.__kernel_poly)
+    i.__kernel_sin                           0x08006e50   Section        0  sin_i.o(i.__kernel_sin)
+    i.__mathlib_dbl_divzero                  0x08006f3c   Section        0  dunder.o(i.__mathlib_dbl_divzero)
+    i.__mathlib_dbl_infnan                   0x08006f50   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_infnan2                  0x08006f5a   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
+    i.__mathlib_dbl_invalid                  0x08006f62   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__mathlib_dbl_overflow                 0x08006f74   Section        0  dunder.o(i.__mathlib_dbl_overflow)
+    i.__mathlib_dbl_underflow                0x08006f88   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__scatterload_copy                     0x08006f9c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08006faa   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08006fac   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x08006fbc   Section        0  errno.o(i.__set_errno)
+    i._fp_digits                             0x08006fc8   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x08006fc9   Thumb Code   316  printfa.o(i._fp_digits)
+    i._printf_core                           0x08007120   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x08007121   Thumb Code  1754  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x0800780c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x0800780d   Thumb Code    32  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x0800782c   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x0800782d   Thumb Code    44  printfa.o(i._printf_pre_padding)
+    i._sputc                                 0x08007858   Section        0  printfa.o(i._sputc)
+    _sputc                                   0x08007859   Thumb Code    10  printfa.o(i._sputc)
+    i.audio_enable_proc                      0x08007864   Section        0  audio.o(i.audio_enable_proc)
+    i.audio_param_init                       0x080078d4   Section        0  audio.o(i.audio_param_init)
+    i.audio_read_all_eqchnl_from_eeprom      0x08007970   Section        0  audio.o(i.audio_read_all_eqchnl_from_eeprom)
+    i.bsp_43131_init                         0x08007990   Section        0  cs43131.o(i.bsp_43131_init)
+    i.bsp_43131_set_volume                   0x08007b5c   Section        0  cs43131.o(i.bsp_43131_set_volume)
+    i.bsp_adau1761_eq_data_conv              0x08007b84   Section        0  adau1761.o(i.bsp_adau1761_eq_data_conv)
+    bsp_adau1761_eq_data_conv                0x08007b85   Thumb Code   344  adau1761.o(i.bsp_adau1761_eq_data_conv)
+    i.bsp_adau1761_eq_download               0x08007cf0   Section        0  adau1761.o(i.bsp_adau1761_eq_download)
+    i.bsp_btn_scan_init                      0x08007eb8   Section        0  key.o(i.bsp_btn_scan_init)
+    i.bsp_cw2015_init                        0x08007f9c   Section        0  cw2015.o(i.bsp_cw2015_init)
+    i.bsp_cw2015_set_alrt                    0x08007fac   Section        0  cw2015.o(i.bsp_cw2015_set_alrt)
+    i.bsp_cw2015_slp                         0x08007fc0   Section        0  cw2015.o(i.bsp_cw2015_slp)
+    i.bsp_tim22_delay_us                     0x08007fd4   Section        0  timer.o(i.bsp_tim22_delay_us)
+    i.button_attach                          0x08008010   Section        0  multi_button.o(i.button_attach)
+    i.button_handler                         0x08008018   Section        0  multi_button.o(i.button_handler)
+    button_handler                           0x08008019   Thumb Code   450  multi_button.o(i.button_handler)
+    i.button_init                            0x080081da   Section        0  multi_button.o(i.button_init)
+    i.button_start                           0x08008218   Section        0  multi_button.o(i.button_start)
+    i.button_ticks                           0x0800823c   Section        0  multi_button.o(i.button_ticks)
+    i.cos                                    0x08008258   Section        0  cos.o(i.cos)
+    i.default_download_IC_2                  0x080082f0   Section        0  adau1761.o(i.default_download_IC_2)
+    i.free                                   0x08008548   Section        0  malloc.o(i.free)
+    i.main                                   0x0800859c   Section        0  main.o(i.main)
+    i.main_FSM                               0x080085dc   Section        0  tasks.o(i.main_FSM)
+    i.malloc                                 0x0800860c   Section        0  malloc.o(i.malloc)
+    i.point_to_int32                         0x08008678   Section        0  adau1761.o(i.point_to_int32)
+    point_to_int32                           0x08008679   Thumb Code    50  adau1761.o(i.point_to_int32)
+    i.pow                                    0x080086ac   Section        0  pow.o(i.pow)
+    i.qcc5125_btn_press                      0x0800902c   Section        0  qcc5125.o(i.qcc5125_btn_press)
+    i.qcc5125_ioctl                          0x08009048   Section        0  qcc5125.o(i.qcc5125_ioctl)
+    qcc5125_ioctl                            0x08009049   Thumb Code    80  qcc5125.o(i.qcc5125_ioctl)
+    i.qcc5125_status_proc                    0x0800909c   Section        0  qcc5125.o(i.qcc5125_status_proc)
+    i.read_btn_level                         0x08009128   Section        0  key.o(i.read_btn_level)
+    i.sin                                    0x08009174   Section        0  sin.o(i.sin)
+    i.sqrt                                   0x08009210   Section        0  sqrt.o(i.sqrt)
+    i.sys_ctrl_status_switch                 0x08009258   Section        0  pwr_mngr.o(i.sys_ctrl_status_switch)
+    i.sys_pwrctrl_power_up                   0x0800925c   Section        0  pwr_mngr.o(i.sys_pwrctrl_power_up)
+    i.system_init                            0x080092d0   Section        0  sys_init.o(i.system_init)
+    i.ui_ftoa_str                            0x08009380   Section        0  wououi.o(i.ui_ftoa_str)
+    i.ui_itoa                                0x080093f8   Section        0  wououi.o(i.ui_itoa)
+    i.ui_itoa_str                            0x0800941c   Section        0  wououi.o(i.ui_itoa_str)
+    .constdata                               0x0800943c   Section       25  system_stm32l0xx.o(.constdata)
+    .constdata                               0x08009455   Section     1484  adau1761.o(.constdata)
+    .constdata                               0x08009a21   Section      570  wououi_font.o(.constdata)
+    .constdata                               0x08009c5b   Section     1330  wououi_font.o(.constdata)
+    .constdata                               0x0800a18d   Section     3420  wououi_font.o(.constdata)
+    .constdata                               0x0800aeec   Section      648  wououi_user.o(.constdata)
+    .constdata                               0x0800b174   Section      448  wououi_udp.o(.constdata)
+    .constdata                               0x0800b338   Section      136  pow.o(.constdata)
+    bp                                       0x0800b338   Data          16  pow.o(.constdata)
+    dp_h                                     0x0800b348   Data          16  pow.o(.constdata)
+    dp_l                                     0x0800b358   Data          16  pow.o(.constdata)
+    L                                        0x0800b368   Data          48  pow.o(.constdata)
+    P                                        0x0800b398   Data          40  pow.o(.constdata)
+    .constdata                               0x0800b3c0   Section       48  cos_i.o(.constdata)
+    C                                        0x0800b3c0   Data          48  cos_i.o(.constdata)
+    .constdata                               0x0800b3f0   Section        8  qnan.o(.constdata)
+    .constdata                               0x0800b3f8   Section      200  rred.o(.constdata)
+    pio2s                                    0x0800b3f8   Data          48  rred.o(.constdata)
+    twooverpi                                0x0800b428   Data         152  rred.o(.constdata)
+    .constdata                               0x0800b4c0   Section       40  sin_i.o(.constdata)
+    S                                        0x0800b4c0   Data          40  sin_i.o(.constdata)
+    .conststring                             0x0800b4e8   Section      293  wououi_user.o(.conststring)
     .data                                    0x20000000   Section       12  stm32l0xx_hal.o(.data)
     .data                                    0x2000000c   Section        4  system_stm32l0xx.o(.data)
     .data                                    0x20000010   Section        1  timer.o(.data)
@@ -624,34 +625,33 @@ Image Symbol Table
     OLED_colorMode                           0x20000293   Data           1  wououi_oled.o(.data)
     .data                                    0x20000694   Section        2  wououi_page.o(.data)
     temp                                     0x20000694   Data           2  wououi_page.o(.data)
-    .data                                    0x20000698   Section      352  wououi_user.o(.data)
-    .data                                    0x200007f8   Section        8  wououi_udp.o(.data)
-    counter_vol_anim                         0x200007f8   Data           1  wououi_udp.o(.data)
-    counter_vol_status                       0x200007f9   Data           1  wououi_udp.o(.data)
-    counter                                  0x200007fa   Data           3  wououi_udp.o(.data)
-    cnt_switch                               0x200007fd   Data           3  wououi_udp.o(.data)
-    .data                                    0x20000800   Section        4  mvars.o(.data)
-    .data                                    0x20000804   Section        4  mvars.o(.data)
-    .data                                    0x20000808   Section        4  errno.o(.data)
-    _errno                                   0x20000808   Data           4  errno.o(.data)
-    .bss                                     0x2000080c   Section      156  i2c.o(.bss)
-    .bss                                     0x200008a8   Section       36  rtc.o(.bss)
-    .bss                                     0x200008cc   Section      192  tim.o(.bss)
-    .bss                                     0x2000098c   Section       24  stm32l0xx_hal_flash.o(.bss)
-    .bss                                     0x200009a4   Section      220  key.o(.bss)
-    .bss                                     0x20000a80   Section     1074  oled.o(.bss)
-    s                                        0x20000a80   Data          50  oled.o(.bss)
-    .bss                                     0x20000eb2   Section       40  qcc5125.o(.bss)
-    .bss                                     0x20000edc   Section      480  adau1761.o(.bss)
-    .bss                                     0x200010bc   Section       10  adau1761.o(.bss)
-    .bss                                     0x200010c6   Section       10  adau1761.o(.bss)
-    .bss                                     0x200010d0   Section       32  wououi.o(.bss)
-    str                                      0x200010d0   Data          16  wououi.o(.bss)
-    str                                      0x200010e0   Data          16  wououi.o(.bss)
-    .bss                                     0x200010f0   Section     1024  wououi_oled.o(.bss)
-    .bss                                     0x200014f0   Section      160  wououi_user.o(.bss)
-    HEAP                                     0x20001590   Section      512  startup_stm32l051xx.o(HEAP)
-    STACK                                    0x20001790   Section     1024  startup_stm32l051xx.o(STACK)
+    .data                                    0x20000698   Section      384  wououi_user.o(.data)
+    .data                                    0x20000818   Section        8  wououi_udp.o(.data)
+    counter_vol_anim                         0x20000818   Data           1  wououi_udp.o(.data)
+    counter_vol_status                       0x20000819   Data           1  wououi_udp.o(.data)
+    counter                                  0x2000081a   Data           3  wououi_udp.o(.data)
+    cnt_switch                               0x2000081d   Data           3  wououi_udp.o(.data)
+    .data                                    0x20000820   Section        4  mvars.o(.data)
+    .data                                    0x20000824   Section        4  mvars.o(.data)
+    .data                                    0x20000828   Section        4  errno.o(.data)
+    _errno                                   0x20000828   Data           4  errno.o(.data)
+    .bss                                     0x2000082c   Section      156  i2c.o(.bss)
+    .bss                                     0x200008c8   Section       36  rtc.o(.bss)
+    .bss                                     0x200008ec   Section      192  tim.o(.bss)
+    .bss                                     0x200009ac   Section       24  stm32l0xx_hal_flash.o(.bss)
+    .bss                                     0x200009c4   Section      220  key.o(.bss)
+    .bss                                     0x20000aa0   Section       10  audio.o(.bss)
+    .bss                                     0x20000aaa   Section     1074  oled.o(.bss)
+    s                                        0x20000aaa   Data          50  oled.o(.bss)
+    .bss                                     0x20000edc   Section       40  qcc5125.o(.bss)
+    .bss                                     0x20000f04   Section      440  adau1761.o(.bss)
+    .bss                                     0x200010bc   Section       32  wououi.o(.bss)
+    str                                      0x200010bc   Data          16  wououi.o(.bss)
+    str                                      0x200010cc   Data          16  wououi.o(.bss)
+    .bss                                     0x200010dc   Section     1024  wououi_oled.o(.bss)
+    .bss                                     0x200014dc   Section      160  wououi_user.o(.bss)
+    HEAP                                     0x20001580   Section      512  startup_stm32l051xx.o(HEAP)
+    STACK                                    0x20001780   Section     1024  startup_stm32l051xx.o(STACK)
 
     Global Symbols
 
@@ -803,7 +803,7 @@ Image Symbol Table
     BTNPREV_SINGLE_Click_Handler             0x08000c6f   Thumb Code    10  key.o(i.BTNPREV_SINGLE_Click_Handler)
     BTNUP_SINGLE_Click_Handler               0x08000c79   Thumb Code    10  key.o(i.BTNUP_SINGLE_Click_Handler)
     DMA1_Channel2_3_IRQHandler               0x08000dad   Thumb Code    10  stm32l0xx_it.o(i.DMA1_Channel2_3_IRQHandler)
-    EEPROM_Read_W_CHECK                      0x08000e09   Thumb Code   112  eeprom.o(i.EEPROM_Read_W_CHECK)
+    EEPROM_ReadWithCheck                     0x08000e09   Thumb Code   112  eeprom.o(i.EEPROM_ReadWithCheck)
     EXTI0_1_IRQHandler                       0x08000e79   Thumb Code    16  stm32l0xx_it.o(i.EXTI0_1_IRQHandler)
     EXTI2_3_IRQHandler                       0x08000e89   Thumb Code    16  stm32l0xx_it.o(i.EXTI2_3_IRQHandler)
     EXTI4_15_IRQHandler                      0x08000e99   Thumb Code    18  stm32l0xx_it.o(i.EXTI4_15_IRQHandler)
@@ -962,131 +962,128 @@ Image Symbol Table
     RTC_IRQHandler                           0x080064e5   Thumb Code    10  stm32l0xx_it.o(i.RTC_IRQHandler)
     SVC_Handler                              0x08006541   Thumb Code     2  stm32l0xx_it.o(i.SVC_Handler)
     SettingPage_CallBack                     0x08006545   Thumb Code    26  wououi_user.o(i.SettingPage_CallBack)
-    Setting_EQPresetPage_CallBack            0x08006579   Thumb Code     2  wououi_user.o(i.Setting_EQPresetPage_CallBack)
-    SysTick_Handler                          0x0800657b   Thumb Code     8  stm32l0xx_it.o(i.SysTick_Handler)
-    SystemClock_Config                       0x08006585   Thumb Code   148  main.o(i.SystemClock_Config)
-    SystemInit                               0x0800661d   Thumb Code     2  system_stm32l0xx.o(i.SystemInit)
-    TIM21_IRQHandler                         0x08006621   Thumb Code    10  stm32l0xx_it.o(i.TIM21_IRQHandler)
-    TIM6_IRQHandler                          0x08006631   Thumb Code    10  stm32l0xx_it.o(i.TIM6_IRQHandler)
-    TestUI_Init                              0x08006785   Thumb Code    92  wououi_user.o(i.TestUI_Init)
-    WouoUI_port_SendBuff                     0x08006801   Thumb Code     8  wououi_port.o(i.WouoUI_port_SendBuff)
-    __0sprintf                               0x08006809   Thumb Code    36  printfa.o(i.__0sprintf)
-    __1sprintf                               0x08006809   Thumb Code     0  printfa.o(i.__0sprintf)
-    __2sprintf                               0x08006809   Thumb Code     0  printfa.o(i.__0sprintf)
-    __c89sprintf                             0x08006809   Thumb Code     0  printfa.o(i.__0sprintf)
-    sprintf                                  0x08006809   Thumb Code     0  printfa.o(i.__0sprintf)
-    __ARM_clz                                0x08006831   Thumb Code    46  depilogue.o(i.__ARM_clz)
-    __ARM_common_ll_muluu                    0x0800685f   Thumb Code    48  stm32l0xx_hal_rcc.o(i.__ARM_common_ll_muluu)
-    __ARM_common_switch8                     0x0800688f   Thumb Code    26  stm32l0xx_hal_dma.o(i.__ARM_common_switch8)
-    __ARM_fpclassify                         0x080068a9   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
-    __ieee754_rem_pio2                       0x08006919   Thumb Code   838  rred.o(i.__ieee754_rem_pio2)
-    __kernel_cos                             0x08006cb5   Thumb Code   224  cos_i.o(i.__kernel_cos)
-    __kernel_poly                            0x08006da9   Thumb Code   172  poly.o(i.__kernel_poly)
-    __kernel_sin                             0x08006e55   Thumb Code   222  sin_i.o(i.__kernel_sin)
-    __mathlib_dbl_divzero                    0x08006f41   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
-    __mathlib_dbl_infnan                     0x08006f55   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
-    __mathlib_dbl_infnan2                    0x08006f5f   Thumb Code     8  dunder.o(i.__mathlib_dbl_infnan2)
-    __mathlib_dbl_invalid                    0x08006f67   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
-    __mathlib_dbl_overflow                   0x08006f79   Thumb Code    16  dunder.o(i.__mathlib_dbl_overflow)
-    __mathlib_dbl_underflow                  0x08006f8d   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
-    __scatterload_copy                       0x08006fa1   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08006faf   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08006fb1   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    __set_errno                              0x08006fc1   Thumb Code     6  errno.o(i.__set_errno)
-    audio_enable_proc                        0x08007869   Thumb Code   114  audio.o(i.audio_enable_proc)
-    bsp_43131_init                           0x080078e9   Thumb Code   430  cs43131.o(i.bsp_43131_init)
-    bsp_43131_set_volume                     0x08007ab5   Thumb Code    34  cs43131.o(i.bsp_43131_set_volume)
-    bsp_adau1761_eq_data_conv                0x08007add   Thumb Code   344  adau1761.o(i.bsp_adau1761_eq_data_conv)
-    bsp_adau1761_eq_download                 0x08007c49   Thumb Code   456  adau1761.o(i.bsp_adau1761_eq_download)
-    bsp_adau1761_eq_init                     0x08007e15   Thumb Code   146  adau1761.o(i.bsp_adau1761_eq_init)
-    bsp_adau1761_eq_set                      0x08007eb9   Thumb Code    22  adau1761.o(i.bsp_adau1761_eq_set)
-    bsp_btn_scan_init                        0x08007edd   Thumb Code   192  key.o(i.bsp_btn_scan_init)
-    bsp_cw2015_init                          0x08007fc1   Thumb Code    16  cw2015.o(i.bsp_cw2015_init)
-    bsp_cw2015_set_alrt                      0x08007fd1   Thumb Code    20  cw2015.o(i.bsp_cw2015_set_alrt)
-    bsp_cw2015_slp                           0x08007fe5   Thumb Code    20  cw2015.o(i.bsp_cw2015_slp)
-    bsp_read_eqs_from_eeprom                 0x08007ff9   Thumb Code    26  eeprom.o(i.bsp_read_eqs_from_eeprom)
-    bsp_tim22_delay_us                       0x08008015   Thumb Code    52  timer.o(i.bsp_tim22_delay_us)
-    button_attach                            0x08008051   Thumb Code     8  multi_button.o(i.button_attach)
-    button_init                              0x0800821b   Thumb Code    60  multi_button.o(i.button_init)
-    button_start                             0x08008259   Thumb Code    32  multi_button.o(i.button_start)
-    button_ticks                             0x0800827d   Thumb Code    22  multi_button.o(i.button_ticks)
-    cos                                      0x08008299   Thumb Code   142  cos.o(i.cos)
-    default_download_IC_2                    0x08008331   Thumb Code   584  adau1761.o(i.default_download_IC_2)
-    free                                     0x08008589   Thumb Code    80  malloc.o(i.free)
-    main                                     0x080085dd   Thumb Code    54  main.o(i.main)
-    main_FSM                                 0x0800861d   Thumb Code    48  tasks.o(i.main_FSM)
-    malloc                                   0x0800864d   Thumb Code    92  malloc.o(i.malloc)
-    point_to_int32                           0x080086b9   Thumb Code    50  adau1761.o(i.point_to_int32)
-    pow                                      0x080086ed   Thumb Code  2428  pow.o(i.pow)
-    qcc5125_btn_press                        0x0800906d   Thumb Code    22  qcc5125.o(i.qcc5125_btn_press)
-    qcc5125_status_proc                      0x080090dd   Thumb Code   126  qcc5125.o(i.qcc5125_status_proc)
-    read_btn_level                           0x08009169   Thumb Code    66  key.o(i.read_btn_level)
-    sin                                      0x080091b5   Thumb Code   146  sin.o(i.sin)
-    sqrt                                     0x08009251   Thumb Code    66  sqrt.o(i.sqrt)
-    sys_ctrl_status_switch                   0x08009299   Thumb Code     2  pwr_mngr.o(i.sys_ctrl_status_switch)
-    sys_pwrctrl_power_up                     0x0800929d   Thumb Code   110  pwr_mngr.o(i.sys_pwrctrl_power_up)
-    system_init                              0x08009311   Thumb Code   166  sys_init.o(i.system_init)
-    ui_ftoa_str                              0x080093d1   Thumb Code    98  wououi.o(i.ui_ftoa_str)
-    ui_itoa                                  0x08009449   Thumb Code    26  wououi.o(i.ui_itoa)
-    ui_itoa_str                              0x0800946d   Thumb Code    28  wououi.o(i.ui_itoa_str)
-    AHBPrescTable                            0x0800948c   Data          16  system_stm32l0xx.o(.constdata)
-    PLLMulTable                              0x0800949c   Data           9  system_stm32l0xx.o(.constdata)
-    R0_SAMPLE_RATE_SETTING_IC_2_Default      0x080094a5   Data           1  adau1761.o(.constdata)
-    R1_DSP_RUN_REGISTER_IC_2_Default         0x080094a6   Data           1  adau1761.o(.constdata)
-    R2_CLKCTRLREGISTER_IC_2_Default          0x080094a7   Data           1  adau1761.o(.constdata)
-    R7_MICCTRLREGISTER_IC_2_Default          0x080094a8   Data           1  adau1761.o(.constdata)
-    R13_SERIAL_PORT_PAD_CONTROL_REGISTERS_IC_2_Default 0x080094a9   Data           1  adau1761.o(.constdata)
-    R15_JACKREGISTER_IC_2_Default            0x080094aa   Data           1  adau1761.o(.constdata)
-    R21_DSP_ENABLE_REGISTER_IC_2_Default     0x080094ab   Data           1  adau1761.o(.constdata)
-    R26_SAMPLE_RATE_SETTING_IC_2_Default     0x080094ac   Data           1  adau1761.o(.constdata)
-    R27_ROUTING_MATRIX_INPUTS_IC_2_Default   0x080094ad   Data           1  adau1761.o(.constdata)
-    R28_ROUTING_MATRIX_OUTPUTS_IC_2_Default  0x080094ae   Data           1  adau1761.o(.constdata)
-    R29_SERIAL_DATAGPIO_PIN_CONFIG_IC_2_Default 0x080094af   Data           1  adau1761.o(.constdata)
-    R30_DSP_SLEW_MODES_IC_2_Default          0x080094b0   Data           1  adau1761.o(.constdata)
-    R31_SERIAL_PORT_SAMPLE_RATE_SETTING_IC_2_Default 0x080094b1   Data           1  adau1761.o(.constdata)
-    R35_SAMPLE_RATE_SETTING_IC_2_Default     0x080094b2   Data           1  adau1761.o(.constdata)
-    R36_DSP_RUN_REGISTER_IC_2_Default        0x080094b3   Data           1  adau1761.o(.constdata)
-    R37_DEJITTER_REGISTER_CONTROL_IC_2_Default 0x080094b4   Data           1  adau1761.o(.constdata)
-    R38_DEJITTER_REGISTER_CONTROL_IC_2_Default 0x080094b5   Data           1  adau1761.o(.constdata)
-    R5_SERIAL_PORT_CONTROL_REGISTERS_IC_2_Default 0x080094b6   Data           2  adau1761.o(.constdata)
-    R11_CONVERTER_CONTROL_REGISTERS_IC_2_Default 0x080094b8   Data           2  adau1761.o(.constdata)
-    R14_COMMUNICATION_PORT_PAD_CONTROL_REGISTERS_IC_2_Default 0x080094ba   Data           2  adau1761.o(.constdata)
-    R24_NON_MODULO_REGISTERS_IC_2_Default    0x080094bc   Data           2  adau1761.o(.constdata)
-    R32_CLOCK_ENABLE_REGISTERS_IC_2_Default  0x080094be   Data           2  adau1761.o(.constdata)
-    R9_ADC_CONTROL_REGISTERS_IC_2_Default    0x080094c0   Data           3  adau1761.o(.constdata)
-    R12_DAC_CONTROL_REGISTERS_IC_2_Default   0x080094c3   Data           3  adau1761.o(.constdata)
-    R6_ALC_CONTROL_REGISTERS_IC_2_Default    0x080094c6   Data           4  adau1761.o(.constdata)
-    R23_GPIO_REGISTERS_IC_2_Default          0x080094ca   Data           4  adau1761.o(.constdata)
-    R22_CRC_REGISTERS_IC_2_Default           0x080094ce   Data           5  adau1761.o(.constdata)
-    R25_WATCHDOG_REGISTERS_IC_2_Default      0x080094d3   Data           5  adau1761.o(.constdata)
-    R3_PLLCRLREGISTER_IC_2_Default           0x080094d8   Data           6  adau1761.o(.constdata)
-    R8_RECORD_INPUT_SIGNAL_PATH_REGISTERS_IC_2_Default 0x080094de   Data           8  adau1761.o(.constdata)
-    Program_Data_IC_2                        0x080094e6   Data        1165  adau1761.o(.constdata)
-    Param_Data_IC_2                          0x08009973   Data         240  adau1761.o(.constdata)
-    R10_PLAYBACK_OUTPUT_SIGNAL_PATH_REGISTERS_IC_2_Default 0x08009a63   Data          14  adau1761.o(.constdata)
-    F6x8                                     0x08009a71   Data         570  wououi_font.o(.constdata)
-    F7x12                                    0x08009cab   Data        1330  wououi_font.o(.constdata)
-    F12X24                                   0x0800a1dd   Data        3420  wououi_font.o(.constdata)
-    mian_option_array                        0x0800af3c   Data          96  wououi_user.o(.constdata)
-    main_icon_array                          0x0800af9c   Data         360  wououi_user.o(.constdata)
-    play_option_array                        0x0800b104   Data         192  wououi_user.o(.constdata)
-    icon_play_checked_16_16                  0x0800b1c4   Data          32  wououi_udp.o(.constdata)
-    icon_play_unchecked_16_16                0x0800b1e4   Data          32  wououi_udp.o(.constdata)
-    icon_next_checked_16_16                  0x0800b204   Data          32  wououi_udp.o(.constdata)
-    icon_next_unchecked_16_16                0x0800b224   Data          32  wououi_udp.o(.constdata)
-    icon_prev_checked_16_16                  0x0800b244   Data          32  wououi_udp.o(.constdata)
-    icon_prev_unchecked_16_16                0x0800b264   Data          32  wououi_udp.o(.constdata)
-    icon_bl_disconn_16_16                    0x0800b284   Data          32  wououi_udp.o(.constdata)
-    icon_bl_conn_16_16                       0x0800b2a4   Data          32  wououi_udp.o(.constdata)
-    icon_vol3_16_16                          0x0800b2c4   Data          32  wououi_udp.o(.constdata)
-    icon_vol2_16_16                          0x0800b2e4   Data          32  wououi_udp.o(.constdata)
-    icon_vol1_16_16                          0x0800b304   Data          32  wououi_udp.o(.constdata)
-    icon_vol0_16_16                          0x0800b324   Data          32  wououi_udp.o(.constdata)
-    icon_pause_unchecked_16_16               0x0800b344   Data          32  wououi_udp.o(.constdata)
-    icon_pause_checked_16_16                 0x0800b364   Data          32  wououi_udp.o(.constdata)
-    __mathlib_zero                           0x0800b440   Data           8  qnan.o(.constdata)
-    Region$$Table$$Base                      0x0800b650   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800b670   Number         0  anon$$obj.o(Region$$Table)
+    Setting_EQPresetPage_CallBack            0x08006575   Thumb Code     2  wououi_user.o(i.Setting_EQPresetPage_CallBack)
+    SysTick_Handler                          0x08006577   Thumb Code     8  stm32l0xx_it.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08006581   Thumb Code   148  main.o(i.SystemClock_Config)
+    SystemInit                               0x08006619   Thumb Code     2  system_stm32l0xx.o(i.SystemInit)
+    TIM21_IRQHandler                         0x0800661d   Thumb Code    10  stm32l0xx_it.o(i.TIM21_IRQHandler)
+    TIM6_IRQHandler                          0x0800662d   Thumb Code    10  stm32l0xx_it.o(i.TIM6_IRQHandler)
+    TestUI_Init                              0x08006781   Thumb Code    92  wououi_user.o(i.TestUI_Init)
+    WouoUI_port_SendBuff                     0x080067fd   Thumb Code     8  wououi_port.o(i.WouoUI_port_SendBuff)
+    __0sprintf                               0x08006805   Thumb Code    36  printfa.o(i.__0sprintf)
+    __1sprintf                               0x08006805   Thumb Code     0  printfa.o(i.__0sprintf)
+    __2sprintf                               0x08006805   Thumb Code     0  printfa.o(i.__0sprintf)
+    __c89sprintf                             0x08006805   Thumb Code     0  printfa.o(i.__0sprintf)
+    sprintf                                  0x08006805   Thumb Code     0  printfa.o(i.__0sprintf)
+    __ARM_clz                                0x0800682d   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_ll_muluu                    0x0800685b   Thumb Code    48  stm32l0xx_hal_rcc.o(i.__ARM_common_ll_muluu)
+    __ARM_common_switch8                     0x0800688b   Thumb Code    26  stm32l0xx_hal_dma.o(i.__ARM_common_switch8)
+    __ARM_fpclassify                         0x080068a5   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    __ieee754_rem_pio2                       0x08006915   Thumb Code   838  rred.o(i.__ieee754_rem_pio2)
+    __kernel_cos                             0x08006cb1   Thumb Code   224  cos_i.o(i.__kernel_cos)
+    __kernel_poly                            0x08006da5   Thumb Code   172  poly.o(i.__kernel_poly)
+    __kernel_sin                             0x08006e51   Thumb Code   222  sin_i.o(i.__kernel_sin)
+    __mathlib_dbl_divzero                    0x08006f3d   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
+    __mathlib_dbl_infnan                     0x08006f51   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_infnan2                    0x08006f5b   Thumb Code     8  dunder.o(i.__mathlib_dbl_infnan2)
+    __mathlib_dbl_invalid                    0x08006f63   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __mathlib_dbl_overflow                   0x08006f75   Thumb Code    16  dunder.o(i.__mathlib_dbl_overflow)
+    __mathlib_dbl_underflow                  0x08006f89   Thumb Code    14  dunder.o(i.__mathlib_dbl_underflow)
+    __scatterload_copy                       0x08006f9d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08006fab   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08006fad   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x08006fbd   Thumb Code     6  errno.o(i.__set_errno)
+    audio_enable_proc                        0x08007865   Thumb Code   100  audio.o(i.audio_enable_proc)
+    audio_param_init                         0x080078d5   Thumb Code   142  audio.o(i.audio_param_init)
+    audio_read_all_eqchnl_from_eeprom        0x08007971   Thumb Code    26  audio.o(i.audio_read_all_eqchnl_from_eeprom)
+    bsp_43131_init                           0x08007991   Thumb Code   430  cs43131.o(i.bsp_43131_init)
+    bsp_43131_set_volume                     0x08007b5d   Thumb Code    34  cs43131.o(i.bsp_43131_set_volume)
+    bsp_adau1761_eq_download                 0x08007cf1   Thumb Code   454  adau1761.o(i.bsp_adau1761_eq_download)
+    bsp_btn_scan_init                        0x08007eb9   Thumb Code   192  key.o(i.bsp_btn_scan_init)
+    bsp_cw2015_init                          0x08007f9d   Thumb Code    16  cw2015.o(i.bsp_cw2015_init)
+    bsp_cw2015_set_alrt                      0x08007fad   Thumb Code    20  cw2015.o(i.bsp_cw2015_set_alrt)
+    bsp_cw2015_slp                           0x08007fc1   Thumb Code    20  cw2015.o(i.bsp_cw2015_slp)
+    bsp_tim22_delay_us                       0x08007fd5   Thumb Code    52  timer.o(i.bsp_tim22_delay_us)
+    button_attach                            0x08008011   Thumb Code     8  multi_button.o(i.button_attach)
+    button_init                              0x080081db   Thumb Code    60  multi_button.o(i.button_init)
+    button_start                             0x08008219   Thumb Code    32  multi_button.o(i.button_start)
+    button_ticks                             0x0800823d   Thumb Code    22  multi_button.o(i.button_ticks)
+    cos                                      0x08008259   Thumb Code   142  cos.o(i.cos)
+    default_download_IC_2                    0x080082f1   Thumb Code   584  adau1761.o(i.default_download_IC_2)
+    free                                     0x08008549   Thumb Code    80  malloc.o(i.free)
+    main                                     0x0800859d   Thumb Code    54  main.o(i.main)
+    main_FSM                                 0x080085dd   Thumb Code    48  tasks.o(i.main_FSM)
+    malloc                                   0x0800860d   Thumb Code    92  malloc.o(i.malloc)
+    pow                                      0x080086ad   Thumb Code  2428  pow.o(i.pow)
+    qcc5125_btn_press                        0x0800902d   Thumb Code    22  qcc5125.o(i.qcc5125_btn_press)
+    qcc5125_status_proc                      0x0800909d   Thumb Code   126  qcc5125.o(i.qcc5125_status_proc)
+    read_btn_level                           0x08009129   Thumb Code    66  key.o(i.read_btn_level)
+    sin                                      0x08009175   Thumb Code   146  sin.o(i.sin)
+    sqrt                                     0x08009211   Thumb Code    66  sqrt.o(i.sqrt)
+    sys_ctrl_status_switch                   0x08009259   Thumb Code     2  pwr_mngr.o(i.sys_ctrl_status_switch)
+    sys_pwrctrl_power_up                     0x0800925d   Thumb Code   110  pwr_mngr.o(i.sys_pwrctrl_power_up)
+    system_init                              0x080092d1   Thumb Code   156  sys_init.o(i.system_init)
+    ui_ftoa_str                              0x08009381   Thumb Code    98  wououi.o(i.ui_ftoa_str)
+    ui_itoa                                  0x080093f9   Thumb Code    26  wououi.o(i.ui_itoa)
+    ui_itoa_str                              0x0800941d   Thumb Code    28  wououi.o(i.ui_itoa_str)
+    AHBPrescTable                            0x0800943c   Data          16  system_stm32l0xx.o(.constdata)
+    PLLMulTable                              0x0800944c   Data           9  system_stm32l0xx.o(.constdata)
+    R0_SAMPLE_RATE_SETTING_IC_2_Default      0x08009455   Data           1  adau1761.o(.constdata)
+    R1_DSP_RUN_REGISTER_IC_2_Default         0x08009456   Data           1  adau1761.o(.constdata)
+    R2_CLKCTRLREGISTER_IC_2_Default          0x08009457   Data           1  adau1761.o(.constdata)
+    R7_MICCTRLREGISTER_IC_2_Default          0x08009458   Data           1  adau1761.o(.constdata)
+    R13_SERIAL_PORT_PAD_CONTROL_REGISTERS_IC_2_Default 0x08009459   Data           1  adau1761.o(.constdata)
+    R15_JACKREGISTER_IC_2_Default            0x0800945a   Data           1  adau1761.o(.constdata)
+    R21_DSP_ENABLE_REGISTER_IC_2_Default     0x0800945b   Data           1  adau1761.o(.constdata)
+    R26_SAMPLE_RATE_SETTING_IC_2_Default     0x0800945c   Data           1  adau1761.o(.constdata)
+    R27_ROUTING_MATRIX_INPUTS_IC_2_Default   0x0800945d   Data           1  adau1761.o(.constdata)
+    R28_ROUTING_MATRIX_OUTPUTS_IC_2_Default  0x0800945e   Data           1  adau1761.o(.constdata)
+    R29_SERIAL_DATAGPIO_PIN_CONFIG_IC_2_Default 0x0800945f   Data           1  adau1761.o(.constdata)
+    R30_DSP_SLEW_MODES_IC_2_Default          0x08009460   Data           1  adau1761.o(.constdata)
+    R31_SERIAL_PORT_SAMPLE_RATE_SETTING_IC_2_Default 0x08009461   Data           1  adau1761.o(.constdata)
+    R35_SAMPLE_RATE_SETTING_IC_2_Default     0x08009462   Data           1  adau1761.o(.constdata)
+    R36_DSP_RUN_REGISTER_IC_2_Default        0x08009463   Data           1  adau1761.o(.constdata)
+    R37_DEJITTER_REGISTER_CONTROL_IC_2_Default 0x08009464   Data           1  adau1761.o(.constdata)
+    R38_DEJITTER_REGISTER_CONTROL_IC_2_Default 0x08009465   Data           1  adau1761.o(.constdata)
+    R5_SERIAL_PORT_CONTROL_REGISTERS_IC_2_Default 0x08009466   Data           2  adau1761.o(.constdata)
+    R11_CONVERTER_CONTROL_REGISTERS_IC_2_Default 0x08009468   Data           2  adau1761.o(.constdata)
+    R14_COMMUNICATION_PORT_PAD_CONTROL_REGISTERS_IC_2_Default 0x0800946a   Data           2  adau1761.o(.constdata)
+    R24_NON_MODULO_REGISTERS_IC_2_Default    0x0800946c   Data           2  adau1761.o(.constdata)
+    R32_CLOCK_ENABLE_REGISTERS_IC_2_Default  0x0800946e   Data           2  adau1761.o(.constdata)
+    R9_ADC_CONTROL_REGISTERS_IC_2_Default    0x08009470   Data           3  adau1761.o(.constdata)
+    R12_DAC_CONTROL_REGISTERS_IC_2_Default   0x08009473   Data           3  adau1761.o(.constdata)
+    R6_ALC_CONTROL_REGISTERS_IC_2_Default    0x08009476   Data           4  adau1761.o(.constdata)
+    R23_GPIO_REGISTERS_IC_2_Default          0x0800947a   Data           4  adau1761.o(.constdata)
+    R22_CRC_REGISTERS_IC_2_Default           0x0800947e   Data           5  adau1761.o(.constdata)
+    R25_WATCHDOG_REGISTERS_IC_2_Default      0x08009483   Data           5  adau1761.o(.constdata)
+    R3_PLLCRLREGISTER_IC_2_Default           0x08009488   Data           6  adau1761.o(.constdata)
+    R8_RECORD_INPUT_SIGNAL_PATH_REGISTERS_IC_2_Default 0x0800948e   Data           8  adau1761.o(.constdata)
+    Program_Data_IC_2                        0x08009496   Data        1165  adau1761.o(.constdata)
+    Param_Data_IC_2                          0x08009923   Data         240  adau1761.o(.constdata)
+    R10_PLAYBACK_OUTPUT_SIGNAL_PATH_REGISTERS_IC_2_Default 0x08009a13   Data          14  adau1761.o(.constdata)
+    F6x8                                     0x08009a21   Data         570  wououi_font.o(.constdata)
+    F7x12                                    0x08009c5b   Data        1330  wououi_font.o(.constdata)
+    F12X24                                   0x0800a18d   Data        3420  wououi_font.o(.constdata)
+    mian_option_array                        0x0800aeec   Data          96  wououi_user.o(.constdata)
+    main_icon_array                          0x0800af4c   Data         360  wououi_user.o(.constdata)
+    play_option_array                        0x0800b0b4   Data         192  wououi_user.o(.constdata)
+    icon_play_checked_16_16                  0x0800b174   Data          32  wououi_udp.o(.constdata)
+    icon_play_unchecked_16_16                0x0800b194   Data          32  wououi_udp.o(.constdata)
+    icon_next_checked_16_16                  0x0800b1b4   Data          32  wououi_udp.o(.constdata)
+    icon_next_unchecked_16_16                0x0800b1d4   Data          32  wououi_udp.o(.constdata)
+    icon_prev_checked_16_16                  0x0800b1f4   Data          32  wououi_udp.o(.constdata)
+    icon_prev_unchecked_16_16                0x0800b214   Data          32  wououi_udp.o(.constdata)
+    icon_bl_disconn_16_16                    0x0800b234   Data          32  wououi_udp.o(.constdata)
+    icon_bl_conn_16_16                       0x0800b254   Data          32  wououi_udp.o(.constdata)
+    icon_vol3_16_16                          0x0800b274   Data          32  wououi_udp.o(.constdata)
+    icon_vol2_16_16                          0x0800b294   Data          32  wououi_udp.o(.constdata)
+    icon_vol1_16_16                          0x0800b2b4   Data          32  wououi_udp.o(.constdata)
+    icon_vol0_16_16                          0x0800b2d4   Data          32  wououi_udp.o(.constdata)
+    icon_pause_unchecked_16_16               0x0800b2f4   Data          32  wououi_udp.o(.constdata)
+    icon_pause_checked_16_16                 0x0800b314   Data          32  wououi_udp.o(.constdata)
+    __mathlib_zero                           0x0800b3f0   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x0800b610   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800b630   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32l0xx_hal.o(.data)
     uwTickPrio                               0x20000004   Data           4  stm32l0xx_hal.o(.data)
     uwTick                                   0x20000008   Data           4  stm32l0xx_hal.o(.data)
@@ -1108,35 +1105,34 @@ Image Symbol Table
     OLED_penColor                            0x20000291   Data           1  wououi_oled.o(.data)
     OLED_bgColor                             0x20000292   Data           1  wououi_oled.o(.data)
     oled_buff_dynamic                        0x20000294   Data        1024  wououi_oled.o(.data)
-    setting_option_array                     0x20000698   Data         192  wououi_user.o(.data)
-    setting_preset_option_array              0x20000758   Data         160  wououi_user.o(.data)
-    __microlib_freelist                      0x20000800   Data           4  mvars.o(.data)
-    __microlib_freelist_initialised          0x20000804   Data           4  mvars.o(.data)
-    hi2c1                                    0x2000080c   Data          84  i2c.o(.bss)
-    hdma_i2c1_tx                             0x20000860   Data          72  i2c.o(.bss)
-    hrtc                                     0x200008a8   Data          36  rtc.o(.bss)
-    htim6                                    0x200008cc   Data          64  tim.o(.bss)
-    htim21                                   0x2000090c   Data          64  tim.o(.bss)
-    htim22                                   0x2000094c   Data          64  tim.o(.bss)
-    pFlash                                   0x2000098c   Data          24  stm32l0xx_hal_flash.o(.bss)
-    btn_up                                   0x200009a4   Data          44  key.o(.bss)
-    btn_down                                 0x200009d0   Data          44  key.o(.bss)
-    btn_prev                                 0x200009fc   Data          44  key.o(.bss)
-    btn_next                                 0x20000a28   Data          44  key.o(.bss)
-    btn_mid                                  0x20000a54   Data          44  key.o(.bss)
-    OLED_GRAM                                0x20000ab2   Data        1024  oled.o(.bss)
-    qcc5125_btn                              0x20000eb2   Data          40  qcc5125.o(.bss)
-    DSP_EQ                                   0x20000edc   Data         480  adau1761.o(.bss)
-    eq_setting_boost                         0x200010bc   Data          10  adau1761.o(.bss)
-    eq_setting_boost_last                    0x200010c6   Data          10  adau1761.o(.bss)
-    oled_buff                                0x200010f0   Data        1024  wououi_oled.o(.bss)
-    playing_page                             0x200014f0   Data          40  wououi_user.o(.bss)
-    main_page                                0x20001518   Data          40  wououi_user.o(.bss)
-    setting_page                             0x20001540   Data          40  wououi_user.o(.bss)
-    setting_eqpreset_page                    0x20001568   Data          40  wououi_user.o(.bss)
-    __heap_base                              0x20001590   Data           0  startup_stm32l051xx.o(HEAP)
-    __heap_limit                             0x20001790   Data           0  startup_stm32l051xx.o(HEAP)
-    __initial_sp                             0x20001b90   Data           0  startup_stm32l051xx.o(STACK)
+    setting_option_array                     0x20000698   Data         224  wououi_user.o(.data)
+    setting_preset_option_array              0x20000778   Data         160  wououi_user.o(.data)
+    __microlib_freelist                      0x20000820   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x20000824   Data           4  mvars.o(.data)
+    hi2c1                                    0x2000082c   Data          84  i2c.o(.bss)
+    hdma_i2c1_tx                             0x20000880   Data          72  i2c.o(.bss)
+    hrtc                                     0x200008c8   Data          36  rtc.o(.bss)
+    htim6                                    0x200008ec   Data          64  tim.o(.bss)
+    htim21                                   0x2000092c   Data          64  tim.o(.bss)
+    htim22                                   0x2000096c   Data          64  tim.o(.bss)
+    pFlash                                   0x200009ac   Data          24  stm32l0xx_hal_flash.o(.bss)
+    btn_up                                   0x200009c4   Data          44  key.o(.bss)
+    btn_down                                 0x200009f0   Data          44  key.o(.bss)
+    btn_prev                                 0x20000a1c   Data          44  key.o(.bss)
+    btn_next                                 0x20000a48   Data          44  key.o(.bss)
+    btn_mid                                  0x20000a74   Data          44  key.o(.bss)
+    eq_boost                                 0x20000aa0   Data          10  audio.o(.bss)
+    OLED_GRAM                                0x20000adc   Data        1024  oled.o(.bss)
+    qcc5125_btn                              0x20000edc   Data          40  qcc5125.o(.bss)
+    eq_channel                               0x20000f04   Data         440  adau1761.o(.bss)
+    oled_buff                                0x200010dc   Data        1024  wououi_oled.o(.bss)
+    playing_page                             0x200014dc   Data          40  wououi_user.o(.bss)
+    main_page                                0x20001504   Data          40  wououi_user.o(.bss)
+    setting_page                             0x2000152c   Data          40  wououi_user.o(.bss)
+    setting_eqpreset_page                    0x20001554   Data          40  wououi_user.o(.bss)
+    __heap_base                              0x20001580   Data           0  startup_stm32l051xx.o(HEAP)
+    __heap_limit                             0x20001780   Data           0  startup_stm32l051xx.o(HEAP)
+    __initial_sp                             0x20001b80   Data           0  startup_stm32l051xx.o(STACK)
 
 
 
@@ -1146,79 +1142,79 @@ Memory Map of the image
 
   Image Entry point : 0x080000c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000be7c, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x0000b74c])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000be5c, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x0000b70c])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000b670, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000b630, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000c0   Data   RO            3    RESET               startup_stm32l051xx.o
-    0x080000c0   0x080000c0   0x00000000   Code   RO         4984  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x080000c0   0x080000c0   0x00000004   Code   RO         5377    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x080000c4   0x080000c4   0x00000004   Code   RO         5380    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         5382    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         5384    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x080000c8   0x080000c8   0x00000008   Code   RO         5385    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         5387    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         5389    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x080000d0   0x080000d0   0x00000004   Code   RO         5378    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x080000c0   0x080000c0   0x00000000   Code   RO         4910  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x080000c0   0x080000c0   0x00000004   Code   RO         5303    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x080000c4   0x080000c4   0x00000004   Code   RO         5306    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         5308    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         5310    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x080000c8   0x080000c8   0x00000008   Code   RO         5311    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         5313    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         5315    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x080000d0   0x080000d0   0x00000004   Code   RO         5304    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x080000d4   0x080000d4   0x0000001c   Code   RO            4    .text               startup_stm32l051xx.o
-    0x080000f0   0x080000f0   0x0000002c   Code   RO         4987    .text               mc_p.l(uidiv.o)
-    0x0800011c   0x0800011c   0x00000028   Code   RO         4989    .text               mc_p.l(idiv.o)
-    0x08000144   0x08000144   0x00000060   Code   RO         4991    .text               mc_p.l(uldiv.o)
-    0x080001a4   0x080001a4   0x00000024   Code   RO         4993    .text               mc_p.l(memcpya.o)
-    0x080001c8   0x080001c8   0x00000024   Code   RO         4995    .text               mc_p.l(memseta.o)
-    0x080001ec   0x080001ec   0x0000000e   Code   RO         4997    .text               mc_p.l(strlen.o)
-    0x080001fa   0x080001fa   0x0000001c   Code   RO         4999    .text               mc_p.l(strcmp.o)
-    0x08000216   0x08000216   0x0000001a   Code   RO         5001    .text               mc_p.l(memcmp.o)
-    0x08000230   0x08000230   0x000000b2   Code   RO         5294    .text               mf_p.l(fadd.o)
-    0x080002e2   0x080002e2   0x0000007a   Code   RO         5296    .text               mf_p.l(fmul.o)
-    0x0800035c   0x0800035c   0x0000007c   Code   RO         5298    .text               mf_p.l(fdiv.o)
-    0x080003d8   0x080003d8   0x00000018   Code   RO         5300    .text               mf_p.l(fscalb.o)
-    0x080003f0   0x080003f0   0x00000164   Code   RO         5302    .text               mf_p.l(dadd.o)
-    0x08000554   0x08000554   0x000000d0   Code   RO         5304    .text               mf_p.l(dmul.o)
-    0x08000624   0x08000624   0x000000f0   Code   RO         5306    .text               mf_p.l(ddiv.o)
-    0x08000714   0x08000714   0x0000002c   Code   RO         5308    .text               mf_p.l(dscalb.o)
-    0x08000740   0x08000740   0x00000016   Code   RO         5310    .text               mf_p.l(fflti.o)
-    0x08000756   0x08000756   0x0000000e   Code   RO         5312    .text               mf_p.l(ffltui.o)
-    0x08000764   0x08000764   0x00000028   Code   RO         5314    .text               mf_p.l(dflti.o)
-    0x0800078c   0x0800078c   0x0000001c   Code   RO         5316    .text               mf_p.l(dfltui.o)
-    0x080007a8   0x080007a8   0x0000002c   Code   RO         5318    .text               mf_p.l(dfltl.o)
-    0x080007d4   0x080007d4   0x00000032   Code   RO         5320    .text               mf_p.l(ffixi.o)
-    0x08000806   0x08000806   0x00000040   Code   RO         5322    .text               mf_p.l(ffixl.o)
+    0x080000f0   0x080000f0   0x0000002c   Code   RO         4913    .text               mc_p.l(uidiv.o)
+    0x0800011c   0x0800011c   0x00000028   Code   RO         4915    .text               mc_p.l(idiv.o)
+    0x08000144   0x08000144   0x00000060   Code   RO         4917    .text               mc_p.l(uldiv.o)
+    0x080001a4   0x080001a4   0x00000024   Code   RO         4919    .text               mc_p.l(memcpya.o)
+    0x080001c8   0x080001c8   0x00000024   Code   RO         4921    .text               mc_p.l(memseta.o)
+    0x080001ec   0x080001ec   0x0000000e   Code   RO         4923    .text               mc_p.l(strlen.o)
+    0x080001fa   0x080001fa   0x0000001c   Code   RO         4925    .text               mc_p.l(strcmp.o)
+    0x08000216   0x08000216   0x0000001a   Code   RO         4927    .text               mc_p.l(memcmp.o)
+    0x08000230   0x08000230   0x000000b2   Code   RO         5220    .text               mf_p.l(fadd.o)
+    0x080002e2   0x080002e2   0x0000007a   Code   RO         5222    .text               mf_p.l(fmul.o)
+    0x0800035c   0x0800035c   0x0000007c   Code   RO         5224    .text               mf_p.l(fdiv.o)
+    0x080003d8   0x080003d8   0x00000018   Code   RO         5226    .text               mf_p.l(fscalb.o)
+    0x080003f0   0x080003f0   0x00000164   Code   RO         5228    .text               mf_p.l(dadd.o)
+    0x08000554   0x08000554   0x000000d0   Code   RO         5230    .text               mf_p.l(dmul.o)
+    0x08000624   0x08000624   0x000000f0   Code   RO         5232    .text               mf_p.l(ddiv.o)
+    0x08000714   0x08000714   0x0000002c   Code   RO         5234    .text               mf_p.l(dscalb.o)
+    0x08000740   0x08000740   0x00000016   Code   RO         5236    .text               mf_p.l(fflti.o)
+    0x08000756   0x08000756   0x0000000e   Code   RO         5238    .text               mf_p.l(ffltui.o)
+    0x08000764   0x08000764   0x00000028   Code   RO         5240    .text               mf_p.l(dflti.o)
+    0x0800078c   0x0800078c   0x0000001c   Code   RO         5242    .text               mf_p.l(dfltui.o)
+    0x080007a8   0x080007a8   0x0000002c   Code   RO         5244    .text               mf_p.l(dfltl.o)
+    0x080007d4   0x080007d4   0x00000032   Code   RO         5246    .text               mf_p.l(ffixi.o)
+    0x08000806   0x08000806   0x00000040   Code   RO         5248    .text               mf_p.l(ffixl.o)
     0x08000846   0x08000846   0x00000002   PAD
-    0x08000848   0x08000848   0x00000048   Code   RO         5324    .text               mf_p.l(dfixi.o)
-    0x08000890   0x08000890   0x00000028   Code   RO         5328    .text               mf_p.l(f2d.o)
-    0x080008b8   0x080008b8   0x00000038   Code   RO         5330    .text               mf_p.l(d2f.o)
-    0x080008f0   0x080008f0   0x00000014   Code   RO         5332    .text               mf_p.l(cfcmple.o)
-    0x08000904   0x08000904   0x00000014   Code   RO         5334    .text               mf_p.l(cfrcmple.o)
-    0x08000918   0x08000918   0x00000020   Code   RO         5394    .text               mc_p.l(llshl.o)
-    0x08000938   0x08000938   0x00000022   Code   RO         5396    .text               mc_p.l(llushr.o)
-    0x0800095a   0x0800095a   0x00000026   Code   RO         5398    .text               mc_p.l(llsshr.o)
-    0x08000980   0x08000980   0x00000000   Code   RO         5409    .text               mc_p.l(iusefp.o)
-    0x08000980   0x08000980   0x00000082   Code   RO         5410    .text               mf_p.l(fepilogue.o)
-    0x08000a02   0x08000a02   0x000000be   Code   RO         5412    .text               mf_p.l(depilogue.o)
-    0x08000ac0   0x08000ac0   0x00000040   Code   RO         5416    .text               mf_p.l(dfixul.o)
-    0x08000b00   0x08000b00   0x00000028   Code   RO         5418    .text               mf_p.l(cdrcmple.o)
-    0x08000b28   0x08000b28   0x00000024   Code   RO         5420    .text               mc_p.l(init.o)
-    0x08000b4c   0x08000b4c   0x000000a2   Code   RO         5424    .text               mf_p.l(dsqrt.o)
-    0x08000bee   0x08000bee   0x00000056   Code   RO         5436    .text               mc_p.l(__dczerorl2.o)
-    0x08000c44   0x08000c44   0x0000000a   Code   RO         3450    i.BTNDOWN_SINGLE_Click_Handler  key.o
-    0x08000c4e   0x08000c4e   0x00000002   Code   RO         3451    i.BTNMID_LONG_PRESS_START_Handler  key.o
-    0x08000c50   0x08000c50   0x0000000a   Code   RO         3452    i.BTNMID_SINGLE_Click_Handler  key.o
-    0x08000c5a   0x08000c5a   0x0000000a   Code   RO         3453    i.BTNNEXT_SINGLE_Click_Handler  key.o
-    0x08000c64   0x08000c64   0x0000000a   Code   RO         3454    i.BTNPREV_LONG_PRESS_START_Handler  key.o
-    0x08000c6e   0x08000c6e   0x0000000a   Code   RO         3455    i.BTNPREV_SINGLE_Click_Handler  key.o
-    0x08000c78   0x08000c78   0x0000000a   Code   RO         3456    i.BTNUP_SINGLE_Click_Handler  key.o
-    0x08000c82   0x08000c82   0x00000028   Code   RO         3971    i.CS43131_ReadReg   cs43131.o
-    0x08000caa   0x08000caa   0x0000004a   Code   RO         3972    i.CS43131_WriteReg  cs43131.o
-    0x08000cf4   0x08000cf4   0x00000076   Code   RO         3973    i.CS_I2C_ReadPayload  cs43131.o
-    0x08000d6a   0x08000d6a   0x00000040   Code   RO         3892    i.CW2015_WriteOneByte  cw2015.o
+    0x08000848   0x08000848   0x00000048   Code   RO         5250    .text               mf_p.l(dfixi.o)
+    0x08000890   0x08000890   0x00000028   Code   RO         5254    .text               mf_p.l(f2d.o)
+    0x080008b8   0x080008b8   0x00000038   Code   RO         5256    .text               mf_p.l(d2f.o)
+    0x080008f0   0x080008f0   0x00000014   Code   RO         5258    .text               mf_p.l(cfcmple.o)
+    0x08000904   0x08000904   0x00000014   Code   RO         5260    .text               mf_p.l(cfrcmple.o)
+    0x08000918   0x08000918   0x00000020   Code   RO         5320    .text               mc_p.l(llshl.o)
+    0x08000938   0x08000938   0x00000022   Code   RO         5322    .text               mc_p.l(llushr.o)
+    0x0800095a   0x0800095a   0x00000026   Code   RO         5324    .text               mc_p.l(llsshr.o)
+    0x08000980   0x08000980   0x00000000   Code   RO         5335    .text               mc_p.l(iusefp.o)
+    0x08000980   0x08000980   0x00000082   Code   RO         5336    .text               mf_p.l(fepilogue.o)
+    0x08000a02   0x08000a02   0x000000be   Code   RO         5338    .text               mf_p.l(depilogue.o)
+    0x08000ac0   0x08000ac0   0x00000040   Code   RO         5342    .text               mf_p.l(dfixul.o)
+    0x08000b00   0x08000b00   0x00000028   Code   RO         5344    .text               mf_p.l(cdrcmple.o)
+    0x08000b28   0x08000b28   0x00000024   Code   RO         5346    .text               mc_p.l(init.o)
+    0x08000b4c   0x08000b4c   0x000000a2   Code   RO         5350    .text               mf_p.l(dsqrt.o)
+    0x08000bee   0x08000bee   0x00000056   Code   RO         5362    .text               mc_p.l(__dczerorl2.o)
+    0x08000c44   0x08000c44   0x0000000a   Code   RO         3448    i.BTNDOWN_SINGLE_Click_Handler  key.o
+    0x08000c4e   0x08000c4e   0x00000002   Code   RO         3449    i.BTNMID_LONG_PRESS_START_Handler  key.o
+    0x08000c50   0x08000c50   0x0000000a   Code   RO         3450    i.BTNMID_SINGLE_Click_Handler  key.o
+    0x08000c5a   0x08000c5a   0x0000000a   Code   RO         3451    i.BTNNEXT_SINGLE_Click_Handler  key.o
+    0x08000c64   0x08000c64   0x0000000a   Code   RO         3452    i.BTNPREV_LONG_PRESS_START_Handler  key.o
+    0x08000c6e   0x08000c6e   0x0000000a   Code   RO         3453    i.BTNPREV_SINGLE_Click_Handler  key.o
+    0x08000c78   0x08000c78   0x0000000a   Code   RO         3454    i.BTNUP_SINGLE_Click_Handler  key.o
+    0x08000c82   0x08000c82   0x00000028   Code   RO         3909    i.CS43131_ReadReg   cs43131.o
+    0x08000caa   0x08000caa   0x0000004a   Code   RO         3910    i.CS43131_WriteReg  cs43131.o
+    0x08000cf4   0x08000cf4   0x00000076   Code   RO         3911    i.CS_I2C_ReadPayload  cs43131.o
+    0x08000d6a   0x08000d6a   0x00000040   Code   RO         3830    i.CW2015_WriteOneByte  cw2015.o
     0x08000daa   0x08000daa   0x00000002   PAD
     0x08000dac   0x08000dac   0x00000010   Code   RO          342    i.DMA1_Channel2_3_IRQHandler  stm32l0xx_it.o
     0x08000dbc   0x08000dbc   0x0000002c   Code   RO         1663    i.DMA_SetConfig     stm32l0xx_hal_dma.o
-    0x08000de8   0x08000de8   0x00000020   Code   RO         3540    i.EEPROM_READ       eeprom.o
-    0x08000e08   0x08000e08   0x00000070   Code   RO         3541    i.EEPROM_Read_W_CHECK  eeprom.o
+    0x08000de8   0x08000de8   0x00000020   Code   RO         3538    i.EEPROM_Read       eeprom.o
+    0x08000e08   0x08000e08   0x00000070   Code   RO         3539    i.EEPROM_ReadWithCheck  eeprom.o
     0x08000e78   0x08000e78   0x00000010   Code   RO          343    i.EXTI0_1_IRQHandler  stm32l0xx_it.o
     0x08000e88   0x08000e88   0x00000010   Code   RO          344    i.EXTI2_3_IRQHandler  stm32l0xx_it.o
     0x08000e98   0x08000e98   0x00000012   Code   RO          345    i.EXTI4_15_IRQHandler  stm32l0xx_it.o
@@ -1279,7 +1275,7 @@ Memory Map of the image
     0x08001db8   0x08001db8   0x00000428   Code   RO         1200    i.HAL_RCC_OscConfig  stm32l0xx_hal_rcc.o
     0x080021e0   0x080021e0   0x0000007a   Code   RO         2284    i.HAL_RTCEx_DeactivateWakeUpTimer  stm32l0xx_hal_rtc_ex.o
     0x0800225a   0x0800225a   0x00000002   PAD
-    0x0800225c   0x0800225c   0x00000068   Code   RO         3639    i.HAL_RTCEx_WakeUpTimerEventCallback  pwr_mngr.o
+    0x0800225c   0x0800225c   0x00000068   Code   RO         3625    i.HAL_RTCEx_WakeUpTimerEventCallback  pwr_mngr.o
     0x080022c4   0x080022c4   0x0000003c   Code   RO         2309    i.HAL_RTCEx_WakeUpTimerIRQHandler  stm32l0xx_hal_rtc_ex.o
     0x08002300   0x08002300   0x000000ac   Code   RO         2121    i.HAL_RTC_Init      stm32l0xx_hal_rtc.o
     0x080023ac   0x080023ac   0x00000030   Code   RO          255    i.HAL_RTC_MspInit   rtc.o
@@ -1346,190 +1342,189 @@ Memory Map of the image
     0x08003ad8   0x08003ad8   0x0000006c   Code   RO          294    i.MX_TIM21_Init     tim.o
     0x08003b44   0x08003b44   0x0000006c   Code   RO          295    i.MX_TIM22_Init     tim.o
     0x08003bb0   0x08003bb0   0x0000004c   Code   RO          296    i.MX_TIM6_Init      tim.o
-    0x08003bfc   0x08003bfc   0x0000004c   Code   RO         4768    i.MainPage_CallBack  wououi_user.o
+    0x08003bfc   0x08003bfc   0x0000004c   Code   RO         4676    i.MainPage_CallBack  wououi_user.o
     0x08003c48   0x08003c48   0x00000002   Code   RO          349    i.NMI_Handler       stm32l0xx_it.o
-    0x08003c4a   0x08003c4a   0x00000050   Code   RO         4520    i.OLED_AllBlur      wououi_oled.o
-    0x08003c9a   0x08003c9a   0x0000005a   Code   RO         4304    i.OLED_Animation    wououi.o
-    0x08003cf4   0x08003cf4   0x00000040   Code   RO         4521    i.OLED_BuffWriteByte  wououi_oled.o
-    0x08003d34   0x08003d34   0x00000028   Code   RO         4522    i.OLED_ClearBuff    wououi_oled.o
-    0x08003d5c   0x08003d5c   0x00000064   Code   RO         4831    i.OLED_ConWinInit   wououi_win.o
-    0x08003dc0   0x08003dc0   0x0000008c   Code   RO         4832    i.OLED_ConWinReact  wououi_win.o
-    0x08003e4c   0x08003e4c   0x00000198   Code   RO         4833    i.OLED_ConWinShow   wououi_win.o
-    0x08003fe4   0x08003fe4   0x0000002a   Code   RO         4523    i.OLED_GetStrHeight  wououi_oled.o
-    0x0800400e   0x0800400e   0x00000012   Code   RO         4524    i.OLED_GetStrWidth  wououi_oled.o
-    0x08004020   0x08004020   0x00000060   Code   RO         4834    i.OLED_InfoWinInit  wououi_win.o
-    0x08004080   0x08004080   0x0000005c   Code   RO         4835    i.OLED_InfoWinReact  wououi_win.o
-    0x080040dc   0x080040dc   0x000000f4   Code   RO         4836    i.OLED_InfoWinShow  wououi_win.o
-    0x080041d0   0x080041d0   0x000000dc   Code   RO         4020    i.OLED_Init         oled.o
-    0x080042ac   0x080042ac   0x000000bc   Code   RO         4657    i.OLED_ListDrawText_CheckBox  wououi_page.o
-    0x08004368   0x08004368   0x00000020   Code   RO         4658    i.OLED_ListPageEnterInit  wououi_page.o
-    0x08004388   0x08004388   0x00000058   Code   RO         4659    i.OLED_ListPageInit  wououi_page.o
-    0x080043e0   0x080043e0   0x000002b4   Code   RO         4660    i.OLED_ListPageReact  wououi_page.o
-    0x08004694   0x08004694   0x00000158   Code   RO         4661    i.OLED_ListPageShow  wououi_page.o
-    0x080047ec   0x080047ec   0x00000014   Code   RO         4307    i.OLED_MsgQueClear  wououi.o
-    0x08004800   0x08004800   0x00000028   Code   RO         4308    i.OLED_MsgQueRead   wououi.o
-    0x08004828   0x08004828   0x00000034   Code   RO         4309    i.OLED_MsgQueSend   wououi.o
-    0x0800485c   0x0800485c   0x0000001c   Code   RO         4662    i.OLED_PageInit     wououi_page.o
-    0x08004878   0x08004878   0x00000038   Code   RO         4663    i.OLED_PageReturn   wououi_page.o
-    0x080048b0   0x080048b0   0x00000002   Code   RO         4917    i.OLED_PlayingPageEnterInit  wououi_udp.o
+    0x08003c4a   0x08003c4a   0x00000050   Code   RO         4428    i.OLED_AllBlur      wououi_oled.o
+    0x08003c9a   0x08003c9a   0x0000005a   Code   RO         4212    i.OLED_Animation    wououi.o
+    0x08003cf4   0x08003cf4   0x00000040   Code   RO         4429    i.OLED_BuffWriteByte  wououi_oled.o
+    0x08003d34   0x08003d34   0x00000028   Code   RO         4430    i.OLED_ClearBuff    wououi_oled.o
+    0x08003d5c   0x08003d5c   0x00000064   Code   RO         4739    i.OLED_ConWinInit   wououi_win.o
+    0x08003dc0   0x08003dc0   0x0000008c   Code   RO         4740    i.OLED_ConWinReact  wououi_win.o
+    0x08003e4c   0x08003e4c   0x00000198   Code   RO         4741    i.OLED_ConWinShow   wououi_win.o
+    0x08003fe4   0x08003fe4   0x0000002a   Code   RO         4431    i.OLED_GetStrHeight  wououi_oled.o
+    0x0800400e   0x0800400e   0x00000012   Code   RO         4432    i.OLED_GetStrWidth  wououi_oled.o
+    0x08004020   0x08004020   0x00000060   Code   RO         4742    i.OLED_InfoWinInit  wououi_win.o
+    0x08004080   0x08004080   0x0000005c   Code   RO         4743    i.OLED_InfoWinReact  wououi_win.o
+    0x080040dc   0x080040dc   0x000000f4   Code   RO         4744    i.OLED_InfoWinShow  wououi_win.o
+    0x080041d0   0x080041d0   0x000000dc   Code   RO         3958    i.OLED_Init         oled.o
+    0x080042ac   0x080042ac   0x000000bc   Code   RO         4565    i.OLED_ListDrawText_CheckBox  wououi_page.o
+    0x08004368   0x08004368   0x00000020   Code   RO         4566    i.OLED_ListPageEnterInit  wououi_page.o
+    0x08004388   0x08004388   0x00000058   Code   RO         4567    i.OLED_ListPageInit  wououi_page.o
+    0x080043e0   0x080043e0   0x000002b4   Code   RO         4568    i.OLED_ListPageReact  wououi_page.o
+    0x08004694   0x08004694   0x00000158   Code   RO         4569    i.OLED_ListPageShow  wououi_page.o
+    0x080047ec   0x080047ec   0x00000014   Code   RO         4215    i.OLED_MsgQueClear  wououi.o
+    0x08004800   0x08004800   0x00000028   Code   RO         4216    i.OLED_MsgQueRead   wououi.o
+    0x08004828   0x08004828   0x00000034   Code   RO         4217    i.OLED_MsgQueSend   wououi.o
+    0x0800485c   0x0800485c   0x0000001c   Code   RO         4570    i.OLED_PageInit     wououi_page.o
+    0x08004878   0x08004878   0x00000038   Code   RO         4571    i.OLED_PageReturn   wououi_page.o
+    0x080048b0   0x080048b0   0x00000002   Code   RO         4828    i.OLED_PlayingPageEnterInit  wououi_udp.o
     0x080048b2   0x080048b2   0x00000002   PAD
-    0x080048b4   0x080048b4   0x00000054   Code   RO         4918    i.OLED_PlayingPageInit  wououi_udp.o
-    0x08004908   0x08004908   0x00000218   Code   RO         4919    i.OLED_PlayingPageReact  wououi_udp.o
-    0x08004b20   0x08004b20   0x0000009c   Code   RO         4920    i.OLED_PlayingPageShow  wououi_udp.o
-    0x08004bbc   0x08004bbc   0x00000020   Code   RO         4021    i.OLED_RamClear     oled.o
-    0x08004bdc   0x08004bdc   0x00000074   Code   RO         4022    i.OLED_Refresh_FrameBuffer  oled.o
-    0x08004c50   0x08004c50   0x00000078   Code   RO         4023    i.OLED_Refresh_Gram  oled.o
-    0x08004cc8   0x08004cc8   0x00000010   Code   RO         4526    i.OLED_SendBuff     wououi_oled.o
-    0x08004cd8   0x08004cd8   0x00000034   Code   RO         4528    i.OLED_SetPointColor  wououi_oled.o
-    0x08004d0c   0x08004d0c   0x00000074   Code   RO         4837    i.OLED_SlideValWinInit  wououi_win.o
-    0x08004d80   0x08004d80   0x00000078   Code   RO         4838    i.OLED_SlideValWinReact  wououi_win.o
-    0x08004df8   0x08004df8   0x000001c0   Code   RO         4839    i.OLED_SlideValWinShow  wououi_win.o
-    0x08004fb8   0x08004fb8   0x0000011c   Code   RO         4840    i.OLED_SpinWinInit  wououi_win.o
-    0x080050d4   0x080050d4   0x000000f4   Code   RO         4841    i.OLED_SpinWinReact  wououi_win.o
-    0x080051c8   0x080051c8   0x00000214   Code   RO         4842    i.OLED_SpinWinShow  wououi_win.o
-    0x080053dc   0x080053dc   0x00000048   Code   RO         4664    i.OLED_TitlePageEnterInit  wououi_page.o
-    0x08005424   0x08005424   0x00000050   Code   RO         4665    i.OLED_TitlePageInit  wououi_page.o
-    0x08005474   0x08005474   0x00000138   Code   RO         4666    i.OLED_TitlePageReact  wououi_page.o
-    0x080055ac   0x080055ac   0x000001b0   Code   RO         4667    i.OLED_TitlePageShow  wououi_page.o
-    0x0800575c   0x0800575c   0x00000010   Code   RO         4313    i.OLED_UIBeginDynamicRefresh  wououi.o
-    0x0800576c   0x0800576c   0x000000c4   Code   RO         4314    i.OLED_UIBlurProc   wououi.o
-    0x08005830   0x08005830   0x00000020   Code   RO         4316    i.OLED_UIFadeInInit  wououi.o
-    0x08005850   0x08005850   0x00000028   Code   RO         4317    i.OLED_UIFadeOutInit  wououi.o
-    0x08005878   0x08005878   0x000001a8   Code   RO         4318    i.OLED_UIIndicatorProc  wououi.o
-    0x08005a20   0x08005a20   0x0000003c   Code   RO         4319    i.OLED_UIJumpToPage  wououi.o
-    0x08005a5c   0x08005a5c   0x0000001c   Code   RO         4320    i.OLED_UILayerInProc  wououi.o
-    0x08005a78   0x08005a78   0x0000002c   Code   RO         4321    i.OLED_UILayerOutProc  wououi.o
-    0x08005aa4   0x08005aa4   0x000000c8   Code   RO         4322    i.OLED_UIPageProc   wououi.o
-    0x08005b6c   0x08005b6c   0x000000e8   Code   RO         4323    i.OLED_UIProc       wououi.o
-    0x08005c54   0x08005c54   0x0000006c   Code   RO         4324    i.OLED_UIScrollBarProc  wououi.o
-    0x08005cc0   0x08005cc0   0x00000030   Code   RO         4031    i.OLED_WR_Byte      oled.o
-    0x08005cf0   0x08005cf0   0x000001c8   Code   RO         4529    i.OLED_WinDrawASCII  wououi_oled.o
-    0x08005eb8   0x08005eb8   0x000000e6   Code   RO         4530    i.OLED_WinDrawBMP   wououi_oled.o
-    0x08005f9e   0x08005f9e   0x000000b8   Code   RO         4531    i.OLED_WinDrawBoxRightAngle  wououi_oled.o
-    0x08006056   0x08006056   0x0000005c   Code   RO         4532    i.OLED_WinDrawHLine  wououi_oled.o
-    0x080060b2   0x080060b2   0x00000076   Code   RO         4535    i.OLED_WinDrawRBox  wououi_oled.o
-    0x08006128   0x08006128   0x000000b8   Code   RO         4536    i.OLED_WinDrawRBoxEmpty  wououi_oled.o
-    0x080061e0   0x080061e0   0x0000006c   Code   RO         4538    i.OLED_WinDrawStr   wououi_oled.o
-    0x0800624c   0x0800624c   0x00000098   Code   RO         4539    i.OLED_WinDrawVLine  wououi_oled.o
-    0x080062e4   0x080062e4   0x00000036   Code   RO         4843    i.OLED_WinFSM       wououi_win.o
-    0x0800631a   0x0800631a   0x0000008e   Code   RO         4540    i.OLED_WinWriteByte  wououi_oled.o
-    0x080063a8   0x080063a8   0x0000000c   Code   RO         4033    i.OLED_displayON    oled.o
+    0x080048b4   0x080048b4   0x00000054   Code   RO         4829    i.OLED_PlayingPageInit  wououi_udp.o
+    0x08004908   0x08004908   0x00000218   Code   RO         4830    i.OLED_PlayingPageReact  wououi_udp.o
+    0x08004b20   0x08004b20   0x0000009c   Code   RO         4831    i.OLED_PlayingPageShow  wououi_udp.o
+    0x08004bbc   0x08004bbc   0x00000020   Code   RO         3959    i.OLED_RamClear     oled.o
+    0x08004bdc   0x08004bdc   0x00000074   Code   RO         3960    i.OLED_Refresh_FrameBuffer  oled.o
+    0x08004c50   0x08004c50   0x00000078   Code   RO         3961    i.OLED_Refresh_Gram  oled.o
+    0x08004cc8   0x08004cc8   0x00000010   Code   RO         4434    i.OLED_SendBuff     wououi_oled.o
+    0x08004cd8   0x08004cd8   0x00000034   Code   RO         4436    i.OLED_SetPointColor  wououi_oled.o
+    0x08004d0c   0x08004d0c   0x00000074   Code   RO         4745    i.OLED_SlideValWinInit  wououi_win.o
+    0x08004d80   0x08004d80   0x00000078   Code   RO         4746    i.OLED_SlideValWinReact  wououi_win.o
+    0x08004df8   0x08004df8   0x000001c0   Code   RO         4747    i.OLED_SlideValWinShow  wououi_win.o
+    0x08004fb8   0x08004fb8   0x0000011c   Code   RO         4748    i.OLED_SpinWinInit  wououi_win.o
+    0x080050d4   0x080050d4   0x000000f4   Code   RO         4749    i.OLED_SpinWinReact  wououi_win.o
+    0x080051c8   0x080051c8   0x00000214   Code   RO         4750    i.OLED_SpinWinShow  wououi_win.o
+    0x080053dc   0x080053dc   0x00000048   Code   RO         4572    i.OLED_TitlePageEnterInit  wououi_page.o
+    0x08005424   0x08005424   0x00000050   Code   RO         4573    i.OLED_TitlePageInit  wououi_page.o
+    0x08005474   0x08005474   0x00000138   Code   RO         4574    i.OLED_TitlePageReact  wououi_page.o
+    0x080055ac   0x080055ac   0x000001b0   Code   RO         4575    i.OLED_TitlePageShow  wououi_page.o
+    0x0800575c   0x0800575c   0x00000010   Code   RO         4221    i.OLED_UIBeginDynamicRefresh  wououi.o
+    0x0800576c   0x0800576c   0x000000c4   Code   RO         4222    i.OLED_UIBlurProc   wououi.o
+    0x08005830   0x08005830   0x00000020   Code   RO         4224    i.OLED_UIFadeInInit  wououi.o
+    0x08005850   0x08005850   0x00000028   Code   RO         4225    i.OLED_UIFadeOutInit  wououi.o
+    0x08005878   0x08005878   0x000001a8   Code   RO         4226    i.OLED_UIIndicatorProc  wououi.o
+    0x08005a20   0x08005a20   0x0000003c   Code   RO         4227    i.OLED_UIJumpToPage  wououi.o
+    0x08005a5c   0x08005a5c   0x0000001c   Code   RO         4228    i.OLED_UILayerInProc  wououi.o
+    0x08005a78   0x08005a78   0x0000002c   Code   RO         4229    i.OLED_UILayerOutProc  wououi.o
+    0x08005aa4   0x08005aa4   0x000000c8   Code   RO         4230    i.OLED_UIPageProc   wououi.o
+    0x08005b6c   0x08005b6c   0x000000e8   Code   RO         4231    i.OLED_UIProc       wououi.o
+    0x08005c54   0x08005c54   0x0000006c   Code   RO         4232    i.OLED_UIScrollBarProc  wououi.o
+    0x08005cc0   0x08005cc0   0x00000030   Code   RO         3969    i.OLED_WR_Byte      oled.o
+    0x08005cf0   0x08005cf0   0x000001c8   Code   RO         4437    i.OLED_WinDrawASCII  wououi_oled.o
+    0x08005eb8   0x08005eb8   0x000000e6   Code   RO         4438    i.OLED_WinDrawBMP   wououi_oled.o
+    0x08005f9e   0x08005f9e   0x000000b8   Code   RO         4439    i.OLED_WinDrawBoxRightAngle  wououi_oled.o
+    0x08006056   0x08006056   0x0000005c   Code   RO         4440    i.OLED_WinDrawHLine  wououi_oled.o
+    0x080060b2   0x080060b2   0x00000076   Code   RO         4443    i.OLED_WinDrawRBox  wououi_oled.o
+    0x08006128   0x08006128   0x000000b8   Code   RO         4444    i.OLED_WinDrawRBoxEmpty  wououi_oled.o
+    0x080061e0   0x080061e0   0x0000006c   Code   RO         4446    i.OLED_WinDrawStr   wououi_oled.o
+    0x0800624c   0x0800624c   0x00000098   Code   RO         4447    i.OLED_WinDrawVLine  wououi_oled.o
+    0x080062e4   0x080062e4   0x00000036   Code   RO         4751    i.OLED_WinFSM       wououi_win.o
+    0x0800631a   0x0800631a   0x0000008e   Code   RO         4448    i.OLED_WinWriteByte  wououi_oled.o
+    0x080063a8   0x080063a8   0x0000000c   Code   RO         3971    i.OLED_displayON    oled.o
     0x080063b4   0x080063b4   0x00000002   Code   RO          350    i.PendSV_Handler    stm32l0xx_it.o
     0x080063b6   0x080063b6   0x00000002   PAD
-    0x080063b8   0x080063b8   0x000000b8   Code   RO         4769    i.PlayingPage_CallBack  wououi_user.o
+    0x080063b8   0x080063b8   0x000000b8   Code   RO         4677    i.PlayingPage_CallBack  wououi_user.o
     0x08006470   0x08006470   0x00000046   Code   RO         2132    i.RTC_EnterInitMode  stm32l0xx_hal_rtc.o
     0x080064b6   0x080064b6   0x0000002e   Code   RO         2133    i.RTC_ExitInitMode  stm32l0xx_hal_rtc.o
     0x080064e4   0x080064e4   0x00000010   Code   RO          351    i.RTC_IRQHandler    stm32l0xx_it.o
-    0x080064f4   0x080064f4   0x0000004c   Code   RO         4224    i.SIGMA_WRITE_REGISTER_BLOCK  adau1761.o
+    0x080064f4   0x080064f4   0x0000004c   Code   RO         4162    i.SIGMA_WRITE_REGISTER_BLOCK  adau1761.o
     0x08006540   0x08006540   0x00000002   Code   RO          352    i.SVC_Handler       stm32l0xx_it.o
     0x08006542   0x08006542   0x00000002   PAD
-    0x08006544   0x08006544   0x00000034   Code   RO         4770    i.SettingPage_CallBack  wououi_user.o
-    0x08006578   0x08006578   0x00000002   Code   RO         4771    i.Setting_EQPresetPage_CallBack  wououi_user.o
-    0x0800657a   0x0800657a   0x00000008   Code   RO          353    i.SysTick_Handler   stm32l0xx_it.o
-    0x08006582   0x08006582   0x00000002   PAD
-    0x08006584   0x08006584   0x00000098   Code   RO           13    i.SystemClock_Config  main.o
-    0x0800661c   0x0800661c   0x00000002   Code   RO         3213    i.SystemInit        system_stm32l0xx.o
-    0x0800661e   0x0800661e   0x00000002   PAD
-    0x08006620   0x08006620   0x00000010   Code   RO          354    i.TIM21_IRQHandler  stm32l0xx_it.o
-    0x08006630   0x08006630   0x00000010   Code   RO          355    i.TIM6_IRQHandler   stm32l0xx_it.o
-    0x08006640   0x08006640   0x00000058   Code   RO         2584    i.TIM_Base_SetConfig  stm32l0xx_hal_tim.o
-    0x08006698   0x08006698   0x00000016   Code   RO         2595    i.TIM_ETR_SetConfig  stm32l0xx_hal_tim.o
-    0x080066ae   0x080066ae   0x0000008c   Code   RO         2601    i.TIM_SlaveTimer_SetConfig  stm32l0xx_hal_tim.o
-    0x0800673a   0x0800673a   0x00000022   Code   RO         2602    i.TIM_TI1_ConfigInputStage  stm32l0xx_hal_tim.o
-    0x0800675c   0x0800675c   0x00000026   Code   RO         2604    i.TIM_TI2_ConfigInputStage  stm32l0xx_hal_tim.o
-    0x08006782   0x08006782   0x00000002   PAD
-    0x08006784   0x08006784   0x0000007c   Code   RO         4772    i.TestUI_Init       wououi_user.o
-    0x08006800   0x08006800   0x00000008   Code   RO         4737    i.WouoUI_port_SendBuff  wououi_port.o
-    0x08006808   0x08006808   0x00000028   Code   RO         5240    i.__0sprintf        mc_p.l(printfa.o)
-    0x08006830   0x08006830   0x0000002e   Code   RO         5414    i.__ARM_clz         mf_p.l(depilogue.o)
-    0x0800685e   0x0800685e   0x00000030   Code   RO         1274    i.__ARM_common_ll_muluu  stm32l0xx_hal_rcc.o
-    0x0800688e   0x0800688e   0x0000001a   Code   RO         1749    i.__ARM_common_switch8  stm32l0xx_hal_dma.o
-    0x080068a8   0x080068a8   0x0000002c   Code   RO         5353    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
-    0x080068d4   0x080068d4   0x00000044   Code   RO         1943    i.__NVIC_SetPriority  stm32l0xx_hal_cortex.o
-    0x08006918   0x08006918   0x0000039c   Code   RO         5358    i.__ieee754_rem_pio2  m_ps.l(rred.o)
-    0x08006cb4   0x08006cb4   0x000000f4   Code   RO         5336    i.__kernel_cos      m_ps.l(cos_i.o)
-    0x08006da8   0x08006da8   0x000000ac   Code   RO         5355    i.__kernel_poly     m_ps.l(poly.o)
-    0x08006e54   0x08006e54   0x000000ec   Code   RO         5363    i.__kernel_sin      m_ps.l(sin_i.o)
-    0x08006f40   0x08006f40   0x00000014   Code   RO         5339    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
-    0x08006f54   0x08006f54   0x0000000a   Code   RO         5340    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
-    0x08006f5e   0x08006f5e   0x00000008   Code   RO         5341    i.__mathlib_dbl_infnan2  m_ps.l(dunder.o)
-    0x08006f66   0x08006f66   0x00000010   Code   RO         5342    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
-    0x08006f76   0x08006f76   0x00000002   PAD
-    0x08006f78   0x08006f78   0x00000014   Code   RO         5343    i.__mathlib_dbl_overflow  m_ps.l(dunder.o)
-    0x08006f8c   0x08006f8c   0x00000014   Code   RO         5345    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
-    0x08006fa0   0x08006fa0   0x0000000e   Code   RO         5430    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x08006fae   0x08006fae   0x00000002   Code   RO         5431    i.__scatterload_null  mc_p.l(handlers.o)
-    0x08006fb0   0x08006fb0   0x0000000e   Code   RO         5432    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x08006fbe   0x08006fbe   0x00000002   PAD
-    0x08006fc0   0x08006fc0   0x0000000c   Code   RO         5404    i.__set_errno       mc_p.l(errno.o)
-    0x08006fcc   0x08006fcc   0x00000158   Code   RO         5245    i._fp_digits        mc_p.l(printfa.o)
-    0x08007124   0x08007124   0x000006ec   Code   RO         5246    i._printf_core      mc_p.l(printfa.o)
-    0x08007810   0x08007810   0x00000020   Code   RO         5247    i._printf_post_padding  mc_p.l(printfa.o)
-    0x08007830   0x08007830   0x0000002c   Code   RO         5248    i._printf_pre_padding  mc_p.l(printfa.o)
-    0x0800785c   0x0800785c   0x0000000a   Code   RO         5250    i._sputc            mc_p.l(printfa.o)
-    0x08007866   0x08007866   0x00000002   PAD
-    0x08007868   0x08007868   0x00000080   Code   RO         3837    i.audio_enable_proc  audio.o
-    0x080078e8   0x080078e8   0x000001cc   Code   RO         3974    i.bsp_43131_init    cs43131.o
-    0x08007ab4   0x08007ab4   0x00000028   Code   RO         3975    i.bsp_43131_set_volume  cs43131.o
-    0x08007adc   0x08007adc   0x0000016c   Code   RO         4225    i.bsp_adau1761_eq_data_conv  adau1761.o
-    0x08007c48   0x08007c48   0x000001cc   Code   RO         4227    i.bsp_adau1761_eq_download  adau1761.o
-    0x08007e14   0x08007e14   0x000000a4   Code   RO         4228    i.bsp_adau1761_eq_init  adau1761.o
-    0x08007eb8   0x08007eb8   0x00000024   Code   RO         4230    i.bsp_adau1761_eq_set  adau1761.o
-    0x08007edc   0x08007edc   0x000000e4   Code   RO         3457    i.bsp_btn_scan_init  key.o
-    0x08007fc0   0x08007fc0   0x00000010   Code   RO         3895    i.bsp_cw2015_init   cw2015.o
-    0x08007fd0   0x08007fd0   0x00000014   Code   RO         3899    i.bsp_cw2015_set_alrt  cw2015.o
-    0x08007fe4   0x08007fe4   0x00000014   Code   RO         3900    i.bsp_cw2015_slp    cw2015.o
-    0x08007ff8   0x08007ff8   0x0000001a   Code   RO         3543    i.bsp_read_eqs_from_eeprom  eeprom.o
-    0x08008012   0x08008012   0x00000002   PAD
-    0x08008014   0x08008014   0x0000003c   Code   RO         3339    i.bsp_tim22_delay_us  timer.o
-    0x08008050   0x08008050   0x00000008   Code   RO         3584    i.button_attach     multi_button.o
-    0x08008058   0x08008058   0x000001c2   Code   RO         3585    i.button_handler    multi_button.o
-    0x0800821a   0x0800821a   0x0000003c   Code   RO         3586    i.button_init       multi_button.o
-    0x08008256   0x08008256   0x00000002   PAD
-    0x08008258   0x08008258   0x00000024   Code   RO         3587    i.button_start      multi_button.o
-    0x0800827c   0x0800827c   0x0000001c   Code   RO         3589    i.button_ticks      multi_button.o
-    0x08008298   0x08008298   0x00000098   Code   RO         4959    i.cos               m_ps.l(cos.o)
-    0x08008330   0x08008330   0x00000258   Code   RO         4231    i.default_download_IC_2  adau1761.o
-    0x08008588   0x08008588   0x00000054   Code   RO         5266    i.free              mc_p.l(malloc.o)
-    0x080085dc   0x080085dc   0x00000040   Code   RO           14    i.main              main.o
-    0x0800861c   0x0800861c   0x00000030   Code   RO         3860    i.main_FSM          tasks.o
-    0x0800864c   0x0800864c   0x0000006c   Code   RO         5267    i.malloc            mc_p.l(malloc.o)
-    0x080086b8   0x080086b8   0x00000032   Code   RO         4232    i.point_to_int32    adau1761.o
-    0x080086ea   0x080086ea   0x00000002   PAD
-    0x080086ec   0x080086ec   0x00000980   Code   RO         4967    i.pow               m_ps.l(pow.o)
-    0x0800906c   0x0800906c   0x0000001c   Code   RO         4157    i.qcc5125_btn_press  qcc5125.o
-    0x08009088   0x08009088   0x00000054   Code   RO         4158    i.qcc5125_ioctl     qcc5125.o
-    0x080090dc   0x080090dc   0x0000008c   Code   RO         4159    i.qcc5125_status_proc  qcc5125.o
-    0x08009168   0x08009168   0x0000004c   Code   RO         3458    i.read_btn_level    key.o
-    0x080091b4   0x080091b4   0x0000009c   Code   RO         4977    i.sin               m_ps.l(sin.o)
-    0x08009250   0x08009250   0x00000048   Code   RO         5370    i.sqrt              m_ps.l(sqrt.o)
-    0x08009298   0x08009298   0x00000002   Code   RO         3642    i.sys_ctrl_status_switch  pwr_mngr.o
-    0x0800929a   0x0800929a   0x00000002   PAD
-    0x0800929c   0x0800929c   0x00000074   Code   RO         3644    i.sys_pwrctrl_power_up  pwr_mngr.o
-    0x08009310   0x08009310   0x000000c0   Code   RO         3811    i.system_init       sys_init.o
-    0x080093d0   0x080093d0   0x00000078   Code   RO         4326    i.ui_ftoa_str       wououi.o
-    0x08009448   0x08009448   0x00000024   Code   RO         4327    i.ui_itoa           wououi.o
-    0x0800946c   0x0800946c   0x00000020   Code   RO         4328    i.ui_itoa_str       wououi.o
-    0x0800948c   0x0800948c   0x00000019   Data   RO         3214    .constdata          system_stm32l0xx.o
-    0x080094a5   0x080094a5   0x000005cc   Data   RO         4238    .constdata          adau1761.o
-    0x08009a71   0x08009a71   0x0000023a   Data   RO         4498    .constdata          wououi_font.o
-    0x08009cab   0x08009cab   0x00000532   Data   RO         4500    .constdata          wououi_font.o
-    0x0800a1dd   0x0800a1dd   0x00000d5c   Data   RO         4502    .constdata          wououi_font.o
-    0x0800af39   0x0800af39   0x00000003   PAD
-    0x0800af3c   0x0800af3c   0x00000288   Data   RO         4774    .constdata          wououi_user.o
-    0x0800b1c4   0x0800b1c4   0x000001c0   Data   RO         4921    .constdata          wououi_udp.o
-    0x0800b384   0x0800b384   0x00000004   PAD
-    0x0800b388   0x0800b388   0x00000088   Data   RO         4968    .constdata          m_ps.l(pow.o)
-    0x0800b410   0x0800b410   0x00000030   Data   RO         5337    .constdata          m_ps.l(cos_i.o)
-    0x0800b440   0x0800b440   0x00000008   Data   RO         5357    .constdata          m_ps.l(qnan.o)
-    0x0800b448   0x0800b448   0x000000c8   Data   RO         5360    .constdata          m_ps.l(rred.o)
-    0x0800b510   0x0800b510   0x00000028   Data   RO         5364    .constdata          m_ps.l(sin_i.o)
-    0x0800b538   0x0800b538   0x00000115   Data   RO         4775    .conststring        wououi_user.o
-    0x0800b64d   0x0800b64d   0x00000003   PAD
-    0x0800b650   0x0800b650   0x00000020   Data   RO         5428    Region$$Table       anon$$obj.o
+    0x08006544   0x08006544   0x00000030   Code   RO         4678    i.SettingPage_CallBack  wououi_user.o
+    0x08006574   0x08006574   0x00000002   Code   RO         4679    i.Setting_EQPresetPage_CallBack  wououi_user.o
+    0x08006576   0x08006576   0x00000008   Code   RO          353    i.SysTick_Handler   stm32l0xx_it.o
+    0x0800657e   0x0800657e   0x00000002   PAD
+    0x08006580   0x08006580   0x00000098   Code   RO           13    i.SystemClock_Config  main.o
+    0x08006618   0x08006618   0x00000002   Code   RO         3213    i.SystemInit        system_stm32l0xx.o
+    0x0800661a   0x0800661a   0x00000002   PAD
+    0x0800661c   0x0800661c   0x00000010   Code   RO          354    i.TIM21_IRQHandler  stm32l0xx_it.o
+    0x0800662c   0x0800662c   0x00000010   Code   RO          355    i.TIM6_IRQHandler   stm32l0xx_it.o
+    0x0800663c   0x0800663c   0x00000058   Code   RO         2584    i.TIM_Base_SetConfig  stm32l0xx_hal_tim.o
+    0x08006694   0x08006694   0x00000016   Code   RO         2595    i.TIM_ETR_SetConfig  stm32l0xx_hal_tim.o
+    0x080066aa   0x080066aa   0x0000008c   Code   RO         2601    i.TIM_SlaveTimer_SetConfig  stm32l0xx_hal_tim.o
+    0x08006736   0x08006736   0x00000022   Code   RO         2602    i.TIM_TI1_ConfigInputStage  stm32l0xx_hal_tim.o
+    0x08006758   0x08006758   0x00000026   Code   RO         2604    i.TIM_TI2_ConfigInputStage  stm32l0xx_hal_tim.o
+    0x0800677e   0x0800677e   0x00000002   PAD
+    0x08006780   0x08006780   0x0000007c   Code   RO         4680    i.TestUI_Init       wououi_user.o
+    0x080067fc   0x080067fc   0x00000008   Code   RO         4645    i.WouoUI_port_SendBuff  wououi_port.o
+    0x08006804   0x08006804   0x00000028   Code   RO         5166    i.__0sprintf        mc_p.l(printfa.o)
+    0x0800682c   0x0800682c   0x0000002e   Code   RO         5340    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x0800685a   0x0800685a   0x00000030   Code   RO         1274    i.__ARM_common_ll_muluu  stm32l0xx_hal_rcc.o
+    0x0800688a   0x0800688a   0x0000001a   Code   RO         1749    i.__ARM_common_switch8  stm32l0xx_hal_dma.o
+    0x080068a4   0x080068a4   0x0000002c   Code   RO         5279    i.__ARM_fpclassify  m_ps.l(fpclassify.o)
+    0x080068d0   0x080068d0   0x00000044   Code   RO         1943    i.__NVIC_SetPriority  stm32l0xx_hal_cortex.o
+    0x08006914   0x08006914   0x0000039c   Code   RO         5284    i.__ieee754_rem_pio2  m_ps.l(rred.o)
+    0x08006cb0   0x08006cb0   0x000000f4   Code   RO         5262    i.__kernel_cos      m_ps.l(cos_i.o)
+    0x08006da4   0x08006da4   0x000000ac   Code   RO         5281    i.__kernel_poly     m_ps.l(poly.o)
+    0x08006e50   0x08006e50   0x000000ec   Code   RO         5289    i.__kernel_sin      m_ps.l(sin_i.o)
+    0x08006f3c   0x08006f3c   0x00000014   Code   RO         5265    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
+    0x08006f50   0x08006f50   0x0000000a   Code   RO         5266    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x08006f5a   0x08006f5a   0x00000008   Code   RO         5267    i.__mathlib_dbl_infnan2  m_ps.l(dunder.o)
+    0x08006f62   0x08006f62   0x00000010   Code   RO         5268    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x08006f72   0x08006f72   0x00000002   PAD
+    0x08006f74   0x08006f74   0x00000014   Code   RO         5269    i.__mathlib_dbl_overflow  m_ps.l(dunder.o)
+    0x08006f88   0x08006f88   0x00000014   Code   RO         5271    i.__mathlib_dbl_underflow  m_ps.l(dunder.o)
+    0x08006f9c   0x08006f9c   0x0000000e   Code   RO         5356    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x08006faa   0x08006faa   0x00000002   Code   RO         5357    i.__scatterload_null  mc_p.l(handlers.o)
+    0x08006fac   0x08006fac   0x0000000e   Code   RO         5358    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x08006fba   0x08006fba   0x00000002   PAD
+    0x08006fbc   0x08006fbc   0x0000000c   Code   RO         5330    i.__set_errno       mc_p.l(errno.o)
+    0x08006fc8   0x08006fc8   0x00000158   Code   RO         5171    i._fp_digits        mc_p.l(printfa.o)
+    0x08007120   0x08007120   0x000006ec   Code   RO         5172    i._printf_core      mc_p.l(printfa.o)
+    0x0800780c   0x0800780c   0x00000020   Code   RO         5173    i._printf_post_padding  mc_p.l(printfa.o)
+    0x0800782c   0x0800782c   0x0000002c   Code   RO         5174    i._printf_pre_padding  mc_p.l(printfa.o)
+    0x08007858   0x08007858   0x0000000a   Code   RO         5176    i._sputc            mc_p.l(printfa.o)
+    0x08007862   0x08007862   0x00000002   PAD
+    0x08007864   0x08007864   0x00000070   Code   RO         3755    i.audio_enable_proc  audio.o
+    0x080078d4   0x080078d4   0x0000009c   Code   RO         3756    i.audio_param_init  audio.o
+    0x08007970   0x08007970   0x00000020   Code   RO         3757    i.audio_read_all_eqchnl_from_eeprom  audio.o
+    0x08007990   0x08007990   0x000001cc   Code   RO         3912    i.bsp_43131_init    cs43131.o
+    0x08007b5c   0x08007b5c   0x00000028   Code   RO         3913    i.bsp_43131_set_volume  cs43131.o
+    0x08007b84   0x08007b84   0x0000016c   Code   RO         4163    i.bsp_adau1761_eq_data_conv  adau1761.o
+    0x08007cf0   0x08007cf0   0x000001c6   Code   RO         4164    i.bsp_adau1761_eq_download  adau1761.o
+    0x08007eb6   0x08007eb6   0x00000002   PAD
+    0x08007eb8   0x08007eb8   0x000000e4   Code   RO         3455    i.bsp_btn_scan_init  key.o
+    0x08007f9c   0x08007f9c   0x00000010   Code   RO         3833    i.bsp_cw2015_init   cw2015.o
+    0x08007fac   0x08007fac   0x00000014   Code   RO         3837    i.bsp_cw2015_set_alrt  cw2015.o
+    0x08007fc0   0x08007fc0   0x00000014   Code   RO         3838    i.bsp_cw2015_slp    cw2015.o
+    0x08007fd4   0x08007fd4   0x0000003c   Code   RO         3339    i.bsp_tim22_delay_us  timer.o
+    0x08008010   0x08008010   0x00000008   Code   RO         3570    i.button_attach     multi_button.o
+    0x08008018   0x08008018   0x000001c2   Code   RO         3571    i.button_handler    multi_button.o
+    0x080081da   0x080081da   0x0000003c   Code   RO         3572    i.button_init       multi_button.o
+    0x08008216   0x08008216   0x00000002   PAD
+    0x08008218   0x08008218   0x00000024   Code   RO         3573    i.button_start      multi_button.o
+    0x0800823c   0x0800823c   0x0000001c   Code   RO         3575    i.button_ticks      multi_button.o
+    0x08008258   0x08008258   0x00000098   Code   RO         4885    i.cos               m_ps.l(cos.o)
+    0x080082f0   0x080082f0   0x00000258   Code   RO         4165    i.default_download_IC_2  adau1761.o
+    0x08008548   0x08008548   0x00000054   Code   RO         5192    i.free              mc_p.l(malloc.o)
+    0x0800859c   0x0800859c   0x00000040   Code   RO           14    i.main              main.o
+    0x080085dc   0x080085dc   0x00000030   Code   RO         3802    i.main_FSM          tasks.o
+    0x0800860c   0x0800860c   0x0000006c   Code   RO         5193    i.malloc            mc_p.l(malloc.o)
+    0x08008678   0x08008678   0x00000032   Code   RO         4166    i.point_to_int32    adau1761.o
+    0x080086aa   0x080086aa   0x00000002   PAD
+    0x080086ac   0x080086ac   0x00000980   Code   RO         4893    i.pow               m_ps.l(pow.o)
+    0x0800902c   0x0800902c   0x0000001c   Code   RO         4095    i.qcc5125_btn_press  qcc5125.o
+    0x08009048   0x08009048   0x00000054   Code   RO         4096    i.qcc5125_ioctl     qcc5125.o
+    0x0800909c   0x0800909c   0x0000008c   Code   RO         4097    i.qcc5125_status_proc  qcc5125.o
+    0x08009128   0x08009128   0x0000004c   Code   RO         3456    i.read_btn_level    key.o
+    0x08009174   0x08009174   0x0000009c   Code   RO         4903    i.sin               m_ps.l(sin.o)
+    0x08009210   0x08009210   0x00000048   Code   RO         5296    i.sqrt              m_ps.l(sqrt.o)
+    0x08009258   0x08009258   0x00000002   Code   RO         3628    i.sys_ctrl_status_switch  pwr_mngr.o
+    0x0800925a   0x0800925a   0x00000002   PAD
+    0x0800925c   0x0800925c   0x00000074   Code   RO         3630    i.sys_pwrctrl_power_up  pwr_mngr.o
+    0x080092d0   0x080092d0   0x000000b0   Code   RO         3727    i.system_init       sys_init.o
+    0x08009380   0x08009380   0x00000078   Code   RO         4234    i.ui_ftoa_str       wououi.o
+    0x080093f8   0x080093f8   0x00000024   Code   RO         4235    i.ui_itoa           wououi.o
+    0x0800941c   0x0800941c   0x00000020   Code   RO         4236    i.ui_itoa_str       wououi.o
+    0x0800943c   0x0800943c   0x00000019   Data   RO         3214    .constdata          system_stm32l0xx.o
+    0x08009455   0x08009455   0x000005cc   Data   RO         4168    .constdata          adau1761.o
+    0x08009a21   0x08009a21   0x0000023a   Data   RO         4406    .constdata          wououi_font.o
+    0x08009c5b   0x08009c5b   0x00000532   Data   RO         4408    .constdata          wououi_font.o
+    0x0800a18d   0x0800a18d   0x00000d5c   Data   RO         4410    .constdata          wououi_font.o
+    0x0800aee9   0x0800aee9   0x00000003   PAD
+    0x0800aeec   0x0800aeec   0x00000288   Data   RO         4682    .constdata          wououi_user.o
+    0x0800b174   0x0800b174   0x000001c0   Data   RO         4832    .constdata          wououi_udp.o
+    0x0800b334   0x0800b334   0x00000004   PAD
+    0x0800b338   0x0800b338   0x00000088   Data   RO         4894    .constdata          m_ps.l(pow.o)
+    0x0800b3c0   0x0800b3c0   0x00000030   Data   RO         5263    .constdata          m_ps.l(cos_i.o)
+    0x0800b3f0   0x0800b3f0   0x00000008   Data   RO         5283    .constdata          m_ps.l(qnan.o)
+    0x0800b3f8   0x0800b3f8   0x000000c8   Data   RO         5286    .constdata          m_ps.l(rred.o)
+    0x0800b4c0   0x0800b4c0   0x00000028   Data   RO         5290    .constdata          m_ps.l(sin_i.o)
+    0x0800b4e8   0x0800b4e8   0x00000125   Data   RO         4683    .conststring        wououi_user.o
+    0x0800b60d   0x0800b60d   0x00000003   PAD
+    0x0800b610   0x0800b610   0x00000020   Data   RO         5354    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800b670, Size: 0x00001b90, Max: 0x00002000, ABSOLUTE, COMPRESSED[0x000000dc])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800b630, Size: 0x00001b80, Max: 0x00002000, ABSOLUTE, COMPRESSED[0x000000dc])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1537,42 +1532,41 @@ Memory Map of the image
     0x2000000c   COMPRESSED   0x00000004   Data   RW         3216    .data               system_stm32l0xx.o
     0x20000010   COMPRESSED   0x00000001   Data   RW         3340    .data               timer.o
     0x20000011   COMPRESSED   0x00000003   PAD
-    0x20000014   COMPRESSED   0x00000004   Data   RW         3591    .data               multi_button.o
-    0x20000018   COMPRESSED   0x00000004   Data   RW         3646    .data               pwr_mngr.o
-    0x2000001c   COMPRESSED   0x00000001   Data   RW         3838    .data               audio.o
-    0x2000001d   COMPRESSED   0x00000001   Data   RW         3861    .data               tasks.o
-    0x2000001e   COMPRESSED   0x00000001   Data   RW         3862    .data               tasks.o
-    0x2000001f   COMPRESSED   0x00000004   Data   RW         4161    .data               qcc5125.o
+    0x20000014   COMPRESSED   0x00000004   Data   RW         3577    .data               multi_button.o
+    0x20000018   COMPRESSED   0x00000004   Data   RW         3632    .data               pwr_mngr.o
+    0x2000001c   COMPRESSED   0x00000001   Data   RW         3760    .data               audio.o
+    0x2000001d   COMPRESSED   0x00000001   Data   RW         3803    .data               tasks.o
+    0x2000001e   COMPRESSED   0x00000001   Data   RW         3804    .data               tasks.o
+    0x2000001f   COMPRESSED   0x00000004   Data   RW         4099    .data               qcc5125.o
     0x20000023   COMPRESSED   0x00000001   PAD
-    0x20000024   COMPRESSED   0x00000234   Data   RW         4330    .data               wououi.o
-    0x20000258   COMPRESSED   0x00000014   Data   RW         4331    .data               wououi.o
-    0x2000026c   COMPRESSED   0x0000000c   Data   RW         4503    .data               wououi_font.o
-    0x20000278   COMPRESSED   0x0000000c   Data   RW         4505    .data               wououi_font.o
-    0x20000284   COMPRESSED   0x0000000c   Data   RW         4507    .data               wououi_font.o
-    0x20000290   COMPRESSED   0x00000404   Data   RW         4542    .data               wououi_oled.o
-    0x20000694   COMPRESSED   0x00000002   Data   RW         4668    .data               wououi_page.o
+    0x20000024   COMPRESSED   0x00000234   Data   RW         4238    .data               wououi.o
+    0x20000258   COMPRESSED   0x00000014   Data   RW         4239    .data               wououi.o
+    0x2000026c   COMPRESSED   0x0000000c   Data   RW         4411    .data               wououi_font.o
+    0x20000278   COMPRESSED   0x0000000c   Data   RW         4413    .data               wououi_font.o
+    0x20000284   COMPRESSED   0x0000000c   Data   RW         4415    .data               wououi_font.o
+    0x20000290   COMPRESSED   0x00000404   Data   RW         4450    .data               wououi_oled.o
+    0x20000694   COMPRESSED   0x00000002   Data   RW         4576    .data               wououi_page.o
     0x20000696   COMPRESSED   0x00000002   PAD
-    0x20000698   COMPRESSED   0x00000160   Data   RW         4776    .data               wououi_user.o
-    0x200007f8   COMPRESSED   0x00000008   Data   RW         4923    .data               wououi_udp.o
-    0x20000800   COMPRESSED   0x00000004   Data   RW         5400    .data               mc_p.l(mvars.o)
-    0x20000804   COMPRESSED   0x00000004   Data   RW         5401    .data               mc_p.l(mvars.o)
-    0x20000808   COMPRESSED   0x00000004   Data   RW         5405    .data               mc_p.l(errno.o)
-    0x2000080c        -       0x0000009c   Zero   RW          219    .bss                i2c.o
-    0x200008a8        -       0x00000024   Zero   RW          257    .bss                rtc.o
-    0x200008cc        -       0x000000c0   Zero   RW          297    .bss                tim.o
-    0x2000098c        -       0x00000018   Zero   RW         1405    .bss                stm32l0xx_hal_flash.o
-    0x200009a4        -       0x000000dc   Zero   RW         3459    .bss                key.o
-    0x20000a80        -       0x00000432   Zero   RW         4035    .bss                oled.o
-    0x20000eb2        -       0x00000028   Zero   RW         4160    .bss                qcc5125.o
-    0x20000eda   COMPRESSED   0x00000002   PAD
-    0x20000edc        -       0x000001e0   Zero   RW         4233    .bss                adau1761.o
-    0x200010bc        -       0x0000000a   Zero   RW         4236    .bss                adau1761.o
-    0x200010c6        -       0x0000000a   Zero   RW         4237    .bss                adau1761.o
-    0x200010d0        -       0x00000020   Zero   RW         4329    .bss                wououi.o
-    0x200010f0        -       0x00000400   Zero   RW         4541    .bss                wououi_oled.o
-    0x200014f0        -       0x000000a0   Zero   RW         4773    .bss                wououi_user.o
-    0x20001590        -       0x00000200   Zero   RW            2    HEAP                startup_stm32l051xx.o
-    0x20001790        -       0x00000400   Zero   RW            1    STACK               startup_stm32l051xx.o
+    0x20000698   COMPRESSED   0x00000180   Data   RW         4684    .data               wououi_user.o
+    0x20000818   COMPRESSED   0x00000008   Data   RW         4834    .data               wououi_udp.o
+    0x20000820   COMPRESSED   0x00000004   Data   RW         5326    .data               mc_p.l(mvars.o)
+    0x20000824   COMPRESSED   0x00000004   Data   RW         5327    .data               mc_p.l(mvars.o)
+    0x20000828   COMPRESSED   0x00000004   Data   RW         5331    .data               mc_p.l(errno.o)
+    0x2000082c        -       0x0000009c   Zero   RW          219    .bss                i2c.o
+    0x200008c8        -       0x00000024   Zero   RW          257    .bss                rtc.o
+    0x200008ec        -       0x000000c0   Zero   RW          297    .bss                tim.o
+    0x200009ac        -       0x00000018   Zero   RW         1405    .bss                stm32l0xx_hal_flash.o
+    0x200009c4        -       0x000000dc   Zero   RW         3457    .bss                key.o
+    0x20000aa0        -       0x0000000a   Zero   RW         3759    .bss                audio.o
+    0x20000aaa        -       0x00000432   Zero   RW         3973    .bss                oled.o
+    0x20000edc        -       0x00000028   Zero   RW         4098    .bss                qcc5125.o
+    0x20000f04        -       0x000001b8   Zero   RW         4167    .bss                adau1761.o
+    0x200010bc        -       0x00000020   Zero   RW         4237    .bss                wououi.o
+    0x200010dc        -       0x00000400   Zero   RW         4449    .bss                wououi_oled.o
+    0x200014dc        -       0x000000a0   Zero   RW         4681    .bss                wououi_user.o
+    0x2000157c   COMPRESSED   0x00000004   PAD
+    0x20001580        -       0x00000200   Zero   RW            2    HEAP                startup_stm32l051xx.o
+    0x20001780        -       0x00000400   Zero   RW            1    STACK               startup_stm32l051xx.o
 
 
 ==============================================================================
@@ -1582,12 +1576,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1750         72       1484          0        500      10584   adau1761.o
-       128         14          0          1          0       1254   audio.o
+      1544         36       1484          0        440       8951   adau1761.o
+       300         32          0          1         10       2569   audio.o
        732         36          0          0          0       3284   cs43131.o
        120          0          0          0          0       2179   cw2015.o
         40          4          0          0          0        710   dma.o
-       170          6          0          0          0       2133   eeprom.o
+       144          6          0          0          0       1631   eeprom.o
        392         14          0          0          0       1019   gpio.o
        260         34          0          0        156       1598   i2c.o
        366         54          0          0        220       5103   key.o
@@ -1616,24 +1610,24 @@ Image component sizes
        936         40          0          0          0       9944   stm32l0xx_hal_tim.o
         88         10          0          0          0       1128   stm32l0xx_hal_tim_ex.o
        170         28          0          0          0       6087   stm32l0xx_it.o
-       192         26          0          0          0        566   sys_init.o
+       176         20          0          0          0        562   sys_init.o
          2          0         25          4          0       1123   system_stm32l0xx.o
         48          8          0          2          0       1676   tasks.o
        392         52          0          0        192       2668   tim.o
-       160         30          0          1          0       5254   timer.o
+       160         30          0          1          0       4870   timer.o
       1770        118          0        584         32      18723   wououi.o
          0          0       5320         36          0       1606   wououi_font.o
       1978         28          0       1028       1024      12214   wououi_oled.o
       2324        164          0          2          0       9650   wououi_page.o
          8          0          0          0          0        471   wououi_port.o
-       778         52        448          8          0       4476   wououi_udp.o
-       438        144        925        352        160       4197   wououi_user.o
+       778         52        448          8          0       4484   wououi_udp.o
+       434        140        941        384        160       4341   wououi_user.o
       2878        234          0          0          0       8255   wououi_win.o
 
     ----------------------------------------------------------------------
-     27862       1722       8436       2048       4996     551310   Object Totals
+     27782       1694       8452       2080       4948     550254   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        50          0         10          6          2          0   (incl. Padding)
+        50          0         10          6          4          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1725,15 +1719,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     37836       2278       8868       2060       4996     542922   Grand Totals
-     37836       2278       8868        220       4996     542922   ELF Image Totals (compressed)
-     37836       2278       8868        220          0          0   ROM Totals
+     37756       2250       8884       2092       4948     541910   Grand Totals
+     37756       2250       8884        220       4948     541910   ELF Image Totals (compressed)
+     37756       2250       8884        220          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                46704 (  45.61kB)
-    Total RW  Size (RW Data + ZI Data)              7056 (   6.89kB)
-    Total ROM Size (Code + RO Data + RW Data)      46924 (  45.82kB)
+    Total RO  Size (Code + RO Data)                46640 (  45.55kB)
+    Total RW  Size (RW Data + ZI Data)              7040 (   6.88kB)
+    Total ROM Size (Code + RO Data + RW Data)      46860 (  45.76kB)
 
 ==============================================================================
 

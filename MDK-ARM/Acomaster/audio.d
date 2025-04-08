@@ -38,3 +38,4 @@ acomaster\audio.o: ./Devices/qcc5125.h
 acomaster\audio.o: ./Devices/adau1761/adau1761.h
 acomaster\audio.o: ./Devices/adau1761/adau1761_REG.h
 acomaster\audio.o: ./Devices/cs43131.h
+acomaster\audio.o: ./Hardware/eeprom.h

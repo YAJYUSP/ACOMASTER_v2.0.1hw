@@ -7,14 +7,9 @@
 #include "adau1761.h"
 #include "adau1761_REG.h"
 
-dsp_eq_t DSP_EQ[10];
-dsp_eq_t DSP_EQ_TEMP[10];
-dsp_eq_t DSP_EQ_LAST[10];
 
-//暂时改成int型，后续修改
-int8_t eq_setting_boost[10];
-int8_t eq_setting_boost_last[10];
-
+// 10段EQ结构体的数组，使用eq_cfreq_e索引
+eq_param_t eq_channel[10];						
 
 
 /* DSP Program Data */
@@ -501,12 +496,85 @@ const ADI_REG_TYPE R38_DEJITTER_REGISTER_CONTROL_IC_2_Default[REG_DEJITTER_REGIS
 };
 
 
+static void SIGMA_WRITE_REGISTER_BLOCK(uint8_t devAddr, uint16_t regAddr, uint16_t length, const ADI_REG_TYPE *pData)
+{
+		uint16_t i;
+    IIC_Start();
+    IIC_Send_Byte(devAddr);//发送器件地址+写命令
+    if(IIC_Wait_Ack())	//等待应答
+    {
+        IIC_Stop();
+				return;
+    }
+    IIC_Send_Byte((regAddr&0xFF00)>>8);	//写寄存器高地址
+    IIC_Wait_Ack();		//等待应答
+		IIC_Send_Byte(regAddr&0x00FF);	//写寄存器低地址
+    IIC_Wait_Ack();		//等待应答
+		
+    for(i=0; i<length; i++)
+    {
+        IIC_Send_Byte(pData[i]);	//发送数据
+        IIC_Wait_Ack();		//等待ACK
+    }
+    IIC_Stop();
+}
+
+static int point_to_int32(float point)
+{
+		if (point > 16.0 || point < -16.0)
+		return 0;
+		long long a = point * 0x7FFFFFF;
+		return (int)(a / 16.0);
+}
+
+
+/* convert boost of specified eq channel to parameter A1-B2 in eq_param_t */
+/* eq: pointer to eq parameter struct, like eq_channel[freq_125]*/
+static void bsp_adau1761_eq_data_conv(eq_param_t *eq)
+{
+		float param_a0;
+		float param_omega;
+		float param_sn;
+		float param_cs;
+		float param_alpha;
+		float param_Ax;
+		//eq boost不为0时，进行运算
+		if(eq->eq_boost != 0)
+		{
+				param_Ax = pow(10.00, (eq->eq_boost/40.00));
+				param_omega = 2*3.14159*eq->center_freq / eq->prj_Fs;
+				param_sn = sin(param_omega);
+				param_cs = cos(param_omega);
+				param_alpha = param_sn / (2*eq->kQ);
+				
+				param_a0 = (param_alpha/param_Ax) + 1;
+				eq->otpt_A1 = 2 * param_cs / param_a0;
+				eq->otpt_A2 = ((param_alpha / param_Ax) - 1) / param_a0;
+				
+				eq->gain_linear = pow(10, (eq->gain/20))/param_a0;
+				eq->otpt_B0 = (param_alpha*param_Ax + 1)*eq->gain_linear;
+				eq->otpt_B1 = -(2*param_cs)*eq->gain_linear;
+				eq->otpt_B2 = (1 - (param_alpha*param_Ax))*eq->gain_linear;
+		}
+		else
+		{
+				eq->gain_linear = pow(10, (eq->gain/20));
+				eq->otpt_B0 = eq->gain_linear;
+				eq->otpt_B1 = 0;
+				eq->otpt_B2 = 0;
+				eq->otpt_A1 = 0;
+				eq->otpt_A2 = 0;
+		}
+}
+
+
 /*
  * Default Download
  */
 #define DEFAULT_DOWNLOAD_SIZE_IC_2 39
 
-void default_download_IC_2() {
+/* SIGMA STUDIO生成的ADAU1761的初始化序列*/
+void default_download_IC_2(void) {
 	SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_2, REG_SAMPLE_RATE_SETTING_IC_2_ADDR, REG_SAMPLE_RATE_SETTING_IC_2_BYTE, R0_SAMPLE_RATE_SETTING_IC_2_Default );
 	SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_2, REG_DSP_RUN_REGISTER_IC_2_ADDR, REG_DSP_RUN_REGISTER_IC_2_BYTE, R1_DSP_RUN_REGISTER_IC_2_Default );
 	SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_2, REG_CLKCTRLREGISTER_IC_2_ADDR, REG_CLKCTRLREGISTER_IC_2_BYTE, R2_CLKCTRLREGISTER_IC_2_Default );
@@ -549,141 +617,52 @@ void default_download_IC_2() {
 	SIGMA_WRITE_REGISTER_BLOCK( DEVICE_ADDR_IC_2, REG_DEJITTER_REGISTER_CONTROL_IC_2_ADDR, REG_DEJITTER_REGISTER_CONTROL_IC_2_BYTE, R38_DEJITTER_REGISTER_CONTROL_IC_2_Default );
 }
 
-//initialize the adau1701 eq struct
-void bsp_adau1761_eq_init(void)
+
+
+// 修改某段EQ的流程：
+// 1.修改该段eq_channel[cfreq].boost值
+// 2.执行bsp_adau1761_eq_download(eq_channel[cfreq])
+
+// 修改全部10段EQ的流程：
+// 1.分别修改十段EQ的eq_channel[cfreq].boost值
+// 2.分别执行bsp_adau1761_eq_download(eq_channel[cfreq])
+
+/* download one channel eq configuration in DSP_EQ to adau1701*/
+/* eq: pointer to eq parameter struct, like eq_channel[freq_125]*/
+
+void bsp_adau1761_eq_download(eq_param_t *eq)
 {
-		for(eq_chnl_e i=eq_63; i<=eq_16000; i++)
-	{
-			DSP_EQ[i].eq_boost = 0.00;
-			DSP_EQ[i].gain = 0.0;
-			DSP_EQ[i].kQ = 1.41;
-			DSP_EQ[i].prj_Fs = 96000;
-	}
-	DSP_EQ[eq_63].center_freq = 63;
-	DSP_EQ[eq_125].center_freq = 125;
-	DSP_EQ[eq_250].center_freq = 250;
-	DSP_EQ[eq_500].center_freq = 500;
-	DSP_EQ[eq_1000].center_freq = 1000;
-	DSP_EQ[eq_2000].center_freq = 2000;
-	DSP_EQ[eq_4000].center_freq = 4000;
-	DSP_EQ[eq_8000].center_freq = 8000;
-	DSP_EQ[eq_12000].center_freq = 12000;
-	DSP_EQ[eq_16000].center_freq = 16000;
+		/* convert boost of specified eq channel to parameter A1-B2 in eq_param_t first*/
+		bsp_adau1761_eq_data_conv(eq);
 	
-	DSP_EQ[eq_63].safeload_addr = 0x0008;
-	DSP_EQ[eq_125].safeload_addr = 0x000D;
-	DSP_EQ[eq_250].safeload_addr = 0x0012;
-	DSP_EQ[eq_500].safeload_addr = 0x0017;
-	DSP_EQ[eq_1000].safeload_addr = 0x001C;
-	DSP_EQ[eq_2000].safeload_addr = 0x0021;
-	DSP_EQ[eq_4000].safeload_addr = 0x0026;
-	DSP_EQ[eq_8000].safeload_addr = 0x002B;
-	DSP_EQ[eq_12000].safeload_addr = 0x0030;
-	DSP_EQ[eq_16000].safeload_addr = 0x0035;
-}
-
-//保存上一次的eq boost设置
-void bsp_adau1761_eq_save_last(int8_t *eq_status, int8_t *eq_status_last)
-{
-		for(eq_chnl_e i=eq_63; i<=eq_16000; i++)
-				eq_status_last[i] = eq_status[i];
-}
-
-//convert the eq boost to parameter A1-B2 in specified eq struct
-void bsp_adau1761_eq_data_conv(dsp_eq_t *EQ)
-{
-		float param_a0;
-		float param_omega;
-		float param_sn;
-		float param_cs;
-		float param_alpha;
-		float param_Ax;
-		//eq boost不为0时，进行运算
-		if(EQ->eq_boost != 0)
-		{
-				param_Ax = pow(10.00, (EQ->eq_boost/40.00));
-				param_omega = 2*3.14159*EQ->center_freq / EQ->prj_Fs;
-				param_sn = sin(param_omega);
-				param_cs = cos(param_omega);
-				param_alpha = param_sn / (2*EQ->kQ);
-				
-				param_a0 = (param_alpha/param_Ax) + 1;
-				EQ->otpt_A1 = 2 * param_cs / param_a0;
-				EQ->otpt_A2 = ((param_alpha / param_Ax) - 1) / param_a0;
-				
-				EQ->gain_linear = pow(10, (EQ->gain/20))/param_a0;
-				EQ->otpt_B0 = (param_alpha*param_Ax + 1)*EQ->gain_linear;
-				EQ->otpt_B1 = -(2*param_cs)*EQ->gain_linear;
-				EQ->otpt_B2 = (1 - (param_alpha*param_Ax))*EQ->gain_linear;
-		}
-		else
-		{
-				EQ->gain_linear = pow(10, (EQ->gain/20));
-				EQ->otpt_B0 = EQ->gain_linear;
-				EQ->otpt_B1 = 0;
-				EQ->otpt_B2 = 0;
-				EQ->otpt_A1 = 0;
-				EQ->otpt_A2 = 0;
-		}
-}
-
-//configure boost of specified eq channel
-void bsp_adau1761_eq_set(eq_chnl_e eq_channel, float boost)
-{
-		if(boost > 10.0 || boost < -10.0)
-				return;
-		DSP_EQ[eq_channel].eq_boost = boost;
-}
-
-
-//convert the eq boost to parameter A1-B2 in each eq struct
-void bsp_adau1761_eq_data_conv_all(void)
-{
-		for(eq_chnl_e i=eq_63; i<eq_16000; i++)
-				bsp_adau1761_eq_data_conv(&DSP_EQ[i]);
-}
-
-
-int point_to_int32(float point)
-{
-		if (point > 16.0 || point < -16.0)
-		return 0;
-		long long a = point * 0x7FFFFFF;
-		return (int)(a / 16.0);
-}
-
-
-//download one eq configuration in DSP_EQ to adau1701
-void bsp_adau1761_eq_download(eq_chnl_e eq_chnl)
-{
 		//eq_channel_param_buf[5 params A1-B2][4 char datas in 1 data frame]
 		ADI_REG_TYPE eq_channel_param_buf[5][4];
 		//convert the data formation and fill the data buffer
 		//B0
-		eq_channel_param_buf[0][0] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B0)&0XFF000000)>>24;
-		eq_channel_param_buf[0][1] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B0)&0XFF0000)>>16;
-		eq_channel_param_buf[0][2] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B0)&0XFF00)>>8;
-		eq_channel_param_buf[0][3] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B0)&0XFF);
+		eq_channel_param_buf[0][0] = (point_to_int32(eq->otpt_B0)&0XFF000000)>>24;
+		eq_channel_param_buf[0][1] = (point_to_int32(eq->otpt_B0)&0XFF0000)>>16;
+		eq_channel_param_buf[0][2] = (point_to_int32(eq->otpt_B0)&0XFF00)>>8;
+		eq_channel_param_buf[0][3] = (point_to_int32(eq->otpt_B0)&0XFF);
 		//B1
-		eq_channel_param_buf[1][0] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B1)&0XFF000000)>>24;
-		eq_channel_param_buf[1][1] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B1)&0XFF0000)>>16;
-		eq_channel_param_buf[1][2] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B1)&0XFF00)>>8;
-		eq_channel_param_buf[1][3] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B1)&0XFF);
+		eq_channel_param_buf[1][0] = (point_to_int32(eq->otpt_B1)&0XFF000000)>>24;
+		eq_channel_param_buf[1][1] = (point_to_int32(eq->otpt_B1)&0XFF0000)>>16;
+		eq_channel_param_buf[1][2] = (point_to_int32(eq->otpt_B1)&0XFF00)>>8;
+		eq_channel_param_buf[1][3] = (point_to_int32(eq->otpt_B1)&0XFF);
 		//B2
-		eq_channel_param_buf[2][0] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B2)&0XFF000000)>>24;
-		eq_channel_param_buf[2][1] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B2)&0XFF0000)>>16;
-		eq_channel_param_buf[2][2] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B2)&0XFF00)>>8;
-		eq_channel_param_buf[2][3] = (point_to_int32(DSP_EQ[eq_chnl].otpt_B2)&0XFF);
+		eq_channel_param_buf[2][0] = (point_to_int32(eq->otpt_B2)&0XFF000000)>>24;
+		eq_channel_param_buf[2][1] = (point_to_int32(eq->otpt_B2)&0XFF0000)>>16;
+		eq_channel_param_buf[2][2] = (point_to_int32(eq->otpt_B2)&0XFF00)>>8;
+		eq_channel_param_buf[2][3] = (point_to_int32(eq->otpt_B2)&0XFF);
 		//A1
-		eq_channel_param_buf[3][0] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A1)&0XFF000000)>>24;
-		eq_channel_param_buf[3][1] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A1)&0XFF0000)>>16;
-		eq_channel_param_buf[3][2] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A1)&0XFF00)>>8;
-		eq_channel_param_buf[3][3] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A1)&0XFF);
+		eq_channel_param_buf[3][0] = (point_to_int32(eq->otpt_A1)&0XFF000000)>>24;
+		eq_channel_param_buf[3][1] = (point_to_int32(eq->otpt_A1)&0XFF0000)>>16;
+		eq_channel_param_buf[3][2] = (point_to_int32(eq->otpt_A1)&0XFF00)>>8;
+		eq_channel_param_buf[3][3] = (point_to_int32(eq->otpt_A1)&0XFF);
 		//A2
-		eq_channel_param_buf[4][0] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A2)&0XFF000000)>>24;
-		eq_channel_param_buf[4][1] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A2)&0XFF0000)>>16;
-		eq_channel_param_buf[4][2] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A2)&0XFF00)>>8;
-		eq_channel_param_buf[4][3] = (point_to_int32(DSP_EQ[eq_chnl].otpt_A2)&0XFF);
+		eq_channel_param_buf[4][0] = (point_to_int32(eq->otpt_A2)&0XFF000000)>>24;
+		eq_channel_param_buf[4][1] = (point_to_int32(eq->otpt_A2)&0XFF0000)>>16;
+		eq_channel_param_buf[4][2] = (point_to_int32(eq->otpt_A2)&0XFF00)>>8;
+		eq_channel_param_buf[4][3] = (point_to_int32(eq->otpt_A2)&0XFF);
 		//将数据safeload进adau1761，以下驱动参照usbi仿真器下载格式编写
 		uint16_t i,j;
 		IIC_Start();
@@ -731,7 +710,7 @@ void bsp_adau1761_eq_download(eq_chnl_e eq_chnl)
 		//将这次要写的个数写入0x0007寄存器，SigmaDSP会自动触发Safeload功能自行写入
 		IIC_Send_Byte(0x00);	//写寄存器高地址,一般都是0x00
 		IIC_Wait_Ack();		
-		IIC_Send_Byte((DSP_EQ[eq_chnl].safeload_addr-0x01)&0x00FF);	//写寄存器低地址
+		IIC_Send_Byte((eq->safeload_addr-0x01)&0x00FF);	//写寄存器低地址
 		IIC_Wait_Ack();		 
 		IIC_Send_Byte(0x00);	
 		IIC_Wait_Ack();		
@@ -743,28 +722,4 @@ void bsp_adau1761_eq_download(eq_chnl_e eq_chnl)
 		IIC_Wait_Ack();		
 		
 		IIC_Stop();
-}
-
-
-static void SIGMA_WRITE_REGISTER_BLOCK(uint8_t devAddr, uint16_t regAddr, uint16_t length, const ADI_REG_TYPE *pData)
-{
-		uint16_t i;
-    IIC_Start();
-    IIC_Send_Byte(devAddr);//发送器件地址+写命令
-    if(IIC_Wait_Ack())	//等待应答
-    {
-        IIC_Stop();
-				return;
-    }
-    IIC_Send_Byte((regAddr&0xFF00)>>8);	//写寄存器高地址
-    IIC_Wait_Ack();		//等待应答
-		IIC_Send_Byte(regAddr&0x00FF);	//写寄存器低地址
-    IIC_Wait_Ack();		//等待应答
-		
-    for(i=0; i<length; i++)
-    {
-        IIC_Send_Byte(pData[i]);	//发送数据
-        IIC_Wait_Ack();		//等待ACK
-    }
-    IIC_Stop();
 }

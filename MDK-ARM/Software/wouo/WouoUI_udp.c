@@ -97,7 +97,6 @@ void OLED_PlayingPageEnterInit(PageAddr page_addr, uint16_t time) {
 
 }
 
-
 extern qcc5125_status_t qcc5125_status;
 
 void OLED_PlayingPageShow(PageAddr page_addr, uint16_t time) {
@@ -238,7 +237,6 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_conn_16_16, 1);
 		else
 			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_disconn_16_16, 1);
-		
 }
 	
 void OLED_PlayingPageInit(
@@ -261,3 +259,42 @@ void OLED_PlayingPageInit(
         playing_page->option_array[i].order = i; // 选项序号标号
 }
 
+
+
+
+
+//--------EQ设置页面相关函数
+void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
+
+}
+
+void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
+	
+	OLED_WinDrawLine(&w_all, 0, 53, 127, 53);
+	
+}
+
+void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
+	
+		Page *p = (Page *)page_addr;
+    EQPage *pp = (EQPage *)page_addr;
+    String selcet_string = NULL;
+    InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
+		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
+	
+		if(msg == msg_none){
+		}
+		else if(msg == msg_add){
+		}
+		else if(msg == msg_sub){
+		}
+		else if(msg == msg_up){    //prev
+		}
+		else if(msg == msg_down){  //next
+		}
+		else if(msg == msg_click){ //play
+		}
+		else if(msg == msg_return){
+		}
+	
+}
