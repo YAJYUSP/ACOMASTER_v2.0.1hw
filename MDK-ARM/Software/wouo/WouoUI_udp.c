@@ -10,6 +10,20 @@
 #include "main.h"
 #include "qcc5125.h"
 
+// 全局十段EQ boost值
+extern int8_t eq_boost[10];
+extern int8_t eq_boost_last[10];
+
+// 这些以后放进saving.c
+
+// 当前选中的EQ预设
+// 1：Normal
+// 2：Custom 1
+// 3：Custom 2
+// 4：Custom 3
+uint8_t current_eqpreset = 1;
+
+
 
 
 const unsigned char icon_play_checked_16_16[] = 
@@ -265,36 +279,171 @@ void OLED_PlayingPageInit(
 
 //--------EQ设置页面相关函数
 void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
-
+	EQPage *ep = (EQPage *)page_addr;
+	ep->current_select = freq_63;
+	ep->current_eqboost = eq_boost[freq_63];
 }
+
+// EQ UI中不同中心频率对应的X坐标
+#define FREQ_63_X_COOR 10
+#define FREQ_125_X_COOR 22
+#define FREQ_250_X_COOR 34
+#define FREQ_500_X_COOR 46
+#define FREQ_1K_X_COOR 58
+#define FREQ_2K_X_COOR 70
+#define FREQ_4K_X_COOR 82
+#define FREQ_8K_X_COOR 94
+#define FREQ_12K_X_COOR 106
+#define FREQ_16K_X_COOR 118
 
 void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
 	
-	OLED_WinDrawLine(&w_all, 0, 53, 127, 53);
+	EQPage *ep = (EQPage *)page_addr;
 	
+	OLED_WinDrawHLine(&w_all, 0, 127, 54); // 底部横线
+	OLED_WinDrawVLine(&w_all, 10, 52, 53); // 刻度线
+	OLED_WinDrawVLine(&w_all, 22, 52, 53);
+	OLED_WinDrawVLine(&w_all, 34, 52, 53);
+	OLED_WinDrawVLine(&w_all, 46, 52, 53);
+	OLED_WinDrawVLine(&w_all, 58, 52, 53);
+	OLED_WinDrawVLine(&w_all, 70, 52, 53);
+	OLED_WinDrawVLine(&w_all, 82, 52, 53);
+	OLED_WinDrawVLine(&w_all, 94, 52, 53);
+	OLED_WinDrawVLine(&w_all, 106, 52, 53);
+	OLED_WinDrawVLine(&w_all, 118, 52, 53);
+	switch (current_eqpreset)
+	{
+		case 1:
+			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Normal:");
+			break;
+		case 2:
+			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 1:");
+			break;
+		case 3:
+			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 2:");
+			break;
+		case 4:
+			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 3:");
+			break;
+	}
+
 }
 
 void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 	
 		Page *p = (Page *)page_addr;
-    EQPage *pp = (EQPage *)page_addr;
+    EQPage *ep = (EQPage *)page_addr;
     String selcet_string = NULL;
     InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
 		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
 	
+		// 指示点的坐标
+		uint8_t X = 0;
+		uint8_t Y = (EQ_BOOST_MAX - eq_boost[ep->current_select]) * 54 / (2 * EQ_BOOST_MAX) - 9;
+		switch(ep->current_select)
+		{
+			case freq_63:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"63");
+				X = FREQ_63_X_COOR;
+				break;
+			case freq_125:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"125");
+				X = FREQ_125_X_COOR;
+				break;
+			case freq_250:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"250");
+				X = FREQ_250_X_COOR;
+				break;
+			case freq_500:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"500");
+				X = FREQ_500_X_COOR;
+				break;
+			case freq_1k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"1k");
+				X = FREQ_1K_X_COOR;
+				break;
+			case freq_2k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"2k");
+				X = FREQ_2K_X_COOR;
+				break;
+			case freq_4k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"4k");
+				X = FREQ_4K_X_COOR;
+				break;
+			case freq_8k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"8k");
+				X = FREQ_8K_X_COOR;
+				break;
+			case freq_12k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"12k");
+				X = FREQ_12K_X_COOR;
+				break;
+			case freq_16k:
+				OLED_WinDrawStr(&w_all, 55, 57, Font_6_8, (uint8_t *)"16k");
+				X = FREQ_16K_X_COOR;
+				break;
+			default:
+				break;
+		}
+		// 绘制指示点
+		OLED_WinDrawHLine(&w_all, X-2, X+2, Y);
+		OLED_WinDrawHLine(&w_all, X-1, X+1, Y+1);
+		OLED_WinDrawHLine(&w_all, X-1, X+1, Y-1);
+		OLED_WinDrawPoint(&w_all, X, Y+2);
+		OLED_WinDrawPoint(&w_all, X, Y-2);
+		// 显示boost值
+		char numBuff[12];
+		ui_itoa_str(eq_boost[ep->current_select], numBuff);
+		OLED_WinDrawStr(&w_all, 100, 57, Font_6_8, (uint8_t *)numBuff);
+		
 		if(msg == msg_none){
 		}
 		else if(msg == msg_add){
+			if(eq_boost[ep->current_select] < EQ_BOOST_MAX)
+				eq_boost[ep->current_select] ++;
 		}
 		else if(msg == msg_sub){
+			if(eq_boost[ep->current_select] > -EQ_BOOST_MAX)
+				eq_boost[ep->current_select] --;
 		}
 		else if(msg == msg_up){    //prev
+			if(ep->current_select > freq_63)
+				ep->current_select --;
+			else
+				ep->current_select = freq_16k;
 		}
 		else if(msg == msg_down){  //next
+			if(ep->current_select < freq_16k)
+				ep->current_select ++;
+			else
+				ep->current_select = freq_63;
 		}
 		else if(msg == msg_click){ //play
 		}
 		else if(msg == msg_return){
+			p->cb(p, &(ep->option_array[10]));
 		}
 	
+}
+
+
+
+void OLED_EQPageInit(
+    EQPage *eq_page,  			// 页面对象
+    uint8_t item_num,       // 选项个数，需与title数组大小，icon数组大小一致
+    Option *option_array,   // 整个页面的选项数组(数组大小需与item_num一致)
+    Icon *icon_array,       // 整个页面的icon数组(数组大小需与item_num一致)
+    CallBackFunc call_back) // 回调函数，参数为确认选中项index（1-256）0表示未确认哪个选项
+{
+		eq_page->page.page_type = type_userdef; //定义页面类型为"用户自定义"
+    OLED_PageInit((PageAddr)eq_page, call_back);
+    eq_page->page.init = OLED_EQPageEnterInit;
+    eq_page->page.show = OLED_EQPageShow;
+    eq_page->page.react = OLED_EQPageReact; // 关联处理函数(方法)
+		eq_page->select_item = 0;
+    eq_page->item_num = item_num;
+		eq_page->option_array = option_array;
+    eq_page->icon_array = icon_array;
+    for (uint8_t i = 0; i < eq_page->item_num; i++)
+        eq_page->option_array[i].order = i; // 选项序号标号
 }

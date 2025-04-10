@@ -14,6 +14,8 @@ TitlePage main_page;
 
 ListPage setting_page;
 ListPage setting_eqpreset_page;
+EQPage setting_eq_page;
+
 
 //--------定义每个页面需要的一些参数
 
@@ -23,17 +25,9 @@ ListPage setting_eqpreset_page;
  
 #define SETTING_PAGE_NUM      7
 #define SETTING_EQPRESET_NUM  5 
+#define SETTING_EQ_NUM        11 
 
 
-// main页面的选项
-const Option mian_option_array[MAIN_PAGE_NUM] =
-{
-        {.text = (char *)"+ Playing"},
-        {.text = (char *)"+ Settings"},
-        {.text = (char *)"! Info", .content = (char *)"   ACOMASTER\nCopyright 2022\n@ Jesse Jia"},
-        // {.text = (char *)"# Conf", .content = (char *)"    WARNING\nThis is a\nconf test!"},
-        // {.text = (char *)"% Spin", .val = 123456, .min = -500000, .max = 500000, .decimalNum = DecimalNum_2},
-};
 // main页面的图标,30x30
 const Icon main_icon_array[MAIN_PAGE_NUM] =
 {
@@ -63,6 +57,14 @@ const Icon main_icon_array[MAIN_PAGE_NUM] =
 							 0x38,0x3C,0x3E,0x3F,0x1F,0x0F,0x07,0x03}, // Info
 };
 
+
+// main页面的选项字符串表
+const Option mian_option_array[MAIN_PAGE_NUM] =
+{
+        {.text = (char *)"+ Playing"},
+        {.text = (char *)"+ Settings"},
+        {.text = (char *)"! Info", .content = (char *)"   ACOMASTER\nCopyright 2022\n@ Jesse Jia"},
+};
 // Play页面的选项字符串表，不用于显示，用于回调函数传参
 const Option play_option_array[PLAY_PAGE_NUM] =
 {
@@ -94,7 +96,21 @@ Option setting_preset_option_array[SETTING_EQPRESET_NUM] =
         {.text = (char *)"# Custom 2", .val = 0, .step = 1},
 				{.text = (char *)"# Custom 3", .val = 0, .step = 1},
 };
-
+// setting->EQ设置页面的选项字符串表
+Option setting_eq_option_array[SETTING_EQ_NUM] =
+{
+        {.text = (char *)"freq_63"},
+				{.text = (char *)"freq_125"},
+				{.text = (char *)"freq_250"},
+				{.text = (char *)"freq_500"},
+				{.text = (char *)"freq_1k"},
+				{.text = (char *)"freq_2k"},
+				{.text = (char *)"freq_4k"},
+				{.text = (char *)"freq_8k"},
+				{.text = (char *)"freq_12k"},
+				{.text = (char *)"freq_16k"},
+				{.text = (char *)"return"},
+};
 
 
 //--------定义每个页面的回调函数
@@ -130,61 +146,27 @@ void MainPage_CallBack(const Page *cur_page_addr, Option *select_item) {
         OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_page);
     }
 }
-
-// setting页面的回调函数，主要用于参数赋值
+// setting页面的回调函数
 void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
  
 	if (!strcmp(select_item->text, "+ EQ Presets")) {
 		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
-	} 
-	
-	
-	// switch (select_item->order)
-    // {                           // 由于第0项是说明文字“Setting”
-    // case 1:
-    //     g_default_ui_para.ani_param[TILE_ANI] = select_item->val;
-    //     break; // ani_tile
-    // case 2:
-    //     g_default_ui_para.ani_param[LIST_ANI] = select_item->val;
-    //     break; // ani_list
-    // case 3:
-    //     g_default_ui_para.ufd_param[TILE_UFD] = select_item->val;
-    //     break; // ani_tile
-    // case 4:
-    //     g_default_ui_para.ufd_param[LIST_UFD] = select_item->val;
-    //     break; // ani_list
-    // case 5:
-    //     g_default_ui_para.loop_param[TILE_UFD] = select_item->val;
-    //     break; // loop_tile
-    // case 6:
-    //     g_default_ui_para.loop_param[LIST_UFD] = select_item->val;
-    //     break; // loop_list
-    // case 7:
-    //     g_default_ui_para.valwin_broken = select_item->val;
-    //     break; // ValWin Broken
-    // case 8:
-    //     g_default_ui_para.conwin_broken = select_item->val;
-    //     break; // ConWin Broken
-    // case 9:
-    //     g_default_ui_para.digital_ripple = select_item->val;
-    //     break; // Digital Ripple Enable/not
-    // case 10:
-    //     g_default_ui_para.raderpic_scan_mode = select_item->val;
-    //     break; // RaderPic scan mode
-    // case 11:
-    //     g_default_ui_para.raderpic_scan_rate = select_item->val;
-    //     break; // RaderPic scan rate
-    // case 12:
-    //     g_default_ui_para.raderpic_move_rate = select_item->val;
-    //     break; // RaderPic move rate
-    // default:
-    //     break;
-    // }
+	} else if (!strcmp(select_item->text, "+ Edit EQ Preset")) {
+        OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page );
+	}
 }
-
-// setting->EQPreset页面的回调函数，主要用于参数赋值
+// 当前选中的EQ预设
+extern uint8_t current_eqpreset;
+// setting->EQPreset页面(继承自ListPage)的回调函数
 void Setting_EQPresetPage_CallBack(const Page *cur_page_addr, Option *select_item) {
-	
+	if(select_item->order != 0)
+		current_eqpreset = select_item->order;
+}
+// setting->EQ页面的回调函数
+void Setting_EQPage_CallBack(const Page *cur_page_addr, Option *select_item) {
+	if (!strcmp(select_item->text, "return")) {
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_page);
+	}
 }
 
 //--------------页面初始化函数，供主函数调用
@@ -203,6 +185,6 @@ void TestUI_Init(void) {
 
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
 		OLED_ListPageInit(&setting_eqpreset_page, SETTING_EQPRESET_NUM, (Option *)setting_preset_option_array, Setting_radio, Setting_EQPresetPage_CallBack);
-
+		OLED_EQPageInit(&setting_eq_page, SETTING_EQ_NUM, (Option *)setting_eq_option_array, NULL, Setting_EQPage_CallBack);
 }
 

@@ -14,6 +14,8 @@ acomaster\wououi_user.o: Software\wouo\WouoUI_page.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_widget.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_win.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_udp.h
+acomaster\wououi_user.o: ./Devices/adau1761/adau1761.h
+acomaster\wououi_user.o: ./Devices/adau1761/adau1761_REG.h
 acomaster\wououi_user.o: ../Core/Inc/main.h
 acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h
 acomaster\wououi_user.o: ../Core/Inc/stm32l0xx_hal_conf.h
