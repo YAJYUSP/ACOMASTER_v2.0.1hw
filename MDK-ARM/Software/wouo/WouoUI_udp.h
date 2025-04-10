@@ -27,8 +27,8 @@ typedef struct EQPage { 	 // EQ设置页面
     uint8_t select_item;   // 选中的中心频率
 	
 		eq_cfreq_e current_select; // 当前选中的eq段
-		int8_t current_eqboost; // 当前选中的eq段对应的boost值
-	           
+	  uint8_t key_points[10];    // 10个eq段boost值对应的屏幕Y坐标
+		uint8_t curve_coor[108];	 // 插值得到的Bezier曲线上点的Y坐标
 	
 	
 	

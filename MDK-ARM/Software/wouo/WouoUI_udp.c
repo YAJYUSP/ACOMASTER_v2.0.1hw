@@ -275,14 +275,10 @@ void OLED_PlayingPageInit(
 
 
 
+/*----------------------------------------------------------------------------------------------------------*/
 
 
-//--------EQ设置页面相关函数
-void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
-	EQPage *ep = (EQPage *)page_addr;
-	ep->current_select = freq_63;
-	ep->current_eqboost = eq_boost[freq_63];
-}
+
 
 // EQ UI中不同中心频率对应的X坐标
 #define FREQ_63_X_COOR 10
@@ -295,6 +291,73 @@ void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
 #define FREQ_8K_X_COOR 94
 #define FREQ_12K_X_COOR 106
 #define FREQ_16K_X_COOR 118
+
+// 计算不同boost值对应的屏幕Y坐标
+static uint8_t calc_ycoor_from_boost(int8_t boost){
+	return (EQ_BOOST_MAX - boost) * 54 / (2 * EQ_BOOST_MAX);
+}
+
+/**
+ * @brief 插值并绘制光滑曲线
+ * @param input 输入10个Y坐标（对应X=10,22,...,118）
+ * @param color 绘制颜色（true为描点，false为擦除）
+ */
+void OLED_DrawSmoothCurve(uint8_t* input, bool color) {
+    // 定义插值参数
+    const uint8_t seg_points = 12;
+    const uint8_t total_seg = 9;
+    uint8_t x_start = 10; // 起始X坐标
+    
+    // 存储前一个点坐标
+    int16_t prev_x = x_start;
+    int16_t prev_y = input[0];
+    
+    // 遍历所有段
+    for (uint8_t seg = 0; seg < total_seg; seg++) {
+        // 控制点处理
+        uint8_t p0 = (seg == 0) ? input[0] : input[seg-1];
+        uint8_t p1 = input[seg];
+        uint8_t p2 = input[seg+1];
+        uint8_t p3 = (seg >= total_seg-2) ? input[total_seg] : input[seg+2];
+        
+        // 系数计算（Q4.4优化）
+        int16_t a = ((-p0 + 3*p1 - 3*p2 + p3) << 2);
+        int16_t b = (2*p0 - 5*p1 + 4*p2 - p3) << 2;
+        int16_t c = (-p0 + p2) << 3;
+        int16_t d = p1 << 4;
+        
+        // 生成并绘制本段曲线
+        for (uint8_t t = 0; t < seg_points; t++) {
+            // 计算当前点坐标
+            int16_t ft = t * 16 / seg_points; // Q4.4
+            int16_t y = ((((a * ft) >> 4) + b) * ft) >> 4;
+            y = ((y + c) * ft) >> 4;
+            y = (y + d) >> 4;
+            y = (y < 0) ? 0 : (y > 255) ? 255 : y;
+            
+            // 计算当前X坐标
+            int16_t curr_x = x_start + seg*seg_points + t;
+            
+            // 使用Bresenham连接前后点
+						OLED_WinDrawLine(&w_all, prev_x, prev_y, curr_x, y);
+            // 更新前点坐标
+            prev_x = curr_x;
+            prev_y = y;
+        }
+    }
+    
+    // 强制绘制最后一个采样点
+		OLED_WinDrawLine(&w_all, prev_x, prev_y, 118, input[9]);
+}
+
+//--------EQ设置页面相关函数
+void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
+	
+	EQPage *ep = (EQPage *)page_addr;
+	ep->current_select = freq_63;
+	for(eq_cfreq_e i=freq_63; i<freq_16k; i++)
+		ep->key_points[i] = calc_ycoor_from_boost(eq_boost[i]);
+}
 
 void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
 	
@@ -311,6 +374,10 @@ void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
 	OLED_WinDrawVLine(&w_all, 94, 52, 53);
 	OLED_WinDrawVLine(&w_all, 106, 52, 53);
 	OLED_WinDrawVLine(&w_all, 118, 52, 53);
+	
+	for(uint8_t i=10; i<108; i++)
+		OLED_WinDrawPoint(&w_all, i, ep->curve_coor[i]);
+
 	switch (current_eqpreset)
 	{
 		case 1:
@@ -335,11 +402,11 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
     EQPage *ep = (EQPage *)page_addr;
     String selcet_string = NULL;
     InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
-		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
+		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题
 	
 		// 指示点的坐标
 		uint8_t X = 0;
-		uint8_t Y = (EQ_BOOST_MAX - eq_boost[ep->current_select]) * 54 / (2 * EQ_BOOST_MAX) - 9;
+		uint8_t Y = calc_ycoor_from_boost(eq_boost[ep->current_select]);
 		switch(ep->current_select)
 		{
 			case freq_63:
@@ -391,10 +458,15 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		OLED_WinDrawHLine(&w_all, X-1, X+1, Y-1);
 		OLED_WinDrawPoint(&w_all, X, Y+2);
 		OLED_WinDrawPoint(&w_all, X, Y-2);
+		
+		// 绘制插值曲线
+		ep->key_points[ep->current_select] = calc_ycoor_from_boost(eq_boost[ep->current_select]);
+		OLED_DrawSmoothCurve(ep->key_points, true);
+		
 		// 显示boost值
 		char numBuff[12];
 		ui_itoa_str(eq_boost[ep->current_select], numBuff);
-		OLED_WinDrawStr(&w_all, 100, 57, Font_6_8, (uint8_t *)numBuff);
+		OLED_WinDrawStr(&w_all, 108, 57, Font_6_8, (uint8_t *)numBuff);
 		
 		if(msg == msg_none){
 		}
