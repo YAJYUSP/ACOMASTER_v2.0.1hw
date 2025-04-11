@@ -27,16 +27,19 @@ Project File Date:  04/07/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ACOMASTER'
+compiling WouoUI_user.c...
 compiling WouoUI_udp.c...
-Software\wouo\WouoUI_udp.c(139): warning:  #177-D: variable "selcet_string" was declared but never referenced
+Software\wouo\WouoUI_udp.c(131): warning:  #177-D: variable "selcet_string" was declared but never referenced
       String selcet_string = NULL;
-Software\wouo\WouoUI_udp.c(411): warning:  #177-D: variable "selcet_string" was declared but never referenced
+Software\wouo\WouoUI_udp.c(356): warning:  #177-D: variable "ep" was declared but never referenced
+  	EQPage *ep = (EQPage *)page_addr;
+Software\wouo\WouoUI_udp.c(391): warning:  #177-D: variable "selcet_string" was declared but never referenced
       String selcet_string = NULL;
-Software\wouo\WouoUI_udp.c: 2 warnings, 0 errors
+Software\wouo\WouoUI_udp.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=39388 RO-data=8984 RW-data=2448 ZI-data=5104  
+Program Size: Code=39800 RO-data=8980 RW-data=2444 ZI-data=5132  
 FromELF: creating hex file...
-"Acomaster\Acomaster.axf" - 0 Error(s), 2 Warning(s).
+"Acomaster\Acomaster.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -60,7 +63,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

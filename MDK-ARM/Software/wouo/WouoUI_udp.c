@@ -8,20 +8,12 @@
 #include "string.h"
 
 #include "main.h"
+#include "audio.h"
 #include "qcc5125.h"
 
 // 全局十段EQ boost值
-extern int8_t eq_boost[10];
-extern int8_t eq_boost_last[10];
+extern audio_config_t configures;
 
-// 这些以后放进saving.c
-
-// 当前选中的EQ预设
-// 1：Normal
-// 2：Custom 1
-// 3：Custom 2
-// 4：Custom 3
-uint8_t current_eqpreset = 1;
 
 
 
@@ -181,7 +173,7 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 			if (p->cb != NULL)
 				p->cb(p, &(pp->option_array[2]));
 		}
-		else if(msg == msg_return){
+		else if(msg == msg_return){ // 返回
 			if (p->cb != NULL)
 				p->cb(p, &(pp->option_array[5]));
 		}
@@ -355,8 +347,8 @@ void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
 	
 	EQPage *ep = (EQPage *)page_addr;
 	ep->current_select = freq_63;
-	for(eq_cfreq_e i=freq_63; i<freq_16k; i++)
-		ep->key_points[i] = calc_ycoor_from_boost(eq_boost[i]);
+	for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
+		ep->key_points[i] = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][i]);
 }
 
 void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
@@ -374,27 +366,23 @@ void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
 	OLED_WinDrawVLine(&w_all, 94, 52, 53);
 	OLED_WinDrawVLine(&w_all, 106, 52, 53);
 	OLED_WinDrawVLine(&w_all, 118, 52, 53);
-	
-	for(uint8_t i=10; i<108; i++)
-		OLED_WinDrawPoint(&w_all, i, ep->curve_coor[i]);
-
-	switch (current_eqpreset)
+	switch (configures.selected_preset)
 	{
-		case 1:
+		case 0:
 			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Normal:");
 			break;
-		case 2:
+		case 1:
 			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 1:");
 			break;
-		case 3:
+		case 2:
 			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 2:");
 			break;
-		case 4:
+		case 3:
 			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Custom 3:");
 			break;
 	}
-
 }
+
 
 void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 	
@@ -406,7 +394,7 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 	
 		// 指示点的坐标
 		uint8_t X = 0;
-		uint8_t Y = calc_ycoor_from_boost(eq_boost[ep->current_select]);
+		uint8_t Y = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][ep->current_select]);
 		switch(ep->current_select)
 		{
 			case freq_63:
@@ -460,23 +448,23 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		OLED_WinDrawPoint(&w_all, X, Y-2);
 		
 		// 绘制插值曲线
-		ep->key_points[ep->current_select] = calc_ycoor_from_boost(eq_boost[ep->current_select]);
+		ep->key_points[ep->current_select] = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][ep->current_select]);
 		OLED_DrawSmoothCurve(ep->key_points, true);
 		
 		// 显示boost值
 		char numBuff[12];
-		ui_itoa_str(eq_boost[ep->current_select], numBuff);
+		ui_itoa_str(configures.preset_eq[configures.selected_preset][ep->current_select], numBuff);
 		OLED_WinDrawStr(&w_all, 108, 57, Font_6_8, (uint8_t *)numBuff);
 		
 		if(msg == msg_none){
 		}
 		else if(msg == msg_add){
-			if(eq_boost[ep->current_select] < EQ_BOOST_MAX)
-				eq_boost[ep->current_select] ++;
+			if(configures.preset_eq[configures.selected_preset][ep->current_select] < EQ_BOOST_MAX)
+				configures.preset_eq[configures.selected_preset][ep->current_select] ++;
 		}
 		else if(msg == msg_sub){
-			if(eq_boost[ep->current_select] > -EQ_BOOST_MAX)
-				eq_boost[ep->current_select] --;
+			if(configures.preset_eq[configures.selected_preset][ep->current_select] > -EQ_BOOST_MAX)
+				configures.preset_eq[configures.selected_preset][ep->current_select] --;
 		}
 		else if(msg == msg_up){    //prev
 			if(ep->current_select > freq_63)
@@ -493,9 +481,9 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		else if(msg == msg_click){ //play
 		}
 		else if(msg == msg_return){
+			audio_save_configs_to_eeprom(&configures); // 存储音频配置
 			p->cb(p, &(ep->option_array[10]));
 		}
-	
 }
 
 

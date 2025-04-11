@@ -995,7 +995,7 @@ I (./Software/gui.h)(0x67F7394A)
 I (./Devices/adau1761/adau1761.h)(0x67F7394A)
 I (./Devices/adau1761/adau1761_REG.h)(0x65615820)
 I (Hardware\key.h)(0x67EF2BA5)
-I (./Software/audio.h)(0x67F7394A)
+I (./Software/audio.h)(0x67F87FC8)
 I (./Devices/qcc5125.h)(0x67F38E40)
 I (./Software/tasks.h)(0x67F38E40)
 I (.\Software\wouo\WouoUI.h)(0x67EF2BA5)
@@ -1230,8 +1230,8 @@ I (./Hardware/timer.h)(0x64992F25)
 I (./Devices/qcc5125.h)(0x67F38E40)
 I (./Devices/cs43131.h)(0x67F38E40)
 I (./Devices/cw2015.h)(0x6607D3F7)
-I (Software\audio.h)(0x67F7394A)
-F (.\Software\sys_init.c)(0x67F7394A)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\sys_init.o --omf_browse acomaster\sys_init.crf --depend acomaster\sys_init.d)
+I (Software\audio.h)(0x67F87FC8)
+F (.\Software\sys_init.c)(0x67F87FF9)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\sys_init.o --omf_browse acomaster\sys_init.crf --depend acomaster\sys_init.d)
 I (../Core/Inc/main.h)(0x656342E5)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h)(0x67ED0AB9)
 I (../Core/Inc/stm32l0xx_hal_conf.h)(0x6565AD4A)
@@ -1286,10 +1286,10 @@ I (D:\Applications\mdk\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 I (.\Software\wouo\WouoUI_page.h)(0x67F38E40)
 I (.\Software\wouo\WouoUI_widget.h)(0x67F36BE5)
 I (.\Software\wouo\WouoUI_win.h)(0x67EF2BA6)
-I (Software\audio.h)(0x67F7394A)
+I (Software\audio.h)(0x67F87FC8)
 I (./Devices/adau1761/adau1761.h)(0x67F7394A)
 I (./Devices/adau1761/adau1761_REG.h)(0x65615820)
-F (.\Software\audio.c)(0x67F73C33)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\audio.o --omf_browse acomaster\audio.crf --depend acomaster\audio.d)
+F (.\Software\audio.c)(0x67F88712)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\audio.o --omf_browse acomaster\audio.crf --depend acomaster\audio.d)
 I (../Core/Inc/main.h)(0x656342E5)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h)(0x67ED0AB9)
 I (../Core/Inc/stm32l0xx_hal_conf.h)(0x6565AD4A)
@@ -1323,7 +1323,7 @@ I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h)(0x67ED0AB9)
-I (Software\audio.h)(0x67F7394A)
+I (Software\audio.h)(0x67F87FC8)
 I (./Devices/qcc5125.h)(0x67F38E40)
 I (./Devices/adau1761/adau1761.h)(0x67F7394A)
 I (./Devices/adau1761/adau1761_REG.h)(0x65615820)
@@ -1377,7 +1377,7 @@ I (./Devices/oledfont.h)(0x67F38E40)
 I (./Devices/qcc5125.h)(0x67F38E40)
 I (./Devices/cw2015.h)(0x6607D3F7)
 I (./Devices/cs43131.h)(0x67F38E40)
-I (Software\audio.h)(0x67F7394A)
+I (Software\audio.h)(0x67F87FC8)
 I (./Hardware/eeprom.h)(0x67F7394A)
 F (.\Devices\cw2015.c)(0x64D77DE9)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\cw2015.o --omf_browse acomaster\cw2015.crf --depend acomaster\cw2015.d)
 I (Devices\cw2015.h)(0x6607D3F7)
@@ -1497,7 +1497,7 @@ F (.\Devices\qcc5125.c)(0x67F38E40)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O
 I (Devices\qcc5125.h)(0x67F38E40)
 I (D:\Applications\mdk\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
 I (Devices\cs43131.h)(0x67F38E40)
-I (./Software/audio.h)(0x67F7394A)
+I (./Software/audio.h)(0x67F87FC8)
 I (./Devices/adau1761/adau1761.h)(0x67F7394A)
 I (./Devices/adau1761/adau1761_REG.h)(0x65615820)
 I (./Software/sys_init.h)(0x64C8B337)
@@ -1569,7 +1569,7 @@ I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h)(0x67ED0AB9)
-F (.\Devices\adau1761\adau1761.c)(0x67F7394A)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\adau1761.o --omf_browse acomaster\adau1761.crf --depend acomaster\adau1761.d)
+F (.\Devices\adau1761\adau1761.c)(0x67F87B86)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\adau1761.o --omf_browse acomaster\adau1761.crf --depend acomaster\adau1761.d)
 I (../Core/Inc/main.h)(0x656342E5)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h)(0x67ED0AB9)
 I (../Core/Inc/stm32l0xx_hal_conf.h)(0x6565AD4A)
@@ -1696,7 +1696,7 @@ I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h)(0x67ED0AB9)
-F (.\Software\wouo\WouoUI_user.c)(0x67F73C33)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\wououi_user.o --omf_browse acomaster\wououi_user.crf --depend acomaster\wououi_user.d)
+F (.\Software\wouo\WouoUI_user.c)(0x67F88BCF)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\wououi_user.o --omf_browse acomaster\wououi_user.crf --depend acomaster\wououi_user.d)
 I (Software\wouo\WouoUI_user.h)(0x67F38E40)
 I (Software\wouo\WouoUI.h)(0x67EF2BA5)
 I (Software\wouo\WouoUI_conf.h)(0x67EF2BA5)
@@ -1746,6 +1746,7 @@ I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h)(0x67ED0AB9)
+I (./Software/audio.h)(0x67F87FC8)
 I (./Devices/qcc5125.h)(0x67F38E40)
 F (.\Software\wouo\WouoUI_widget.c)(0x67EF2BA6)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\wououi_widget.o --omf_browse acomaster\wououi_widget.crf --depend acomaster\wououi_widget.d)
 I (Software\wouo\WouoUI_widget.h)(0x67F36BE5)
@@ -1773,7 +1774,7 @@ I (D:\Applications\mdk\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
 I (Software\wouo\WouoUI_page.h)(0x67F38E40)
 I (Software\wouo\WouoUI_widget.h)(0x67F36BE5)
 I (Software\wouo\WouoUI.h)(0x67EF2BA5)
-F (.\Software\wouo\WouoUI_udp.c)(0x67F79C9F)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\wououi_udp.o --omf_browse acomaster\wououi_udp.crf --depend acomaster\wououi_udp.d)
+F (.\Software\wouo\WouoUI_udp.c)(0x67F888E0)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc -I ../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I ../Drivers/CMSIS/Include -I ./Software -I ./Hardware -I ./Devices -I ./Devices/adau1701 -I ./Devices/adau1761 -I .\Software\wouo-I.\RTE\_ACOMASTER-ID:\Applications\mdk\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Applications\mdk\Packs\Keil\STM32L0xx_DFP\2.2.0\Drivers\CMSIS\Device\ST\STM32L0xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L051xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L051xx-o acomaster\wououi_udp.o --omf_browse acomaster\wououi_udp.crf --depend acomaster\wououi_udp.d)
 I (Software\wouo\WouoUI_udp.h)(0x67F77863)
 I (Software\wouo\WouoUI.h)(0x67EF2BA5)
 I (Software\wouo\WouoUI_conf.h)(0x67EF2BA5)
@@ -1822,4 +1823,5 @@ I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h)(0x67ED0AB9)
 I (../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h)(0x67ED0AB9)
+I (./Software/audio.h)(0x67F87FC8)
 I (./Devices/qcc5125.h)(0x67F38E40)

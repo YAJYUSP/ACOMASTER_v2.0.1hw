@@ -10,10 +10,7 @@
 // 为0代表没有进行过初始化，为1代表进行过
 uint8_t audio_init_flag = 0;
 
-
-// 全局十段EQ boost值
-int8_t eq_boost[10] = {0};
-
+audio_config_t configures;
 
 
 //音频链路暂停，将会按下qcc5125的暂停键
@@ -61,10 +58,10 @@ void audio_enable_proc(qcc5125_status_t qcs, uint8_t time)
 					default_download_IC_2();
 					// 等待adau1761工作稳定
 					HAL_Delay(1);
-					// 加载eeprom中存储的eq boost参数
+					// 加载配置项中存储的eq boost参数
 					for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
 					{
-						eq_channel[i].eq_boost = eq_boost[i];
+						eq_channel[i].eq_boost = configures.preset_eq[configures.selected_preset][i];
 						audio_download_eqchnl(&(eq_channel[i]));
 					}
 					HAL_Delay(1);
@@ -77,10 +74,10 @@ void audio_enable_proc(qcc5125_status_t qcs, uint8_t time)
 }
 
 
-//initialize the adau1701 eq struct
-void audio_param_init(eq_param_t *eq)
+//初始化和音频配置相关的结构体
+void audio_param_init(eq_param_t *eq, audio_config_t* cfg)
 {
-		for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
+	for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
 	{
 			eq[i].eq_boost = 0.00; // 每段EQ的boost 
 			eq[i].gain = 0.0;			 // 每段EQ的增益
@@ -108,24 +105,38 @@ void audio_param_init(eq_param_t *eq)
 	eq[freq_8k].safeload_addr = 0x002B;
 	eq[freq_12k].safeload_addr = 0x0030;
 	eq[freq_16k].safeload_addr = 0x0035;
+	
+	cfg->selected_preset = 0;
 }
 
-/* 将eq_boost[10]存进eeprom*/
-void audio_save_all_eqchnl_to_eeprom(void)
+///* 将eq_boost[10]存进eeprom*/
+//void audio_save_all_eqchnl_to_eeprom(void)
+//{
+//	for(uint8_t i=0; i<=9; i++)
+//	{
+//			EEPROM_WriteWithCheck(i, (uint8_t *)&eq_boost[i], 1);
+//	}
+//}
+
+///* 从eeprom读出eq数据存入eq_boost[10]*/
+//void audio_read_all_eqchnl_from_eeprom(void)
+//{
+//	for(uint8_t i=0; i<=9; i++)
+//	{
+//			EEPROM_ReadWithCheck(i, (uint8_t *)&eq_boost[i], 1);
+//	}
+//}
+
+/* 将audio_config_t结构体存进eeprom*/
+void audio_save_configs_to_eeprom(audio_config_t *cfg)
 {
-	for(uint8_t i=0; i<=9; i++)
-	{
-			EEPROM_WriteWithCheck(i, (uint8_t *)&eq_boost[i], 1);
-	}
+	EEPROM_WriteWithCheck(0, (uint8_t *)cfg, sizeof(audio_config_t));
 }
 
-/* 从eeprom读出eq数据存入eq_boost[10]*/
-void audio_read_all_eqchnl_from_eeprom(void)
+/* 将audio_config_t结构体从eeprom读出*/
+void audio_read_configs_from_eeprom(audio_config_t *cfg)
 {
-	for(uint8_t i=0; i<=9; i++)
-	{
-			EEPROM_ReadWithCheck(i, (uint8_t *)&eq_boost[i], 1);
-	}
+	EEPROM_ReadWithCheck(0, (uint8_t *)cfg, sizeof(audio_config_t));
 }
 
 

@@ -5,6 +5,7 @@
 #include "WouoUI_udp.h"
 
 #include "main.h"
+#include "audio.h"
 #include "qcc5125.h"
 
 
@@ -115,7 +116,7 @@ Option setting_eq_option_array[SETTING_EQ_NUM] =
 
 //--------定义每个页面的回调函数
 
-// play页面的回调函数,暂时没有用到
+// play页面的回调函数
 void PlayingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 
 	if (!strcmp(select_item->text, "prev")) {
@@ -149,18 +150,30 @@ void MainPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 // setting页面的回调函数
 void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
  
-	if (!strcmp(select_item->text, "+ EQ Presets")) {
-		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
-	} else if (!strcmp(select_item->text, "+ Edit EQ Preset")) {
-        OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page );
+//	if (!strcmp(select_item->text, "+ EQ Presets")) {
+//		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
+//	} else if (!strcmp(select_item->text, "+ Edit EQ Preset")) {
+//        OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page );
+//	}
+	switch (select_item->order) { 
+	case 0:
+			break;
+	case 1:
+			OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
+			break;
+	case 2:
+			OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page);
+			break;
+	default:
+			break;
 	}
 }
-// 当前选中的EQ预设
-extern uint8_t current_eqpreset;
+
+extern audio_config_t configures;
 // setting->EQPreset页面(继承自ListPage)的回调函数
 void Setting_EQPresetPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 	if(select_item->order != 0)
-		current_eqpreset = select_item->order;
+		configures.selected_preset = select_item->order - 1;
 }
 // setting->EQ页面的回调函数
 void Setting_EQPage_CallBack(const Page *cur_page_addr, Option *select_item) {

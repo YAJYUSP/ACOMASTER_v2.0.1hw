@@ -8,7 +8,7 @@
 #include "adau1761_REG.h"
 
 
-// 10段EQ结构体的数组，使用eq_cfreq_e索引
+// 10段EQ结构体的数组，用于存储每段EQ内部的配置与参数，使用eq_cfreq_e索引
 eq_param_t eq_channel[10];						
 
 
