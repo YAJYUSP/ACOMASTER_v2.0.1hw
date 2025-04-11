@@ -11,6 +11,12 @@ typedef struct audio_config_t { 	// 和音频播放有关的配置项
 }audio_config_t;  
 
 
+void audio_pulse(void);
+void audio_prev(void);
+void audio_next(void);
+void audio_volp(void);
+void audio_vols(void);
+
 
 void audio_enable_proc(qcc5125_status_t qcs, uint8_t time);
 void audio_download_eqchnl(eq_param_t *eq);

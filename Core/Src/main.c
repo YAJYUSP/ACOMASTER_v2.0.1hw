@@ -104,7 +104,7 @@ int main(void)
 	//这里先不使能RTC中断，设备息屏前再使能，重新生成代码后要修改rtc.c	
 	
   /* USER CODE END 2 */
-
+	
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)

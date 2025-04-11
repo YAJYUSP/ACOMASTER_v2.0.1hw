@@ -100,7 +100,7 @@ const unsigned char icon_pause_checked_16_16[] =
 
 //--------Playing页面相关函数
 void OLED_PlayingPageEnterInit(PageAddr page_addr, uint16_t time) {
-
+	
 }
 
 extern qcc5125_status_t qcc5125_status;
@@ -131,7 +131,7 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
     String selcet_string = NULL;
     InputMsg msg = OLED_MsgQueRead(); // 空时读出msg_none
 		OLED_MsgQueClear(); 							// 这里暂时清空消息队列，可能会引发问题------------------======================================================
-	
+		
 		// 此计数器标志用以控制按下PLAY等按键时屏幕三大icon的变化，标志为1代表正在计数
 		static uint8_t counter[3] = {0};
 		static uint8_t cnt_switch[3] = {0};
@@ -209,7 +209,7 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 			else
 				OLED_WinDrawBMP(&w_all,60, 35, 16, 16, (uint8_t *)icon_play_checked_16_16, 1);		
 		}
-			
+		
 		/* 处理音量动画的变化*/
 		if(counter_vol_status == 1) {
 			if(counter_vol_anim < ANIM_VOL_TIMEOUT)
@@ -460,11 +460,17 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		}
 		else if(msg == msg_add){
 			if(configures.preset_eq[configures.selected_preset][ep->current_select] < EQ_BOOST_MAX)
+			{
 				configures.preset_eq[configures.selected_preset][ep->current_select] ++;
+				p->cb(p, &(ep->option_array[11])); // boost改变后，把配置同步到DSP中
+			}
 		}
 		else if(msg == msg_sub){
 			if(configures.preset_eq[configures.selected_preset][ep->current_select] > -EQ_BOOST_MAX)
+			{
 				configures.preset_eq[configures.selected_preset][ep->current_select] --;
+				p->cb(p, &(ep->option_array[11])); // boost改变后，把配置同步到DSP中
+			}
 		}
 		else if(msg == msg_up){    //prev
 			if(ep->current_select > freq_63)
@@ -481,7 +487,6 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		else if(msg == msg_click){ //play
 		}
 		else if(msg == msg_return){
-			audio_save_configs_to_eeprom(&configures); // 存储音频配置
 			p->cb(p, &(ep->option_array[10]));
 		}
 }
@@ -507,3 +512,7 @@ void OLED_EQPageInit(
     for (uint8_t i = 0; i < eq_page->item_num; i++)
         eq_page->option_array[i].order = i; // 选项序号标号
 }
+
+
+
+

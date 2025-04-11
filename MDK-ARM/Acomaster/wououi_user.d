@@ -13,9 +13,11 @@ acomaster\wououi_user.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\st
 acomaster\wououi_user.o: Software\wouo\WouoUI_page.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_widget.h
 acomaster\wououi_user.o: Software\wouo\WouoUI_win.h
-acomaster\wououi_user.o: Software\wouo\WouoUI_udp.h
+acomaster\wououi_user.o: ./Software/audio.h
+acomaster\wououi_user.o: ./Devices/qcc5125.h
 acomaster\wououi_user.o: ./Devices/adau1761/adau1761.h
 acomaster\wououi_user.o: ./Devices/adau1761/adau1761_REG.h
+acomaster\wououi_user.o: Software\wouo\WouoUI_udp.h
 acomaster\wououi_user.o: ../Core/Inc/main.h
 acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h
 acomaster\wououi_user.o: ../Core/Inc/stm32l0xx_hal_conf.h
@@ -49,5 +51,3 @@ acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc.h
 acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_rtc_ex.h
 acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h
 acomaster\wououi_user.o: ../Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim_ex.h
-acomaster\wououi_user.o: ./Software/audio.h
-acomaster\wououi_user.o: ./Devices/qcc5125.h

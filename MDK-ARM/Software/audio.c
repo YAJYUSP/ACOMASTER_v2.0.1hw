@@ -13,12 +13,32 @@ uint8_t audio_init_flag = 0;
 audio_config_t configures;
 
 
-//音频链路暂停，将会按下qcc5125的暂停键
-static void audio_pulse(void)
+// 音频链路暂停，将会按下qcc5125的暂停键
+void audio_pulse(void)
 {
-		//暂停音乐
 		qcc5125_btn_press(KEY_PLAY, 200);
 }
+// 上一首
+void audio_prev(void)
+{
+		qcc5125_btn_press(KEY_PREV, 200);
+}
+// 下一首
+void audio_next(void)
+{
+		qcc5125_btn_press(KEY_NEXT, 200);
+}
+// 音量+
+void audio_volp(void)
+{
+		qcc5125_btn_press(KEY_NEXT, 550);
+}
+// 音量-
+void audio_vols(void)
+{
+		qcc5125_btn_press(KEY_PREV, 550);
+}
+
 
 
 static void audio_mute(void)

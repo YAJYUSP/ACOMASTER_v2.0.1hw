@@ -26,7 +26,7 @@ EQPage setting_eq_page;
  
 #define SETTING_PAGE_NUM      7
 #define SETTING_EQPRESET_NUM  5 
-#define SETTING_EQ_NUM        11 
+#define SETTING_EQ_NUM        12 
 
 
 // main页面的图标,30x30
@@ -111,6 +111,7 @@ Option setting_eq_option_array[SETTING_EQ_NUM] =
 				{.text = (char *)"freq_12k"},
 				{.text = (char *)"freq_16k"},
 				{.text = (char *)"return"},
+				{.text = (char *)"update"},
 };
 
 
@@ -120,22 +121,22 @@ Option setting_eq_option_array[SETTING_EQ_NUM] =
 void PlayingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 
 	if (!strcmp(select_item->text, "prev")) {
-		qcc5125_btn_press(KEY_PREV, 200);
+		audio_prev();
 	} 
 	if (!strcmp(select_item->text,"next")) {
-		qcc5125_btn_press(KEY_NEXT, 200);
+		audio_next();
 	} 
 	if (!strcmp(select_item->text, "play")) {
-		qcc5125_btn_press(KEY_PLAY, 200);
+		audio_pulse();
 	} 
 	if (!strcmp(select_item->text, "volp")) {
-		qcc5125_btn_press(KEY_NEXT, 550);
+		audio_volp();
 	}
 	if (!strcmp(select_item->text, "vols")) {
-		qcc5125_btn_press(KEY_PREV, 550);
+		audio_vols();
 	}
 	if (!strcmp(select_item->text, "return")) {
-		OLED_UIJumpToPage((PageAddr)cur_page_addr, &main_page);
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &main_page ); 
 	}
 }
 
@@ -150,22 +151,10 @@ void MainPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 // setting页面的回调函数
 void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
  
-//	if (!strcmp(select_item->text, "+ EQ Presets")) {
-//		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
-//	} else if (!strcmp(select_item->text, "+ Edit EQ Preset")) {
-//        OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page );
-//	}
-	switch (select_item->order) { 
-	case 0:
-			break;
-	case 1:
-			OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
-			break;
-	case 2:
-			OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page);
-			break;
-	default:
-			break;
+	if (!strcmp(select_item->text, "+ EQ Presets")) {
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eqpreset_page);
+	} else if (!strcmp(select_item->text, "+ Edit EQ Preset")) { 
+		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_eq_page );
 	}
 }
 
@@ -173,12 +162,18 @@ extern audio_config_t configures;
 // setting->EQPreset页面(继承自ListPage)的回调函数
 void Setting_EQPresetPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 	if(select_item->order != 0)
+	{
 		configures.selected_preset = select_item->order - 1;
+		audio_save_configs_to_eeprom(&configures); // 存储配置
+	}
 }
 // setting->EQ页面的回调函数
 void Setting_EQPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 	if (!strcmp(select_item->text, "return")) {
-		OLED_UIJumpToPage((PageAddr)cur_page_addr, &setting_page);
+		audio_save_configs_to_eeprom(&configures); // 存储配置
+		OLED_PageReturn((PageAddr)cur_page_addr);  
+	}else if (!strcmp(select_item->text, "update")) { 
+
 	}
 }
 
@@ -199,5 +194,35 @@ void TestUI_Init(void) {
     OLED_ListPageInit(&setting_page, SETTING_PAGE_NUM, (Option *)setting_option_array, Setting_none, SettingPage_CallBack);
 		OLED_ListPageInit(&setting_eqpreset_page, SETTING_EQPRESET_NUM, (Option *)setting_preset_option_array, Setting_radio, Setting_EQPresetPage_CallBack);
 		OLED_EQPageInit(&setting_eq_page, SETTING_EQ_NUM, (Option *)setting_eq_option_array, NULL, Setting_EQPage_CallBack);
+	
+		// 编辑setting_preset_option_array
+		switch (configures.selected_preset)
+		{
+			case 0: // 选中Normal
+				setting_eqpreset_page.option_array[1].val = 1;
+				setting_eqpreset_page.option_array[2].val = 0;
+				setting_eqpreset_page.option_array[3].val = 0;
+				setting_eqpreset_page.option_array[4].val = 0;
+				break;
+			case 1: // 选中Custom 1
+				setting_eqpreset_page.option_array[1].val = 0;
+				setting_eqpreset_page.option_array[2].val = 1;
+				setting_eqpreset_page.option_array[3].val = 0;
+				setting_eqpreset_page.option_array[4].val = 0;
+				break;
+			case 2: // 选中Custom 2
+				setting_eqpreset_page.option_array[1].val = 0;
+				setting_eqpreset_page.option_array[2].val = 0;
+				setting_eqpreset_page.option_array[3].val = 1;
+				setting_eqpreset_page.option_array[4].val = 0;
+				break;
+			case 3: // 选中Custom 3
+				setting_eqpreset_page.option_array[1].val = 0;
+				setting_eqpreset_page.option_array[2].val = 0;
+				setting_eqpreset_page.option_array[3].val = 0;
+				setting_eqpreset_page.option_array[4].val = 1;
+				break;
+		}
+	
 }
 

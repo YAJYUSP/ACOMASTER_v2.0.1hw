@@ -54,6 +54,6 @@ acomaster\sys_init.o: D:\Applications\mdk\Keil_v5\ARM\ARMCC\Bin\..\include\strin
 acomaster\sys_init.o: .\Software\wouo\WouoUI_page.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_widget.h
 acomaster\sys_init.o: .\Software\wouo\WouoUI_win.h
-acomaster\sys_init.o: Software\audio.h
+acomaster\sys_init.o: ./Software/audio.h
 acomaster\sys_init.o: ./Devices/adau1761/adau1761.h
 acomaster\sys_init.o: ./Devices/adau1761/adau1761_REG.h
