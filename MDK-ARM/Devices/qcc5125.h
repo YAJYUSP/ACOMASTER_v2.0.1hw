@@ -46,22 +46,8 @@ typedef struct
 		uint8_t mode;
 }ioctrl_t;
 
-
-// qcc5125的输出信号状态
-typedef struct 
-{
-		// 正在播放音乐
-		uint8_t is_music_playing, is_music_playing_last;
-		// 连接成功
-		uint8_t is_connected, is_connected_last;
-}qcc5125_status_t;
-
-
-extern qcc5125_status_t qcc5125_status;
-
-
 void qcc5125_btn_press(QCC5125_vbtn_e btn, uint16_t time);
-void qcc5125_status_proc(qcc5125_status_t *stat, uint8_t time);
+void qcc5125_btn_proc(uint8_t time);
 
 
 #endif

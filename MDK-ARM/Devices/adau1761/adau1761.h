@@ -6,7 +6,7 @@
 #define DEVICE_ARCHITECTURE_IC_2                  "ADAU176x"
 #define DEVICE_ADDR_IC_2                          0x70
 
-#define EQ_BOOST_MAX  15
+#define EQ_BOOST_MAX  20
 
 typedef unsigned char ADI_REG_TYPE;
 

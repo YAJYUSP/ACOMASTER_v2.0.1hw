@@ -7,8 +7,6 @@
 
 
 ioctrl_t 					qcc5125_btn[4];
-qcc5125_status_t  qcc5125_status;
-
 
 
 static void qcc5125_ioctl(QCC5125_vbtn_e key, uint8_t level){
@@ -59,35 +57,25 @@ void qcc5125_btn_press(QCC5125_vbtn_e btn, uint16_t time)
 }
 
 
-
-// 更新qcc5125的状态，包括io、连接/播放状态等
+// 更新虚拟按键
 // time:被调用的周期，以ms计算
-void qcc5125_status_proc(qcc5125_status_t *stat, uint8_t time)
+void qcc5125_btn_proc(uint8_t time)
 {
-		// 更新虚拟按键
-		for(QCC5125_vbtn_e i = KEY_PLAY; i <= KEY_PWR; i++){
-			
-			if(qcc5125_btn[i].mode == 0)
+	for(QCC5125_vbtn_e i = KEY_PLAY; i <= KEY_PWR; i++){
+		
+		if(qcc5125_btn[i].mode == 0)
+				qcc5125_ioctl(i, 0);
+		else if(qcc5125_btn[i].mode == 1){
+			if(qcc5125_btn[i].delay_cnt * time < qcc5125_btn[i].delay_set){
+					qcc5125_ioctl(i, 1);
+					qcc5125_btn[i].delay_cnt++;
+			}
+			else
+			{
 					qcc5125_ioctl(i, 0);
-			else if(qcc5125_btn[i].mode == 1){
-				if(qcc5125_btn[i].delay_cnt * time < qcc5125_btn[i].delay_set){
-						qcc5125_ioctl(i, 1);
-						qcc5125_btn[i].delay_cnt++;
-				}
-				else
-				{
-						qcc5125_ioctl(i, 0);
-						qcc5125_btn[i].mode = 0;
-				}
+					qcc5125_btn[i].mode = 0;
 			}
 		}
-		// 记录上一次的模块状态
-		stat->is_connected_last = qcc5125_status.is_connected;
-		stat->is_music_playing_last = qcc5125_status.is_music_playing;
-		// 更新模块输出引脚状态
-		stat->is_connected = IF_BL_CNED;
-		stat->is_music_playing = IF_MUSIC_PLAYING;
+	}
 }
-
-
 

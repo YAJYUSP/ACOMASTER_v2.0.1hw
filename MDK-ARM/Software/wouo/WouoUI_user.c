@@ -158,22 +158,28 @@ void SettingPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 	}
 }
 
-extern audio_config_t configures;
+extern audio_config_t aud_conf;
 // setting->EQPreset页面(继承自ListPage)的回调函数
 void Setting_EQPresetPage_CallBack(const Page *cur_page_addr, Option *select_item) {
 	if(select_item->order != 0)
 	{
-		configures.selected_preset = select_item->order - 1;
-		audio_save_configs_to_eeprom(&configures); // 存储配置
+		aud_conf.selected_preset = select_item->order - 1;
+		audio_save_configs_to_eeprom(&aud_conf); // 存储配置
+		// 加载配置项中存储的eq boost参数
+		for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
+			audio_download_eqchnl(&aud_conf, i);
 	}
 }
 // setting->EQ页面的回调函数
 void Setting_EQPage_CallBack(const Page *cur_page_addr, Option *select_item) {
+	
+	EQPage *ep = (EQPage *)cur_page_addr;
+	
 	if (!strcmp(select_item->text, "return")) {
-		audio_save_configs_to_eeprom(&configures); // 存储配置
+		audio_save_configs_to_eeprom(&aud_conf); // 存储配置
 		OLED_PageReturn((PageAddr)cur_page_addr);  
 	}else if (!strcmp(select_item->text, "update")) { 
-
+		audio_download_eqchnl(&aud_conf, ep->current_select); // 在此页面，ep->current_select就是选中的EQ中心频率
 	}
 }
 
@@ -196,7 +202,7 @@ void TestUI_Init(void) {
 		OLED_EQPageInit(&setting_eq_page, SETTING_EQ_NUM, (Option *)setting_eq_option_array, NULL, Setting_EQPage_CallBack);
 	
 		// 编辑setting_preset_option_array
-		switch (configures.selected_preset)
+		switch (aud_conf.selected_preset)
 		{
 			case 0: // 选中Normal
 				setting_eqpreset_page.option_array[1].val = 1;

@@ -14,7 +14,7 @@
 
 
 extern eq_param_t eq_channel[10];  // 10段EQ结构体的数组
-extern audio_config_t configures;
+extern audio_config_t aud_conf;
 
 void system_init(void)
 {
@@ -60,9 +60,9 @@ void system_init(void)
 //		sys_chg_info_init(&sys_chg_info);
 		
 		//初始化与音频配置相关的内容
-		audio_param_init(eq_channel, &configures);
+		audio_param_init(eq_channel, &aud_conf);
 		//从eeprom读cfg数据
-		audio_read_configs_from_eeprom(&configures);
+		audio_read_configs_from_eeprom(&aud_conf);
 		
 		//初始化显示屏
 		OLED_Init();

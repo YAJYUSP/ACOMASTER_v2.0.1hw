@@ -11,10 +11,7 @@
 #include "audio.h"
 #include "qcc5125.h"
 
-// 全局十段EQ boost值
-extern audio_config_t configures;
-
-
+extern audio_config_t aud_conf;
 
 
 
@@ -103,7 +100,7 @@ void OLED_PlayingPageEnterInit(PageAddr page_addr, uint16_t time) {
 	
 }
 
-extern qcc5125_status_t qcc5125_status;
+extern audio_status_t aud_stat;
 
 void OLED_PlayingPageShow(PageAddr page_addr, uint16_t time) {
 	
@@ -113,7 +110,7 @@ void OLED_PlayingPageShow(PageAddr page_addr, uint16_t time) {
 	
 	OLED_WinDrawBMP(&w_all,24, 35, 16, 16, (uint8_t *)icon_prev_unchecked_16_16, 1);
 	OLED_WinDrawBMP(&w_all,88, 35, 16, 16, (uint8_t *)icon_next_unchecked_16_16, 1);
-	if(qcc5125_status.is_music_playing)
+	if(aud_stat.is_music_playing)
 		OLED_WinDrawBMP(&w_all,57, 35, 16, 16, (uint8_t *)icon_pause_unchecked_16_16, 1);
 	else
 		OLED_WinDrawBMP(&w_all,60, 35, 16, 16, (uint8_t *)icon_play_unchecked_16_16, 1);
@@ -204,7 +201,7 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 					counter[2] = 0;
 					cnt_switch[2] = 0;
 			}
-			if(qcc5125_status.is_music_playing)
+			if(aud_stat.is_music_playing)
 				OLED_WinDrawBMP(&w_all,57, 35, 16, 16, (uint8_t *)icon_pause_checked_16_16, 1);
 			else
 				OLED_WinDrawBMP(&w_all,60, 35, 16, 16, (uint8_t *)icon_play_checked_16_16, 1);		
@@ -239,7 +236,7 @@ void OLED_PlayingPageReact(PageAddr page_addr, uint16_t time) {
 			OLED_WinDrawBMP(&w_all,0, 0, 16, 16, (uint8_t *)icon_vol3_16_16, 1);
 		
 		/* 处理蓝牙图标*/
-		if(qcc5125_status.is_connected)
+		if(aud_stat.is_connected)
 			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_conn_16_16, 1);
 		else
 			OLED_WinDrawBMP(&w_all,56, 0, 16, 16, (uint8_t *)icon_bl_disconn_16_16, 1);
@@ -348,7 +345,7 @@ void OLED_EQPageEnterInit(PageAddr page_addr, uint16_t time) {
 	EQPage *ep = (EQPage *)page_addr;
 	ep->current_select = freq_63;
 	for(eq_cfreq_e i=freq_63; i<=freq_16k; i++)
-		ep->key_points[i] = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][i]);
+		ep->key_points[i] = calc_ycoor_from_boost(aud_conf.preset_eq[aud_conf.selected_preset][i]);
 }
 
 void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
@@ -366,7 +363,7 @@ void OLED_EQPageShow(PageAddr page_addr, uint16_t time) {
 	OLED_WinDrawVLine(&w_all, 94, 52, 53);
 	OLED_WinDrawVLine(&w_all, 106, 52, 53);
 	OLED_WinDrawVLine(&w_all, 118, 52, 53);
-	switch (configures.selected_preset)
+	switch (aud_conf.selected_preset)
 	{
 		case 0:
 			OLED_WinDrawStr(&w_all, 0, 57, Font_6_8, (uint8_t *)"Normal:");
@@ -394,7 +391,7 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 	
 		// 指示点的坐标
 		uint8_t X = 0;
-		uint8_t Y = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][ep->current_select]);
+		uint8_t Y = calc_ycoor_from_boost(aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select]);
 		switch(ep->current_select)
 		{
 			case freq_63:
@@ -448,27 +445,27 @@ void OLED_EQPageReact(PageAddr page_addr, uint16_t time) {
 		OLED_WinDrawPoint(&w_all, X, Y-2);
 		
 		// 绘制插值曲线
-		ep->key_points[ep->current_select] = calc_ycoor_from_boost(configures.preset_eq[configures.selected_preset][ep->current_select]);
+		ep->key_points[ep->current_select] = calc_ycoor_from_boost(aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select]);
 		OLED_DrawSmoothCurve(ep->key_points, true);
 		
 		// 显示boost值
 		char numBuff[12];
-		ui_itoa_str(configures.preset_eq[configures.selected_preset][ep->current_select], numBuff);
+		ui_itoa_str(aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select], numBuff);
 		OLED_WinDrawStr(&w_all, 108, 57, Font_6_8, (uint8_t *)numBuff);
 		
 		if(msg == msg_none){
 		}
 		else if(msg == msg_add){
-			if(configures.preset_eq[configures.selected_preset][ep->current_select] < EQ_BOOST_MAX)
+			if(aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select] < EQ_BOOST_MAX)
 			{
-				configures.preset_eq[configures.selected_preset][ep->current_select] ++;
+				aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select] ++;
 				p->cb(p, &(ep->option_array[11])); // boost改变后，把配置同步到DSP中
 			}
 		}
 		else if(msg == msg_sub){
-			if(configures.preset_eq[configures.selected_preset][ep->current_select] > -EQ_BOOST_MAX)
+			if(aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select] > -EQ_BOOST_MAX)
 			{
-				configures.preset_eq[configures.selected_preset][ep->current_select] --;
+				aud_conf.preset_eq[aud_conf.selected_preset][ep->current_select] --;
 				p->cb(p, &(ep->option_array[11])); // boost改变后，把配置同步到DSP中
 			}
 		}

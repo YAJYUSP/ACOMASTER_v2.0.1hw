@@ -38,10 +38,7 @@ void bsp_tim22_delay_us(uint16_t nus)
 		HAL_TIM_Base_Stop(&htim22);
 } 
 
-
-extern qcc5125_status_t  qcc5125_status;
-
-
+extern audio_status_t aud_stat;
 //PIT
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -71,11 +68,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if (htim == (&htim6))                           
 		{
 				
-				qcc5125_status_proc(&qcc5125_status, 100);
-				audio_enable_proc(qcc5125_status, 100);  // 就是这句代码
-
-
-				
+				audio_status_proc(&aud_stat, 100);
+	
 				
 //				//EQ调整模式中，长按按键自动更改参数
 //				if(device_current_state == EQ_UI) 
